@@ -1,0 +1,23 @@
+#!/bin/bash
+NAME=${1-$(cat .upstream)}
+ID=$(mix doex.id $NAME)
+
+echo "===================================="
+echo "  SYNCING CODE ON $NAME ($ID)       "
+echo "===================================="
+
+for GITREPO in "techblog"
+do
+  echo "  Installing $GITREPO from github"
+  mix doex.ssh $ID "USER_EMAIL=aforward@gmail.com \\
+                      USER_NAME=aforward \\
+                      URL=git@github.com:aforward/$GITREPO.git \\
+                      GIT_BRANCH=master \\
+                      INSTALL_DIR=/src \\
+                      NAME=$GITREPO \\
+                      bits install gitclone"
+  echo "  DONE, Installing $GITREPO"
+done
+
+mix doex.ssh $ID "mix local.hex --force"
+mix doex.ssh $ID "cd /src/techblog && ./bin/package/checkout && mix deps.get"

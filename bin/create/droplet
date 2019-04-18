@@ -1,0 +1,22 @@
+#!/bin/bash
+
+VERSION=$(MIX_QUIET=1 mix version.current)
+NAME=${1-techblog-v${VERSION//[.|-]/}}
+
+mix doex.droplets.create $NAME \
+  --region tor1 \
+  --size s-1vcpu-1gb \
+  --snapshot erlang21231elixir181phoenix140postgres11 \
+  --ipv6 \
+  --private_networking \
+  --sleep 30 \
+  --block
+
+ID=$(mix doex.id $NAME)
+
+mix doex.ssh.hostkey $ID
+mix doex.scp $ID $HOME/.ssh/id_rsa.pub /root/.ssh/
+mix doex.scp $ID $HOME/.ssh/id_rsa /root/.ssh/
+./bin/remote/sync $NAME
+mix doex.ssh $ID "echo \"{ cd /src/techblog && source ./bin/env; }\" >> /root/.bash_aliases"
+echo "$NAME" > .upstream

@@ -1,0 +1,16 @@
+#!/bin/bash
+VERSION=$(mix version.current)
+REL_ROOT=/src/techblogrel
+
+if [[ ! -e ${REL_ROOT}/.git ]]; then
+  (cd ${REL_ROOT} && git init)
+fi
+
+mkdir -p ${REL_ROOT}/releases/${VERSION}
+
+cp ./_build/prod/rel/techblog/releases/${VERSION}/techblog.tar.gz \
+   ${REL_ROOT}/releases/${VERSION}/techblog.tar.gz
+
+(cd ${REL_ROOT} && \
+ ln -sf releases/${VERSION}/techblog.tar.gz techblog.tar.gz && \
+ tar zxf techblog.tar.gz)

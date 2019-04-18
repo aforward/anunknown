@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BRANCH=${1-origin/master}
+
+git fetch && git fetch --tags && git reset --hard $BRANCH
+
+for GITREPO in "techblog"
+do
+  (cd /src/$GITREPO && \
+   git fetch && git fetch --tags && git reset --hard origin/master)
+done

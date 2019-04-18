@@ -1,0 +1,38 @@
+#!/bin/bash
+
+source ./bin/env
+
+echo "--------------"
+echo "STARTING DEPLOY"
+echo " follow along with tail -f /var/log/build.log"
+echo "--------------"
+
+touch /var/log/build.log
+echo "" > /var/log/build.log
+
+echo "1) Pulling latest code"
+echo "1) Pulling latest code" >> /var/log/build.log
+./bin/package/checkout >> /var/log/build.log
+
+TAG=${1-v$(MIX_QUIET=1 mix version.current)}
+echo "2) Checking out $TAG"
+echo "2) Checking out $TAG" >> /var/log/build.log
+./bin/package/checkout $TAG &>> /var/log/build.log
+
+echo "3) Preparing release"
+echo "3) Preparing release" >> /var/log/build.log
+./bin/package/prerelease &>> /var/log/build.log
+
+echo "4) Building release"
+echo "4) Building release" >> /var/log/build.log
+./bin/package/release &>> /var/log/build.log
+
+echo "5) Deploy release"
+echo "5) Deploy release" >> /var/log/build.log
+./bin/package/extract &>> /var/log/build.log
+
+echo "6) Retart env"
+echo "6) Retart env" >> /var/log/build.log
+/src/techblogrel/bin/techblog stop &>> /var/log/build.log
+/src/techblogrel/bin/techblog start &>> /var/log/build.log
+

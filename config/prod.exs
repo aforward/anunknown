@@ -10,9 +10,12 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :techblog, TechblogWeb.Endpoint,
-  http: [:inet6, port: System.get_env("PORT") || 4000],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  http: [:inet6, port: 80],
+  url: [port: 80],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  server: true,
+  root: ".",
+  version: Application.spec(:dividends, :vsn)
 
 # Do not print debug messages in production
 config :logger, level: :info
@@ -68,4 +71,3 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
-import_config "prod.secret.exs"

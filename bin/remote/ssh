@@ -1,0 +1,4 @@
+#!/bin/bash
+
+NAME=${1-$(cat .upstream)}
+ssh root@`mix doex.ip $NAME`
