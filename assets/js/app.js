@@ -17,6 +17,6 @@ import "phoenix_html"
 // import socket from "./socket"
 
 // Enabled LiveView Socket
-import LiveSocket from "phoenix_live_view"
-let liveSocket = new LiveSocket("/live")
-liveSocket.connect()
+// import LiveSocket from "phoenix_live_view"
+// let liveSocket = new LiveSocket("/live")
+// liveSocket.connect()
