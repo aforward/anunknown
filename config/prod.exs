@@ -12,6 +12,10 @@ use Mix.Config
 config :techblog, TechblogWeb.Endpoint,
   http: [:inet6, port: 80],
   url: [port: 80],
+  secret_key_base: {:system, "SECRET_KEY_BASE"},
+  live_view: [
+    signing_salt: {:system, "SIGNING_SALT"}
+  ],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   root: ".",
