@@ -1,9 +1,6 @@
 defmodule Techblog do
-  @moduledoc """
-  Techblog keeps the contexts that define your domain
-  and business logic.
+  @moduledoc false
+  @version Mix.Project.config()[:version]
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  def formatted_version, do: "v" <> @version
 end

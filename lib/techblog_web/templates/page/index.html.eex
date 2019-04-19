@@ -1,1 +1,2 @@
-techblog
+techblog<br>
+<%= Techblog.formatted_version %>
