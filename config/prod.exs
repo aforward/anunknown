@@ -20,6 +20,7 @@ config :techblog,
 config :techblog, TechblogWeb.Endpoint,
   http: [:inet6, port: 80],
   url: [port: 80],
+  force_ssl: [hsts: true, rewrite_on: [:x_forwarded_proto], host: nil],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   live_view: [
     signing_salt: {:system, "SIGNING_SALT"}

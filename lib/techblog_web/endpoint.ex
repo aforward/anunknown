@@ -59,20 +59,19 @@ defmodule TechblogWeb.Endpoint do
     host = Application.get_env(:techblog, :host)
     ssl_port = Application.get_env(:techblog, :ssl_port)
 
-    {:ok, config}
     config
     |> Keyword.put(:url, host: host, port: port)
     |> Keyword.put(:http, [:inet6, port: port])
     |> invoke(fn cfg ->
       case TechblogWeb.Certbot.https_keys() do
         [] ->
-          cfg |> Keyword.put(:https, false)
+          cfg
+          |> Keyword.put(:https, false)
 
         keys ->
           if File.exists?(keys[:keyfile]) do
             cfg
             |> Keyword.put(:https, [port: ssl_port] ++ keys)
-            |> Keyword.put(:force_ssl, hsts: true, rewrite_on: [:x_forwarded_proto], host: nil)
           else
             cfg |> Keyword.put(:https, false)
           end
@@ -80,5 +79,4 @@ defmodule TechblogWeb.Endpoint do
     end)
     |> invoke({:ok, &1})
   end
-
 end
