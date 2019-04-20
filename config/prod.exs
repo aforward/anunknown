@@ -6,7 +6,7 @@ config :techblog,
   port: 80,
   ssl_port: 443,
   host: {:system, "DOMAIN"},
-  email: {:system, "EMAIL"},
+  email: {:system, "EMAIL"}
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
