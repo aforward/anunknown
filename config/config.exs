@@ -7,6 +7,13 @@
 # General application configuration
 use Mix.Config
 
+config :techblog,
+  domain: "localhost",
+  acme_server: :local,
+  port: 4000,
+  ssl_port: 4001,
+  host: "127.0.0.1"
+
 # Configures the endpoint
 config :techblog, TechblogWeb.Endpoint,
   url: [host: "localhost"],

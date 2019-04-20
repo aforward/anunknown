@@ -44,3 +44,4 @@ npm-debug.log
 .upstream
 bin/env.private
 assets/package-lock.json
+priv/certbot/*

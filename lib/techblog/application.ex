@@ -6,12 +6,8 @@ defmodule Techblog.Application do
   use Application
 
   def start(_type, _args) do
-    # List all child processes to be supervised
     children = [
-      # Start the endpoint when the application starts
-      TechblogWeb.Endpoint
-      # Starts a worker by calling: Techblog.Worker.start_link(arg)
-      # {Techblog.Worker, arg},
+      SiteEncrypt.Phoenix.child_spec({TechblogWeb.Certbot, TechblogWeb.Endpoint})
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

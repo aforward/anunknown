@@ -1,5 +1,13 @@
 use Mix.Config
 
+config :techblog,
+  domain: {:system, "DOMAIN"},
+  acme_server: :prod,
+  port: 80,
+  ssl_port: 443,
+  host: {:system, "DOMAIN"},
+  email: {:system, "EMAIL"},
+
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
 # when generating URLs.
@@ -19,7 +27,7 @@ config :techblog, TechblogWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   root: ".",
-  version: Application.spec(:dividends, :vsn)
+  version: Application.spec(:techblog, :vsn)
 
 # Do not print debug messages in production
 config :logger, level: :info

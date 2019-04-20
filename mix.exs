@@ -39,6 +39,8 @@ defmodule Techblog.MixProject do
       {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:doex, "~> 0.9"},
       {:version_tasks, "~> 0.11"},
+      {:site_encrypt, github: "aforward-oss/site_encrypt", branch: "f/num_acceptors"},
+      {:fn_expr, "~> 0.3"},
       {:distillery, "~> 2.0"},
       {:telemetry, "~> 0.4.0"},
       {:gettext, "~> 0.11"},
