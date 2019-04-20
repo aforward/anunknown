@@ -6,6 +6,8 @@ defmodule Techblog.Application do
   use Application
 
   def start(_type, _args) do
+    DeferredConfig.populate(:techblog)
+
     children = [
       SiteEncrypt.Phoenix.child_spec({TechblogWeb.Certbot, TechblogWeb.Endpoint})
     ]
