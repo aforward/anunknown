@@ -109,8 +109,11 @@ code.markdown {
         margin: 0;
         padding: 0;
         list-style: none;
+        li:first-child {
+          margin: $size-7 0 0 0;
+        }
         li {
-          line-height: $size-4;
+          margin: $size-12 0 0 0;
         }
         a {
           text-decoration: none;
@@ -261,7 +264,7 @@ code.markdown {
     ul {
       @include opensans-font(300);
       color: $grey-8;
-      margin: $size-8 0 $size-8 $size-8;
+      margin: $size-8 0 $size-8 0;
       list-style-type: circle;
       li {
         font-size: $size-7;
