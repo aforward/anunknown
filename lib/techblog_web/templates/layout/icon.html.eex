@@ -1,0 +1,33 @@
+<%= case assigns[:name] do %>
+  <% "icon-arrow-right" -> %>
+    <svg viewBox="0 0 205 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g class="primary" >
+                <g id="Group" transform="translate(0.000000, -3.000000)">
+                    <rect id="Rectangle" x="0" y="44" width="200" height="25" rx="8"></rect>
+                    <rect id="Rectangle" transform="translate(165.216199, 34.476593) rotate(38.000000) translate(-165.216199, -34.476593) " x="125.216199" y="21.9765934" width="80" height="25" rx="8"></rect>
+                    <rect id="Rectangle" transform="translate(167.778082, 81.456822) rotate(-46.000000) translate(-167.778082, -81.456822) " x="127.778082" y="68.9568216" width="80" height="25" rx="8"></rect>
+                    <ellipse id="Oval" cx="196" cy="55.5" rx="9" ry="9.5"></ellipse>
+                </g>
+            </g>
+        </g>
+    </svg>
+  <% "icon-arrow-left" -> %>
+  <svg viewBox="0 0 205 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g class="primary">
+              <g transform="translate(102.500000, 56.500000) scale(-1, 1) translate(-102.500000, -56.500000) translate(0.000000, -3.000000)">
+                  <rect id="Rectangle" x="0" y="44" width="200" height="25" rx="8"></rect>
+                  <rect id="Rectangle" transform="translate(165.216199, 34.476593) rotate(38.000000) translate(-165.216199, -34.476593) " x="125.216199" y="21.9765934" width="80" height="25" rx="8"></rect>
+                  <rect id="Rectangle" transform="translate(167.778082, 81.456822) rotate(-46.000000) translate(-167.778082, -81.456822) " x="127.778082" y="68.9568216" width="80" height="25" rx="8"></rect>
+                  <ellipse id="Oval" cx="196" cy="55.5" rx="9" ry="9.5"></ellipse>
+              </g>
+          </g>
+      </g>
+  </svg>
+  <% "icon-spinner" -> %>
+    <svg class="icon-spinner" viewBox="0 0 50 50">
+      <circle class="primary" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+    </svg>
+  <% _ -> %>
+<% end %>

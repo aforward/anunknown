@@ -1,2 +1,25 @@
-techblog<br>
-<%= Techblog.formatted_version %>
+<div class="block-homepage">
+  <div class="container">
+    <div class="left-block">
+      <h2>Recent Articles</h2>
+      <ul>
+        <%= for {slug, details} <- @slugs do %>
+          <li><a href="/articles/<%= slug %>"><%= details.title %></a></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="right-block">
+      <%= for {slug, html} <- @summaries do %>
+        <%= raw(html) %>
+        <div class="read-more">
+          <a href="/articles/<%= slug%>">
+            <span>Read More</span>
+            <%= render TechblogWeb.LayoutView, "icon.html", name: "icon-arrow-right" %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render TechblogWeb.LayoutView, "version.html", assigns %>
+<%= render TechblogWeb.LayoutView, "spinner.html" %>

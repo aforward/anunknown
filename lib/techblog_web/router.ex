@@ -15,13 +15,8 @@ defmodule TechblogWeb.Router do
   end
 
   scope "/", TechblogWeb do
-    pipe_through :browser
-
-    get "/", PageController, :index
+    pipe_through(:browser)
+    get("/", PageController, :index)
+    get("/articles/:slug", PageController, :show)
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", TechblogWeb do
-  #   pipe_through :api
-  # end
 end

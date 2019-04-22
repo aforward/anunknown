@@ -1,0 +1,5 @@
+<div id="spinnerButton" style="display: none;">
+  <span class="icon">
+    <%= render TechblogWeb.LayoutView, "icon.html", name: "icon-spinner" %>
+  </span>
+</div>

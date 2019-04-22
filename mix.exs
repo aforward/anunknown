@@ -42,6 +42,7 @@ defmodule Techblog.MixProject do
       {:site_encrypt, github: "aforward-oss/site_encrypt", branch: "f/num_acceptors"},
       {:fn_expr, "~> 0.3"},
       {:deferred_config, "~> 0.1.0"},
+      {:earmark, "~> 1.3"},
       {:distillery, "~> 2.0"},
       {:telemetry, "~> 0.4.0"},
       {:gettext, "~> 0.11"},

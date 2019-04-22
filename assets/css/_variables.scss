@@ -1,0 +1,71 @@
+
+$size-1: 72px;
+$size-2: 60px;
+$size-3: 48px;
+$size-4: 36px;
+$size-5: 30px;
+$size-6: 24px;
+$size-7: 20px;
+$size-8: 18px;
+$size-9: 16px;
+$size-10: 14px;
+$size-11: 12px;
+$size-12: 8px;
+$size-13: 4px;
+$size-14: 2px;
+$size-15: 1px;
+
+
+@mixin max-width-column($w: 900px) {
+  .column {
+    max-width: $w;
+  }
+}
+
+@mixin rounded-table-row($r: $size-13) {
+  td:first-child {
+    border-top-left-radius: $r;
+    border-bottom-left-radius: $r;
+  }
+  td:last-child {
+    border-top-right-radius: $r;
+    border-bottom-right-radius: $r;
+  }
+}
+
+@mixin button-spinner($w: 24px) {
+  .icon {
+    .icon-spinner {
+      animation: rotate 2s linear infinite;
+      position: relative;
+      width: $w;
+      height: $w;
+      & .primary {
+        stroke: $grey-5;
+        stroke-linecap: round;
+        animation: dash 1.5s ease-in-out infinite;
+      }
+    }
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dasharray: 1, 150;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -35;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -124;
+    }
+  }
+}
