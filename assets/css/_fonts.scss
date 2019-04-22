@@ -4,6 +4,10 @@
   font-weight: $weight;
 }
 
+@mixin inconsolata-font($weight: 400) {
+  font-family: 'Inconsolata', monospace;
+  font-weight: $weight;
+}
 
 @mixin montserrat-font($weight: 400) {
   font-family: 'Montserrat', sans-serif;

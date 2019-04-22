@@ -134,23 +134,23 @@ code.markdown {
         color: $grey-9;
       }
       h2 {
-        font-size: $size-7;
+        font-size: $size-5;
         color: $grey-8;
       }
       h3 {
-        font-size: $size-8;
+        font-size: $size-6;
         color: $grey-7;
       }
       h4 {
-        font-size: $size-9;
+        font-size: $size-7;
         color: $grey-8;
       }
       h5 {
-        font-size: $size-10;
+        font-size: $size-8;
         color: $grey-7;
       }
       h6 {
-        font-size: $size-11;
+        font-size: $size-9;
         color: $grey-6;
       }
 
@@ -217,23 +217,23 @@ code.markdown {
       color: $grey-9;
     }
     h2 {
-      font-size: $size-7;
+      font-size: $size-5;
       color: $grey-8;
     }
     h3 {
-      font-size: $size-8;
+      font-size: $size-6;
       color: $grey-7;
     }
     h4 {
-      font-size: $size-9;
+      font-size: $size-7;
       color: $grey-8;
     }
     h5 {
-      font-size: $size-10;
+      font-size: $size-7;
       color: $grey-7;
     }
     h6 {
-      font-size: $size-11;
+      font-size: $size-7;
       color: $grey-6;
     }
 
@@ -243,14 +243,15 @@ code.markdown {
 
     p {
       @include roboto-font(400);
-      font-size: $size-7;
+      font-size: $size-8;
       color: $grey-8;
-      margin: $size-10 0 $size-10 0;
+      margin: $size-6 0 $size-6 0;
       a {
         color: $blue-5;
       }
     }
     pre {
+      @include inconsolata-font(300);
       background-color: $grey-0;
       font-size: $size-8;
       border-radius: $size-13;
