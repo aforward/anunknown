@@ -18,6 +18,9 @@
         margin-top: $size-5;
         padding: $size-10 $size-5 $size-12 $size-5;
         flex: 1;
+        pre {
+          padding: $size-10 $size-9;
+        }
       }
     }
   }
@@ -165,6 +168,15 @@ code.markdown {
 
       img {
         max-width: 100%;
+      }
+
+      pre {
+        @include inconsolata-font(300);
+        background-color: $grey-0;
+        font-size: $size-10;
+        border-radius: $size-13;
+        color: $grey-8;
+        overflow: auto;
       }
 
       .read-more {
