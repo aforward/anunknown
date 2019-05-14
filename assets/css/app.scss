@@ -283,9 +283,9 @@ code.markdown {
       }
     }
     table {
-      max-width: 100%;
+      width: 100%;
       overflow-x: auto;
-      display: block;
+      display: table;
       @include opensans-font(300);
       thead tr {
         &:first-child {
@@ -302,17 +302,28 @@ code.markdown {
       td {
         font-size: $size-9;
         padding: $size-12;
+        br {
+          line-height: $size-4;
+        }
       }
 
-      tbody tr:nth-child(odd){
-        border-radius: $size-11;
-        background-color: $blue-0;
-        @include rounded-table-row();
-      }
-
-      tbody tr:nth-child(even){
-        padding: 20px;
-        background-color: #FFFFFF;
+      tbody {
+        tr:nth-child(odd){}
+        tr:nth-child(even){}
+        tr {
+          td:first-child {
+            border-left: 2px solid $grey-2;
+          }
+          td:last-child {
+            border-right: 2px solid $grey-2;
+          }
+          td {
+            max-width: 300px;
+            vertical-align: top;
+            padding: 20px 10px 30px 10px;
+            border-bottom: 2px solid $grey-2;
+          }
+        }
       }
 
     }
