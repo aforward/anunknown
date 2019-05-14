@@ -210,6 +210,53 @@ code.markdown {
   }
 }
 
+.block-article, .container, .block-homepage, .container, .right-block {
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: table;
+    @include opensans-font(300);
+    thead tr {
+      &:first-child {
+        background-color: $blue-8;
+        color: white;
+      }
+      & th {
+        font-size: $size-9;
+        padding: 20px;
+
+      }
+    }
+
+    td {
+      font-size: $size-9;
+      padding: $size-12;
+      br {
+        line-height: $size-4;
+      }
+    }
+
+    tbody {
+      tr:nth-child(odd){}
+      tr:nth-child(even){}
+      tr {
+        td:first-child {
+          border-left: 2px solid $grey-2;
+        }
+        td:last-child {
+          border-right: 2px solid $grey-2;
+        }
+        td {
+          max-width: 300px;
+          vertical-align: top;
+          padding: 20px 10px 30px 10px;
+          border-bottom: 2px solid $grey-2;
+        }
+      }
+    }
+  }
+}
+
 .block-article {
   .container {
     margin: 0 auto;
@@ -282,41 +329,6 @@ code.markdown {
         font-size: $size-7;
       }
     }
-    table {
-      max-width: 100%;
-      overflow-x: auto;
-      display: block;
-      @include opensans-font(300);
-      thead tr {
-        &:first-child {
-          background-color: $blue-8;
-          color: white;
-        }
-        & th {
-          font-size: $size-9;
-          padding: 20px;
-
-        }
-      }
-
-      td {
-        font-size: $size-9;
-        padding: $size-12;
-      }
-
-      tbody tr:nth-child(odd){
-        border-radius: $size-11;
-        background-color: $blue-0;
-        @include rounded-table-row();
-      }
-
-      tbody tr:nth-child(even){
-        padding: 20px;
-        background-color: #FFFFFF;
-      }
-
-    }
-
 
     .go-back {
       margin-bottom: $size-3;
