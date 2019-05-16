@@ -17,15 +17,23 @@ defmodule TechblogTest do
 
   test "articles (new install)" do
     assert %{
-             "setting-up-blog" =>
-               "<h1>Setting Up Your Blog</h1>\n<h2>April 20, 2019</h2>\n<p>This is your full-length article.</p>\n"
+             "setting-up-blog" => %{
+               html:
+                 "<h1>Setting Up Your Blog</h1>\n<h2>April 20, 2019</h2>\n<p>This is your full-length article.</p>\n",
+               sort: "20190420",
+               title: "Setting Up Your Blog"
+             }
            } == "test/fixtures/newinstall" |> Techblog.articles()
   end
 
   test "summaries (new install)" do
     assert %{
-             "setting-up-blog" =>
-               "<h1>Setting Up Your Blog</h1>\n<h2>April 20, 2019</h2>\n<p>This is your summary.</p>\n"
+             "setting-up-blog" => %{
+               html:
+                 "<h1>Setting Up Your Blog</h1>\n<h2>April 20, 2019</h2>\n<p>This is your summary.</p>\n",
+               sort: "20190420",
+               title: "Setting Up Your Blog"
+             }
            } == "test/fixtures/newinstall" |> Techblog.summaries()
   end
 end

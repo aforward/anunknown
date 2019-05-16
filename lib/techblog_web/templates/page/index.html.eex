@@ -9,7 +9,7 @@
       </ul>
     </div>
     <div class="right-block">
-      <%= for {slug, html} <- @summaries do %>
+      <%= for {slug, %{html: html}} <- @summaries do %>
         <%= raw(html) %>
         <div class="read-more">
           <a href="/articles/<%= slug%>">

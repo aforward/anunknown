@@ -63,11 +63,15 @@ defmodule Techblog do
   defp all_html!(path, ext) do
     path
     |> slugs()
-    |> Map.keys()
-    |> Enum.map(fn name ->
-      {name, as_html!("#{path}/#{name}#{ext}")}
-    end)
+    |> Enum.map(fn slug -> append_html!(slug, path, ext) end)
     |> Enum.into(%{})
+  end
+
+  defp append_html!({name, details}, path, ext) do
+    {
+      name,
+      Map.put(details, :html, as_html!("#{path}/#{name}#{ext}"))
+    }
   end
 
   defp as_html!(filename), do: as_html!(filename, File.exists?(filename))
