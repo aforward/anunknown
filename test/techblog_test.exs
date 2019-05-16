@@ -4,14 +4,14 @@ defmodule TechblogTest do
 
   test "slugs (populated)" do
     assert %{
-             "one" => %{title: "My First Title"},
-             "two" => %{title: "My Second Title"}
+             "one" => %{title: "My First Title", sort: "b"},
+             "two" => %{title: "My Real Second Title", sort: "a"}
            } == Techblog.slugs("test/fixtures/populated")
   end
 
   test "slugs (new install)" do
     assert %{
-             "setting-up-blog" => %{title: "Setting Up Your Blog"}
+             "setting-up-blog" => %{title: "Setting Up Your Blog", sort: "20190420"}
            } == Techblog.slugs("test/fixtures/newinstall")
   end
 

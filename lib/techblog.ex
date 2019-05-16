@@ -24,15 +24,7 @@ defmodule Techblog do
     |> Enum.map(fn nme ->
       {
         nme |> String.split_at(String.length(ext) * -1) |> elem(0),
-        %{
-          title:
-            "#{path}/#{nme}"
-            |> File.stream!()
-            |> Enum.take(1)
-            |> Enum.fetch!(0)
-            |> String.replace("#", "")
-            |> String.trim()
-        }
+        article_attrs("#{path}/#{nme}")
       }
     end)
     |> Enum.into(%{})
@@ -60,13 +52,46 @@ defmodule Techblog do
 
   defp as_html!(filename, true) do
     filename
-    |> File.read!()
+    |> article_content()
     |> Earmark.as_html!()
   end
 
   defp as_html!(filename, false) do
     "#{filename}.example"
-    |> File.read!()
+    |> article_content()
     |> Earmark.as_html!()
+  end
+
+  defp article_content(fullpath) do
+    fullpath
+    |> File.stream!()
+    |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
+    |> Enum.join()
+  end
+
+  defp article_attrs(fullpath) do
+    Map.merge(default_attrs(fullpath), other_attrs(fullpath))
+  end
+
+  defp default_attrs(fullpath) do
+    %{
+      title:
+        fullpath
+        |> File.stream!()
+        |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
+        |> Enum.filter(fn line -> String.starts_with?(line, "#") end)
+        |> Enum.fetch!(0)
+        |> String.replace("#", "")
+        |> String.trim()
+    }
+  end
+
+  defp other_attrs(fullpath) do
+    fullpath
+    |> File.stream!()
+    |> Enum.filter(fn line -> String.starts_with?(line, "#meta") end)
+    |> Enum.map(&(String.slice(&1, 6..-1) |> String.trim() |> String.split(" ", parts: 2)))
+    |> Enum.map(fn [k, v] -> {String.to_atom(k), v} end)
+    |> Enum.into(%{})
   end
 end
