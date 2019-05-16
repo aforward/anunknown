@@ -1,4 +1,5 @@
 # Continuous Testing with Elixir
+#meta sort 2015-12-02
 ### Dec 2, 2015
 
 There is great power in having your tests always run, all the time when writing code, it stops the minor interruptions.
