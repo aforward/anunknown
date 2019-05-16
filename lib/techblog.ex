@@ -30,6 +30,28 @@ defmodule Techblog do
     |> Enum.into(%{})
   end
 
+  @doc """
+  Sort the provided map of slugs based on the :sort details.  "Biggest"
+  (aka newest if using a timestamp) first.
+
+  To add a custom sort, add the following meta information into
+  your .summary.md filename
+
+      # How To Deploy to Digital Ocean
+      #meta sort 2019-09-21
+
+  ## Example
+
+      iex> Techblog.sort(%{"a" => %{sort: "m"}, "b" => %{sort: "a"}, "c" => %{sort: "z"}, "d" => %{}})
+      [{"c", %{sort: "z"}}, {"a", %{sort: "m"}}, {"b", %{sort: "a"}}, {"d", %{}}]
+
+  """
+  def sort(map) do
+    map
+    |> Enum.sort_by(fn {_, details} -> details[:sort] end)
+    |> Enum.reverse()
+  end
+
   def articles(), do: articles(@default_path)
 
   def articles(path), do: all_html!(path, ".md")
