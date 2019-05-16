@@ -7,7 +7,7 @@ defmodule TechblogWeb.PageController do
 
   def index(conn, _params) do
     conn
-    |> assign(:slugs, slugs())
+    |> assign(:slugs, slugs() |> Techblog.sort())
     |> assign(:summaries, summaries())
     |> render("index.html")
   end
