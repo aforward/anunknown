@@ -1,0 +1,4 @@
+<%= case @game.started do
+  false -> TechblogWeb.HanoiView.render("splash.html", game: @game)
+  _ -> TechblogWeb.HanoiView.render("game.html", game: @game)
+end %>
