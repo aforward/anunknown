@@ -3,6 +3,8 @@
 @import "colours";
 @import "fonts";
 
+@import "empexlogo";
+
 @include desktop() {
   .block-homepage {
     .container {

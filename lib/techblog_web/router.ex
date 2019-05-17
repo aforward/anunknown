@@ -19,5 +19,7 @@ defmodule TechblogWeb.Router do
     get("/", PageController, :index)
     get("/articles", PageController, :index)
     get("/articles/:slug", PageController, :show)
+
+    live "/demo/empex", EmpexlogoLiveView
   end
 end
