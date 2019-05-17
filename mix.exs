@@ -37,6 +37,7 @@ defmodule Techblog.MixProject do
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+      {:diet, github: "pragdave/diet"},
       {:doex, "~> 0.9"},
       {:version_tasks, "~> 0.11"},
       {:site_encrypt, github: "aforward-oss/site_encrypt", branch: "f/num_acceptors"},
