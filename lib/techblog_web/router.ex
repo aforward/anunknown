@@ -18,5 +18,7 @@ defmodule TechblogWeb.Router do
     pipe_through(:browser)
     get("/", PageController, :index)
     get("/articles/:slug", PageController, :show)
+
+    live "/demo/empex", EmpexlogoLiveView
   end
 end
