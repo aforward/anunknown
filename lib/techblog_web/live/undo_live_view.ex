@@ -11,6 +11,17 @@ defmodule TechblogWeb.UndoLiveView do
       }
       .pending { background-color: red; }
       .ok { background-color: grey; }
+      .phx-disconnected{
+        opacity: 0.5;
+        cursor: wait;
+      }
+      .phx-disconnected *{
+        pointer-events: none;
+      }
+
+      .phx-error {
+        background: #ffe6f0!important;
+      }
     </style>
 
     <%= if @undo_counter > 0 do %>
@@ -20,9 +31,7 @@ defmodule TechblogWeb.UndoLiveView do
     <%= for {id, r} <- @records do %>
       <div class="record <%= r.status%>">
         <span><%= r.name %></span>
-        <%= if @ready do %>
-          <button phx-click="delete" phx-value="<%= id %>">Delete</button>
-        <% end %>
+        <button phx-click="delete" phx-value="<%= id %>">Delete</button>
       </div>
     <% end %>
     """
@@ -37,7 +46,6 @@ defmodule TechblogWeb.UndoLiveView do
     })
     |> assign(:pending_delete, [])
     |> assign(:undo_counter, 0)
-    |> assign(:ready, connected?(socket))
     |> socket_reply(:ok)
   end
 
