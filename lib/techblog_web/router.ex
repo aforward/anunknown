@@ -22,5 +22,6 @@ defmodule TechblogWeb.Router do
     live "/demo/empex", EmpexlogoLiveView
     live "/demo/hangman", HangmanLiveView
     live "/demo/hanoi", HanoiLiveView
+    live "/demo/undo", UndoLiveView
   end
 end
