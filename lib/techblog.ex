@@ -52,6 +52,32 @@ defmodule Techblog do
     |> Enum.reverse()
   end
 
+  @doc """
+  The URL for displaying images within your GitHub repo is
+
+      ![My Image](/assets/static/images/a.png?raw=true)
+
+  But in your website, you want to strip out a few things
+
+      ![My Image](/images/a.png)
+
+  We don't (yet) support optional titles like
+
+      ![My Image](/assets/static/images/a.png?raw=true "Optional Title")
+
+  This function will help do that transformation.
+
+  ## Example
+
+      iex> Techblog.format_images("![My Image](/assets/static/images/a.png?raw=true)")
+      "![My Image](/images/a.png)"
+  """
+  def format_images(line) do
+    Regex.replace(~r{!\[(.*)\]\(/assets/static/([^\)]*)\?raw=true\)}, line, fn _, alt, p ->
+      "![#{alt}](/#{p})"
+    end)
+  end
+
   def articles(), do: articles(@default_path)
 
   def articles(path), do: all_html!(path, ".md")
@@ -92,6 +118,7 @@ defmodule Techblog do
     fullpath
     |> File.stream!()
     |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
+    |> Enum.map(&format_images/1)
     |> Enum.join()
   end
 

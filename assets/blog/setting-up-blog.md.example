@@ -24,7 +24,9 @@ Task lists:
 - ???
 - Be rich
 
-The above was rendered using
+![Art](/assets/static/images/artboard.png?raw=true)
+
+The above was (mostly) rendered using
 
 ```markdown
 # This is a title (h1)
@@ -42,6 +44,15 @@ Task lists:
 - ???
 - Be rich
 ```
+
+For images, if you want it to show up in GitHub AND on your blog
+then you can use this cheat
+
+```
+BANG[Art](/assets/static/images/artboard.png?raw=true)
+```
+
+Where `BANG` is really `!`.
 
 ![A sample blog with one article](/images/sample.png)
 
