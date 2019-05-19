@@ -56,10 +56,12 @@ defmodule Techblog do
   The URL for displaying images within your GitHub repo is
 
       ![My Image](/assets/static/images/a.png?raw=true)
+      <img src="/assets/static/images/a.png?raw=true" />
 
   But in your website, you want to strip out a few things
 
       ![My Image](/images/a.png)
+      <img src="/images/a.png" />
 
   We don't (yet) support optional titles like
 
@@ -71,10 +73,18 @@ defmodule Techblog do
 
       iex> Techblog.format_images("![My Image](/assets/static/images/a.png?raw=true)")
       "![My Image](/images/a.png)"
+
+      iex> Techblog.format_images("<img src=\\\"/assets/static/images/a.png?raw=true\\\" alt=\\\"hello\\\"/>")
+      "<img src=\\\"/images/a.png\\\" alt=\\\"hello\\\"/>"
+
   """
   def format_images(line) do
-    Regex.replace(~r{!\[(.*)\]\(/assets/static/([^\)]*)\?raw=true\)}, line, fn _, alt, p ->
+    line
+    |> regex(~r{!\[(.*)\]\(/assets/static/([^\)]*)\?raw=true\)}, fn _, alt, p ->
       "![#{alt}](/#{p})"
+    end)
+    |> regex(~r{<img\s+src=\"/assets/static/([^\?]*)\?raw=true\"}, fn _, p ->
+      "<img src=\"/#{p}\""
     end)
   end
 
@@ -146,5 +156,9 @@ defmodule Techblog do
     |> Enum.map(&(String.slice(&1, 6..-1) |> String.trim() |> String.split(" ", parts: 2)))
     |> Enum.map(fn [k, v] -> {String.to_atom(k), v} end)
     |> Enum.into(%{})
+  end
+
+  defp regex(line, matcher, func) do
+    Regex.replace(matcher, line, func)
   end
 end
