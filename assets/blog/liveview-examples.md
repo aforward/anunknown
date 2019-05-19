@@ -59,11 +59,11 @@ Below are a variety of articles on LiveView from mange perspectives.s
 
 #### Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=Z2DU0qLfPIY" target="_blank" style="text-align: left"><img src="/images/liveview-examples/video_elixirconf_2018_chrismccord.png" alt="Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=Z2DU0qLfPIY" target="_blank" style="text-align: left"><img src="/assets/static/images/liveview-examples/video_elixirconf_2018_chrismccord.png?raw=true" alt="Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### Chris McCord Keynote: ElixirConf EU 2019 (LiveView Released)
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=8xJzHq8ru0M" target="_blank"><img src="/images/liveview-examples/video_elixirconfeu_2019_chrismccord.png" alt="Chris McCord Keynote: Code Sync 2019 (LiveView Released)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=8xJzHq8ru0M" target="_blank"><img src="/assets/static/images/liveview-examples/video_elixirconfeu_2019_chrismccord.png?raw=true" alt="Chris McCord Keynote: Code Sync 2019 (LiveView Released)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### How to Create a Counter with Phoenix LiveView
 
@@ -83,11 +83,11 @@ Below are a variety of articles on LiveView from mange perspectives.s
 
 #### Getting Started With Phoenix LiveView 3 Parts (Elixircasts)
 
-<a href="https://elixircasts.io/phoenix-liveview-part-1" target="_blank"><img src="/images/liveview-examples/video_elixircasts_part1.png" alt="Getting Started With Phoenix LiveView Part 1 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://elixircasts.io/phoenix-liveview-part-1" target="_blank"><img src="/assets/static/images/liveview-examples/video_elixircasts_part1.png?raw=true" alt="Getting Started With Phoenix LiveView Part 1 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
-<a href="https://elixircasts.io/phoenix-liveview-part-2" target="_blank"><img src="/images/liveview-examples/video_elixircasts_part2.png" alt="Getting Started With Phoenix LiveView Part 2 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://elixircasts.io/phoenix-liveview-part-2" target="_blank"><img src="/assets/static/images/liveview-examples/video_elixircasts_part2.png?raw=true" alt="Getting Started With Phoenix LiveView Part 2 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
-<a href="https://elixircasts.io/phoenix-liveview-part-3" target="_blank"><img src="/images/liveview-examples/video_elixircasts_part3.png" alt="Getting Started With Phoenix LiveView Part 3 (Subscription)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://elixircasts.io/phoenix-liveview-part-3" target="_blank"><img src="/assets/static/images/liveview-examples/video_elixircasts_part3.png?raw=true" alt="Getting Started With Phoenix LiveView Part 3 (Subscription)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 ## Audios
 
