@@ -1,0 +1,4 @@
+<%= if msg = get_flash(@conn, :info) do %>
+  <h1><%= msg[:title] %></h1>
+  <h2><%= msg[:subtitle] %></h2>
+<% end %>
