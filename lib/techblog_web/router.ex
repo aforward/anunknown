@@ -20,6 +20,8 @@ defmodule TechblogWeb.Router do
     get("/articles", PageController, :index)
     get("/articles/:slug", PageController, :show)
 
+    get("/demo/flash", DemoController, :show_flash)
+
     live "/demo/empex", EmpexlogoLiveView
     live "/demo/hangman", HangmanLiveView
     live "/demo/hanoi", HanoiLiveView
