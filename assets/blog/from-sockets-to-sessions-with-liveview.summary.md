@@ -1,5 +1,5 @@
 # LiveView storing Session Data on Redirect
-#meta sort 20190521
+#meta sort 2019-05-21
 ### May 21, 2019
 
 How can you have your LiveView login form update the user's

@@ -1,5 +1,5 @@
 # Run Custom JS on LivePage Reload
-#meta sort 20190520
+#meta sort 2019-05-20
 ### May 20, 2019
 
 In your LiveView LEEX, you can add a `script` tag and append a `@tick` to the `id`.
