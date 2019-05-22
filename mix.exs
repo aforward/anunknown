@@ -4,7 +4,7 @@ defmodule Techblog.MixProject do
   def project do
     [
       app: :techblog,
-      version: "0.3.13",
+      version: "0.3.14",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
