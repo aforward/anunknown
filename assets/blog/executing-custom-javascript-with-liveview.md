@@ -1,6 +1,5 @@
 # Run Custom JS on LivePage Reload
 # How to executing custom JavaScript on a LiveView update
-#meta sort 20190520
 ### May 20, 2019
 
 As [part of my talk at EMPEX 2019](http://empex.co/events/2019/conference.html) on [LiveView](https://github.com/phoenixframework/phoenix_live_view), I showed a way to execute custom JavaScript on a LiveView refresh.
