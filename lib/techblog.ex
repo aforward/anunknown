@@ -53,6 +53,38 @@ defmodule Techblog do
   end
 
   @doc """
+  Let's filter the results based on one or more tags.
+  We will do it on every request (for now) and then
+  look at pre-calculating it as needed
+
+  To add tags, just add tags
+
+      #meta tags[] love cheese
+
+  ## Example
+
+      iex> Techblog.filter(%{"a" => %{tags: ["a", "z"]}, "b" => %{tags: ["a"]}, "c" => %{tags: ["z"]}, "d" => %{}}, ["a", "z"])
+      [{"a", %{tags: ["a", "z"]}}, {"b", %{tags: ["a"]}}, {"c", %{tags: ["z"]}}]
+
+      iex> Techblog.filter(%{"a" => %{tags: ["a", "z"]}, "b" => %{tags: ["a"]}, "c" => %{tags: ["z"]}, "d" => %{}}, ["z"])
+      [{"a", %{tags: ["a", "z"]}}, {"c", %{tags: ["z"]}}]
+
+      iex> Techblog.filter(%{"a" => %{tags: ["a", "z"]}, "b" => %{tags: ["a"]}, "c" => %{tags: ["z"]}, "d" => %{}}, [])
+      %{"a" => %{tags: ["a", "z"]}, "b" => %{tags: ["a"]}, "c" => %{tags: ["z"]}, "d" => %{}}
+
+  """
+  def filter(map, []), do: map
+  def filter(map, nil), do: map
+
+  def filter(map, needle) do
+    map
+    |> Enum.filter(fn
+      {_k, %{tags: haystack}} -> Enum.any?(haystack, &Enum.member?(needle, &1))
+      {_k, _no_tags} -> false
+    end)
+  end
+
+  @doc """
   The URL for displaying images within your GitHub repo is
 
       ![My Image](/assets/static/images/a.png?raw=true)

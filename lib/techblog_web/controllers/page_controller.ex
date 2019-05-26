@@ -5,10 +5,10 @@ defmodule TechblogWeb.PageController do
   @articles Techblog.articles()
   @summaries Techblog.summaries()
 
-  def index(conn, _params) do
+  def index(conn, params) do
     conn
-    |> assign(:slugs, slugs() |> Techblog.sort())
-    |> assign(:summaries, summaries() |> Techblog.sort())
+    |> assign(:slugs, slugs() |> Techblog.filter(params["tags"]) |> Techblog.sort())
+    |> assign(:summaries, summaries() |> Techblog.filter(params["tags"]) |> Techblog.sort())
     |> render("index.html")
   end
 
