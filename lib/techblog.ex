@@ -170,8 +170,18 @@ defmodule Techblog do
     |> File.stream!()
     |> Enum.filter(fn line -> String.starts_with?(line, "#meta") end)
     |> Enum.map(&(String.slice(&1, 6..-1) |> String.trim() |> String.split(" ", parts: 2)))
-    |> Enum.map(fn [k, v] -> {String.to_atom(k), v} end)
+    |> Enum.map(&parse_attribute/1)
     |> Enum.into(%{})
+  end
+
+  def parse_attribute([k, v]) do
+    k
+    |> String.split("[]")
+    |> case do
+      [k, ""] -> [k, String.split(v, " ") |> Enum.sort()]
+      [k] -> [k, v]
+    end
+    |> (fn [k, v] -> {String.to_atom(k), v} end).()
   end
 
   defp regex(line, matcher, func) do
