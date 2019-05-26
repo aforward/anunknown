@@ -1,0 +1,6 @@
+<div class="go-back">
+  <a href="/">
+    <%= render TechblogWeb.LayoutView, "icon.html", name: "icon-arrow-left" %>
+    <span>Back</span>
+  </a>
+</div>

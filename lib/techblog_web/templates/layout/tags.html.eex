@@ -1,0 +1,10 @@
+<%= if @article[:tags] do %>
+  <div class="tags">
+    <h4><%= @article[:tag_name] || "Tags:" %></h4>
+    <ul>
+      <%= for t <- @article[:tags] do %>
+        <a href="/articles?tags[]=<%= t %>"><%= t %></a>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -9,8 +9,9 @@
       </ul>
     </div>
     <div class="right-block">
-      <%= for {slug, %{html: html}} <- @summaries do %>
+      <%= for {slug, %{html: html} = article} <- @summaries do %>
         <%= raw(html) %>
+        <%= render TechblogWeb.LayoutView, "tags.html", article: article %>
         <div class="read-more">
           <a href="/articles/<%= slug%>">
             <span>Read More</span>

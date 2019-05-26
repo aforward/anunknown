@@ -206,6 +206,34 @@ code.markdown {
           }
         }
       }
+
+      .tags {
+        h4 {
+          display: inline;
+        font-size: $size-8;
+        }
+        ul {
+          display: inline;
+          margin: 0;
+          padding: 0;
+          li {
+            margin: 0;
+            display: inline;
+            font-size: $size-8;
+          }
+          li + li {
+            padding-left: $size-7;
+          }
+        }
+        a {
+          text-decoration: underline;
+          color: $blue-5;
+          &:hover {
+            color: $blue-7;
+          }
+        }
+        margin-bottom: $size-10;
+      }
     }
   }
 }

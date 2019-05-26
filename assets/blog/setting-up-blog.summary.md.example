@@ -1,4 +1,6 @@
 # Setting Up Your Blog
+#meta tag_name Article Tags
+#meta tags[] elixir erlang
 ## April 20, 2019
 
 Welcome to your [Elixir](http://elixir-lang.org)-driven [techblog](https://github.com/aforward-oss/techblog).  This blog takes your content written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and compiles it to HTML using [Earmark](https://github.com/pragdave/earmark).  Let's say you wanted to write an article "How to deploy using docker", then create two files:
