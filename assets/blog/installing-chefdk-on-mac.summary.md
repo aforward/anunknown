@@ -1,5 +1,6 @@
 # Getting Started With ChefDK
 #meta sort 2019-05-22
+#meta tags[] chef devops
 ### May 22, 2019
 
 I am getting back into [Chef](https://www.chef.io/), and the landscape
