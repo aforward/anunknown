@@ -2,6 +2,7 @@ defmodule TechblogTest do
   use ExUnit.Case
   doctest Techblog
   doctest Techblog.TwoChars
+  doctest Techblog.CaesarCipher
 
   test "slugs (populated)" do
     assert %{
