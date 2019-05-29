@@ -1,5 +1,5 @@
 # Phoenix LiveView Examples
-### May 18, 2019
+### May 29, 2019 (originally posted May 18)
 
 [LiveView](https://github.com/phoenixframework/phoenix_live_view)
 for [Phoenix](https://github.com/phoenixframework/phoenix) on [Elixir](https://github.com/elixir-lang/elixir) is definitely scratching an itch
@@ -27,7 +27,7 @@ Sometimes it's best to learn by examples, here goes.
 | ![Undo](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_undo.png?raw=true) | A simple pattern for support an undo feature. | [Undo Source](https://github.com/joerichsen/phoenix_live_view_example/blob/undo_example/lib/demo_web/live/undo_live.ex) |
 | ![Logic Simulator](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_logic_simulator.png?raw=true) | Simulating Logic Gates Switches and Lightbulbs. | [Logic Simulator Source](https://github.com/TheFirstAvenger/logic_sim_liveview) |
 | ![Doom's Fire](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_dooms_fire.png?raw=true) | DOOM fire animated from server side. Made with [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view). Based on [Doom fire algorithm](https://github.com/filipedeschamps/doom-fire-algorithm) | [Doom's Fire Demo](https://elixir-doom-fire.herokuapp.com/) <br> [Doom's Fire Source](https://github.com/allmonty/elixir-live-doom-fire) |
-| ![SVG Editor](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_svgeditor.png?raw=true) | SVG Editor | [Source](https://github.com/mmmries/showoff) |
+| ![SVG Editor](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_svgeditor.png?raw=true) | SVG Editor | [SVG Editor Demo](https://showoff.riesd.com/) <br> [SVG Editor Source](https://github.com/mmmries/showoff) |
 | ![Calculator](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_calculator.png?raw=true) | A simple calculator written in LiveView. | [Calculator Source](https://github.com/smeade/phoenix_live_view_example/blob/master/lib/demo_web/live/calc_live/index.ex) |
 | ![Pixels with Frenemies](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_pixels_with_frenemies.png?raw=true) | Simple app to see how easy it would be to expand the demo apps to real-time collaboration. Spoiler: it was easy, in 1 day. Now just select a color and paint the canvas! | [Pixels with Frenemies Demo](https://stormy-earth-96381.herokuapp.com/collaborative_canvas) <br> [Pixels with Frenemies Source](https://github.com/JohnB/phoenix_live_view_example) |
 | ![Load Generator](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_load_generator.png?raw=true) | Synthetic load generator + ad-hoc scheduler observer powered by LiveView | [Load Generator Source](https://github.com/sasa1977/demo_system/tree/replace-js-with-live-view) |
@@ -37,14 +37,35 @@ Sometimes it's best to learn by examples, here goes.
 | ![Adventure Capitalist](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_adventure_capitalist.png?raw=true) | A very simple implementation of [Adventure Capitalist](https://en.wikipedia.org/wiki/AdVenture_Capitalist) | [Adventure Capitalist Source](https://github.com/eteubert/open_adventure_capitalist) |
 | ![Phoenix Live Examples](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_examples.png?raw=true) | A collection of examples including: thermostat, snake, autocomplete search, image editor, clock, pacman, rainbow, counter, "top", CRUD (users), presence | [Phoenix Live Examples Source](https://github.com/chrismccord/phoenix_live_view_example) |
 | ![Table Sort](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_tablesort.png?raw=true) | Table Sort in LiveView | [Phoenix Table Sort Source](https://github.com/joerichsen/phoenix_live_view_example/blob/table_example/lib/demo_web/live/table_live.ex) |
-| ![Elixir Match](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_match.png?raw=true) | Elixir Match is an online version of the memory card game. | [Elixir Match Source](https://github.com/toranb/elixir-match) |
+| ![Table Filter](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_table_filter.png?raw=true) | Table Filter in LiveView | [Table Filter Article](https://medium.com/@imartinat/table-filter-with-phoenix-liveview-cb30508e9fc0) <br> [Table Filter Source](https://github.com/imartinat/phoenix_live_view_tablefilter) |
+| ![Table Editing](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_table_editing.png?raw=true) | Table Editing in LiveView | [Table Editing Source](https://github.com/hurty/phoenix_live_view_example/blob/master/lib/demo_web/live/tables_live.ex) |
+| ![Elixir Match](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_match.png?raw=true) | Elixir Match is an online version of the memory card game. | [Elixir Match Source](https://github.com/toranb/elixir-match) <br> [Elixir Match LiveView Commit](https://github.com/toranb/elixir-match/commit/bac39b8da84f3e672021e9d168589204a3a7682d) |
 | ![Empex Display](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_empexdisplay.png?raw=true) | Manipulating a SVG graphic for the 2019 [Empex NY conference](https://empex.co/nyc.html) | [Empex SVG Demo](/demo/empex) <br> [Empex SVG Source](https://github.com/empex2019liveview/empexlogo) |
 | ![Hangman](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_hangman.png?raw=true) | Impleneting a LiveView UI for Dave Thomas' DIET implementation of hangman [Empex NY conference](https://empex.co/nyc.html) | [Hangman Demo](/demo/hangman) <br> [Hangman Source](https://github.com/empex2019liveview/hangman) |
-| ![Towers of Hanoi](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_hanoi.png?raw=true) | Impleneting a LiveView UI for the Towers of Hanoi game.s | [Towers of Hanoi Demo](/demo/hanoi) <br> [Towers of Hanoi Source](https://github.com/empex2019liveview/hanoi) |
+| ![Towers of Hanoi](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_hanoi.png?raw=true) | Impleneting a LiveView UI for the Towers of Hanoi game | [Towers of Hanoi Demo](/demo/hanoi) <br> [Towers of Hanoi Source](https://github.com/empex2019liveview/hanoi) |
+| ![LiveView Chat](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_chat.png?raw=true) | Tracking Users in a Chat App with LiveView, PubSub Presence | [Chat App Article](https://elixirschool.com/blog/live-view-with-presence/) <br> [Chat App (Elixir School) Source](https://github.com/elixirschool/live-view-chat) <br> [PHAT Chat Source](https://github.com/SophieDeBenedetto/phat) |
+| ![Another LiveView Chat](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_real_time_chat.png?raw=true) | Another LiveView Chat | [Real-Time Chat Demo (Video)](https://www.dropbox.com/s/nvr1f2tkmyo41kr/live_chat.mp4) <br> [Real-Time Chat Source](https://github.com/CassiusPacheco/live_chat) <br> [Based On Source](https://github.com/dwyl/phoenix-chat-example) |
+| ![Search Debounce](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_debounce.png?raw=true) | Phoenix Live View Debounce | [Phoenix Live View Debounce Article](https://dev.to/tizpuppi/phoenix-live-view-debounce-4icf) |
+| ![Blast](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_blast.png?raw=true) | Blast Game | [Blast Demo](https://blast.alembic.com.au/) <br> [Blast Source](https://github.com/team-alembic/lambdajam-blast) |
+| ![Kanban Board](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_kanban_board.png?raw=true) | Kanban Board | [Kanban Board Demo](https://phoenix-live-view-kanban-board.herokuapp.com/) <br> [Kanban Board Source](https://github.com/amberbit/board) |
+| ![Boggle Game (Soup)](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_soup.png?raw=true) | Boggle Game called Soup | [Soup Boggle Demo](https://lettersoup.herokuapp.com/) <br> [Soup Boggle Source](https://github.com/martinstannard/soup) |
+| ![Tech Trivia Game](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_trivia.png?raw=true) | Tech Trivia | [Trivia Demo](https://phx-trivia.gigalixirapp.com/) <br> [Trivia Source](https://github.com/ramortegui/phoenix_trivia) |
+| ![Timer Compared To Node](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_compare_node.png?raw=true) | Timer Comparison Node to LiveView | [Node Timer Demo](http://nodeservertime.herokuapp.com/) <br> [LiveView Timer Demo](https://phoenixliveviewtime.herokuapp.com/) |
+| ![Rubular Regex Parser](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_rubular.png?raw=true) | Rubular Regex Parser | [Rubular Source](https://github.com/ckampfe/rere/blob/master/lib/rere_web/live/rere_live.ex) |
+| ![Displays IMU data using Phoenix LiveView](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_moving_imu.png?raw=true) | Displays IMU data using Phoenix LiveView | [IMU Data Demo (Video)](https://twitter.com/joshnuss/status/1114761613985353728) <br> [IMU Data Source](https://github.com/joshnuss/live_imu) |
+| ![Calendar](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_calendar.png?raw=true) | Calendar | [Calendar Source](https://github.com/nicolasblanco/booking_calendar/blob/master/lib/booking_calendar_web/live/calendar_live.ex) |
+| ![Kubernetes Dashboard](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_kubernetes.png?raw=true) | Kubernetes Dashboard | [Kubernetes Dashboard Demo (Video)](https://www.youtube.com/watch?v=vOaZ_AspfKc) |
+| ![UX Keypad](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_ux_keypad.png?raw=true) | UX Keypad | [UX Keypad Source](https://gist.github.com/ponyesteves/372cf186665ab464413096fd3855f0ca) |
+| ![Visualizing Functional Data Structures with LiveView](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_functional_data_structures.png?raw=true) | Visualizing Functional Data Structures with LiveView | [Functional Data Structures Source](https://github.com/zkayser/pfds_visualizations) |
+| ![TODO App in LiveView](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_todo.png?raw=true) | TODO App | [TODO App Source](https://github.com/smeade/phoenix_live_view_example_todos) |
+| ![Conways Game of Life](/10xdevelopers/assets/static/images/liveview-examples/phoenix_liveview_conway_game_of_life.png?raw=true) | Conways Game of Life | [Conways Game of Life Demo](https://github.com/horneber/phoenix-lifeview-conway) [Conways Game of Life Source](https://github.com/horneber/phoenix-lifeview-conway) |
+
+
+
 
 ## Articles
 
-Below are a variety of articles on LiveView from mange perspectives.s
+Below are a variety of articles on LiveView from mange perspectives.
 
 * [Walk-Through of Phoenix LiveView](https://elixirschool.com/blog/phoenix-live-view/)
 * [Swapping React for Phoenix LiveView](https://medium.com/qixxit-development/swapping-react-for-phoenix-liveview-db6581f27a14)
@@ -53,7 +74,8 @@ Below are a variety of articles on LiveView from mange perspectives.s
 * [Real World Phoenix |> A LiveView Dashboard](https://www.theguild.nl/real-world-phoenix-of-groter-dan-a-liveview-dashboard/)
 * [Phoenix LiveView Impressions](https://haughtcodeworks.com/blog/software-development/elixir-phoenix-liveview/)
 * [Phoenix LiveView: Interactive, Real-Time Apps. No Need to Write JavaScript](https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript)
-
+* [Talking to the LiveView](https://medium.com/@iacobson/talking-to-the-liveview-7a19f7e45522)
+* [Reactor, a LiveView library for Django](https://github.com/edelvalle/reactor)
 
 ## Videos
 
@@ -89,10 +111,18 @@ Below are a variety of articles on LiveView from mange perspectives.s
 
 <a href="https://elixircasts.io/phoenix-liveview-part-3" target="_blank"><img src="/10xdevelopers/assets/static/images/liveview-examples/video_elixircasts_part3.png?raw=true" alt="Getting Started With Phoenix LiveView Part 3 (Subscription)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
+#### Setup Phoenix Live View
+
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=5PWUTABsCmQ" target="_blank"><img src="http://img.youtube.com/vi/5PWUTABsCmQ/0.jpg" alt="Setup Phoenix Live View" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+
+#### Phoenix Live View in action
+
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=vHKSY5dLK5Y" target="_blank"><img src="http://img.youtube.com/vi/vHKSY5dLK5Y/0.jpg" alt="Phoenix Live View in action" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+
+
 ## Audios
 
 * [Elixir Talk - Episode 141 - More LiveView Stuff and Desmond Wants to Work With You](https://soundcloud.com/elixirtalk/episode-141-more-liveview-stuff-and-desmond-wants-to-work-with-you)
-
 
 ## Other Curated Lists
 
@@ -102,4 +132,5 @@ List of Lists is fun.  Here are a few other places where LiveView lists are bein
 | --- | --- |
 | [Tefter](https://tefter.io) | [Phoenix LiveView Examples](https://tefter.io/zorbash/lists/phoenix-liveview-examples) |
 | [Leandro Cesquini Pereira](https://medium.com/@leandrocesquini) | [Phoenix Liveview Collection](https://medium.com/@leandrocesquini/phoenix-liveview-collection-8259f35ff2b0) |
+| [Darin Wilson](https://shift.infinite.red/@darinw) | [Phoenix LiveView Round-Up: The Story So Far](https://shift.infinite.red/phoenix-liveview-round-up-the-story-so-far-3cbb1648e940) |
 
