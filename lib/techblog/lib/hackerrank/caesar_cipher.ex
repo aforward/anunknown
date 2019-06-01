@@ -1,4 +1,4 @@
-defmodule Techblog.CaesarCipher do
+defmodule Techblog.Hackerrank.CaesarCipher do
   @moduledoc """
   A problem from
   https://www.hackerrank.com/challenges/caesar-cipher-1/problem
@@ -25,34 +25,34 @@ defmodule Techblog.CaesarCipher do
 
   ## Examples
 
-    iex> Techblog.CaesarCipher.encrypt(1, "a", 0)
+    iex> encrypt(1, "a", 0)
     "a"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "a", 26)
+    iex> encrypt(1, "a", 26)
     "a"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "a", 52)
+    iex> encrypt(1, "a", 52)
     "a"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "a", 1)
+    iex> encrypt(1, "a", 1)
     "b"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "z", 1)
+    iex> encrypt(1, "z", 1)
     "a"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "A", 0)
+    iex> encrypt(1, "A", 0)
     "A"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "A", 26)
+    iex> encrypt(1, "A", 26)
     "A"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "A", 52)
+    iex> encrypt(1, "A", 52)
     "A"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "A", 1)
+    iex> encrypt(1, "A", 1)
     "B"
 
-    iex> Techblog.CaesarCipher.encrypt(1, "Z", 1)
+    iex> encrypt(1, "Z", 1)
     "A"
 
   """

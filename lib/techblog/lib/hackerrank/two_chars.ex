@@ -1,4 +1,4 @@
-defmodule Techblog.TwoChars do
+defmodule Techblog.Hackerrank.TwoChars do
   @moduledoc """
   A problem from
   https://www.hackerrank.com/challenges/two-characters/problem
@@ -24,28 +24,28 @@ defmodule Techblog.TwoChars do
 
   ## Examples
 
-      iex> Techblog.TwoChars.two_characters(1, "a")
+      iex> two_characters(1, "a")
       0
 
-      iex> Techblog.TwoChars.two_characters(2, "aa")
+      iex> two_characters(2, "aa")
       0
 
-      iex> Techblog.TwoChars.two_characters(12, "aaaaaaaaaaaa")
+      iex> two_characters(12, "aaaaaaaaaaaa")
       0
 
-      iex> Techblog.TwoChars.two_characters(2, "ab")
+      iex> two_characters(2, "ab")
       2
 
-      iex> Techblog.TwoChars.two_characters(3, "abc")
+      iex> two_characters(3, "abc")
       2
 
-      iex> Techblog.TwoChars.two_characters(10, "beabeefeab")
+      iex> two_characters(10, "beabeefeab")
       5
 
-      iex> Techblog.TwoChars.two_characters(28, "asdcbsdcagfsdbgdfanfghbsfdab")
+      iex> two_characters(28, "asdcbsdcagfsdbgdfanfghbsfdab")
       8
 
-      iex> Techblog.TwoChars.two_characters(28, "asvkugfiugsalddlasguifgukvsa")
+      iex> two_characters(28, "asvkugfiugsalddlasguifgukvsa")
       0
   """
   def two_characters(_num, text) do
@@ -69,13 +69,13 @@ defmodule Techblog.TwoChars do
 
   ## Examples
 
-      iex> Techblog.TwoChars.sequence_length(["a"], "b", "e")
+      iex> sequence_length(["a"], "b", "e")
       0
 
-      iex> Techblog.TwoChars.sequence_length(["b", "e"], "b", "e")
+      iex> sequence_length(["b", "e"], "b", "e")
       2
 
-      iex> Techblog.TwoChars.sequence_length(["b", "a", "e"], "b", "e")
+      iex> sequence_length(["b", "a", "e"], "b", "e")
       2
   """
   def sequence_length(_text, a, a), do: 0
