@@ -144,6 +144,17 @@ defmodule Techblog do
 
   def summaries(path), do: all_html!(path, ".summary.md")
 
+  def tags(), do: tags(@default_path)
+
+  def tags(path) do
+    path
+    |> articles()
+    |> Enum.flat_map(fn {_, %{tags: tags}} -> tags end)
+    |> Enum.reduce(%{}, fn t, tags ->
+      Map.update(tags, t, 1, &(&1 + 1))
+    end)
+  end
+
   defp all_html!(path, ext) do
     path
     |> slugs()

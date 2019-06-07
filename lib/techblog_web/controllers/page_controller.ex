@@ -4,9 +4,11 @@ defmodule TechblogWeb.PageController do
   @slugs Techblog.slugs()
   @articles Techblog.articles()
   @summaries Techblog.summaries()
+  @tags Techblog.tags()
 
   def index(conn, params) do
     conn
+    |> assign(:tags, tags())
     |> assign(:slugs, slugs() |> Techblog.filter(params["tags"]) |> Techblog.sort())
     |> assign(:summaries, summaries() |> Techblog.filter(params["tags"]) |> Techblog.sort())
     |> render("index.html")
@@ -43,6 +45,13 @@ defmodule TechblogWeb.PageController do
     case Mix.env() do
       :dev -> Techblog.summaries()
       _ -> @summaries
+    end
+  end
+
+  def tags() do
+    case Mix.env() do
+      :dev -> Techblog.tags()
+      _ -> @tags
     end
   end
 end

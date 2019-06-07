@@ -43,6 +43,10 @@ defmodule TechblogTest do
            } == "test/fixtures/newinstall" |> Techblog.summaries()
   end
 
+  test "tags" do
+    assert %{"elixir" => 1, "erlang" => 1} == "test/fixtures/newinstall" |> Techblog.tags()
+  end
+
   test "format_images looks for ?raw=true in an image block" do
     assert "![My Image](/images/a.png)" ==
              Techblog.format_images("![My Image](/assets/static/images/a.png?raw=true)")
