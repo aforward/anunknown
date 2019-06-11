@@ -15,13 +15,16 @@ Adjust the values accordingly (we are using `sw_vers` to tease out
 your Mac OSX version).
 
 ```bash
-CHEF_VERSION=3.10.1 && \
+CHEF_VERSION=4.0.60 && \
   CHEF_SUBV=1 && \
   MACOSX_VERSION=$(sw_vers | grep ProductVersion | egrep -o '\d+\.\d+') && \
   curl -o /tmp/chefdk.dmg \
     https://packages.chef.io/files/stable/chefdk/${CHEF_VERSION}/mac_os_x/${MACOSX_VERSION}/chefdk-${CHEF_VERSION}-${CHEF_SUBV}.dmg && \
   open /tmp/chefdk.dmg
 ```
+
+The latest version is `4.0.60`, please check [ChefDK Releases](https://downloads.chef.io/chefdk)
+to get the appropriate version
 
 That should download the SDK for your Mac ([not running OS X then check out the docs](https://docs.chef.io/install_dk.html)).
 and popup the installer.
