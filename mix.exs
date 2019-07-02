@@ -44,7 +44,7 @@ defmodule Techblog.MixProject do
       {:fn_expr, "~> 0.3"},
       {:deferred_config, "~> 0.1.0"},
       {:earmark, "~> 1.3"},
-      {:distillery, "~> 2.0"},
+      {:distillery, "~> 2.1"},
       {:telemetry, "~> 0.4.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},

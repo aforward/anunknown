@@ -12,5 +12,6 @@ cp ./_build/prod/rel/techblog/releases/${VERSION}/techblog.tar.gz \
    ${REL_ROOT}/releases/${VERSION}/techblog.tar.gz
 
 (cd ${REL_ROOT} && \
+ rm -rf lib bin var && \
  ln -sf releases/${VERSION}/techblog.tar.gz techblog.tar.gz && \
  tar zxf techblog.tar.gz)
