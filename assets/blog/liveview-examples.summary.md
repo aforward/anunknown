@@ -1,6 +1,6 @@
 # Phoenix LiveView Examples
 #meta sort 2019-05-29
-#meta tags[] elixir liveview empex2019
+#meta tags[] elixir liveview empex
 ### May 29, 2019 (originally posted May 18)
 
 [LiveView](https://github.com/phoenixframework/phoenix_live_view)
