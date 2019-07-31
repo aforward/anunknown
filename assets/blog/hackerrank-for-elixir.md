@@ -33,7 +33,7 @@ Solution.go()
 
 When you run against HackerRank, you (properly get)
 
-![Reading and Writing for HackerRank](/10xdevelopers/assets/static/images/hackerrank-elixir/elixir_solution_setup.png?raw=true)
+![Reading and Writing for HackerRank](/anunknown/assets/static/images/hackerrank-elixir/elixir_solution_setup.png?raw=true)
 
 Notice the OUTPUT properly captured the input (i.e. the code is
 working as expected, but not yet as desired).

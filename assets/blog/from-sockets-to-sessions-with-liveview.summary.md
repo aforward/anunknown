@@ -6,4 +6,4 @@
 How can you have your LiveView login form update the user's
 session across pages?
 
-![Adding authenticated user to flash](/10xdevelopers/assets/static/images/liveview-session/flash_user.png?raw=true)
+![Adding authenticated user to flash](/anunknown/assets/static/images/liveview-session/flash_user.png?raw=true)

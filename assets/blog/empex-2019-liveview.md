@@ -1,7 +1,7 @@
 # LiveView at EMPEX 2019
 ### May 18, 2019
 
-![My Talk on LiveView](/10xdevelopers/assets/static/images/liveview-empex2019/title.png?raw=true)
+![My Talk on LiveView](/anunknown/assets/static/images/liveview-empex2019/title.png?raw=true)
 
 It was great to be back at [EMPEX](https://empex.co) in NYC again this (2019) year.
 Absolutely lovely conference, and this year my talk on LiveView
@@ -25,7 +25,7 @@ This functionality is expected to be available in 1.5+
 Within the talk, I mention of few projects directly.
 The source code has been grouped within the [Code Samples on GitHub](https://github.com/empex2019liveview).
 
-![I love git](/10xdevelopers/assets/static/images/liveview-empex2019/ilovegit.png?raw=true)
+![I love git](/anunknown/assets/static/images/liveview-empex2019/ilovegit.png?raw=true)
 
 Look through the [git commit history](https://github.com/empex2019liveview/hangman/commits/main).
 I like to [treat git history like an edited movie](https://www.youtube.com/watch?v=qpdYRPL3SVE) as opposed
@@ -33,7 +33,7 @@ to an instagram live feed, and telling a scripted story for posterity I find mor
 the raw reality of potential many missteps.
 
 
-![LiveView Survey](/10xdevelopers/assets/static/images/liveview-empex2019/liveview_survey.png?raw=true)
+![LiveView Survey](/anunknown/assets/static/images/liveview-empex2019/liveview_survey.png?raw=true)
 
 ## Optimizing Dividend Reinvestment - The APP
 
@@ -42,42 +42,42 @@ I love dividends, and we worked through two examples of migrating [a dividend op
 Bob owns 100 shares, so he would be paid about $68 a quarter.  Alice has double that, with 200 shares netting
 her $136 every three months.
 
-![July Dividend Payout](/10xdevelopers/assets/static/images/liveview-empex2019/july_payout.png?raw=true)
+![July Dividend Payout](/anunknown/assets/static/images/liveview-empex2019/july_payout.png?raw=true)
 
 What are Bob and Alice going to do with all the income?
 Obviously buy more shares.
 
-![Drip Power](/10xdevelopers/assets/static/images/liveview-empex2019/drip_power.png?raw=true)
+![Drip Power](/anunknown/assets/static/images/liveview-empex2019/drip_power.png?raw=true)
 
 Let's build a application to help Alice and Bob optimize their DRIPs.
 
-![Let's Get Started](/10xdevelopers/assets/static/images/liveview-empex2019/letsgetstarted.png?raw=true)
+![Let's Get Started](/anunknown/assets/static/images/liveview-empex2019/letsgetstarted.png?raw=true)
 
 ## Client Side Versus Server Side Rendering
 
 A (somewhat esoteric) server side only rendition would look like
 
-![Server Rending](/10xdevelopers/assets/static/images/liveview-empex2019/server_rendering.png?raw=true)
+![Server Rending](/anunknown/assets/static/images/liveview-empex2019/server_rendering.png?raw=true)
 
 We definitely get the simplicity of having the rendering all in one spot.  But the page now needs to store local state to ensure the _paint_ the right display each time.
 
 A client-side version support much improved rich client interactions would look like
 
-![Client Rending](/10xdevelopers/assets/static/images/liveview-empex2019/client_rendering.png?raw=true)
+![Client Rending](/anunknown/assets/static/images/liveview-empex2019/client_rendering.png?raw=true)
 
 With a client side interaction, some (or all) of the rendering is moved to the browser, state is _somewhat_ shared between between client and server code.  But some interactions now no longer require any communication back to the server.
 
 If we were using jQuery then the client would register the need for the event, and initiate the API call, aggregate the necessary data.
 
-![Register Events with jQuery](/10xdevelopers/assets/static/images/liveview-empex2019/register_events.png?raw=true)
+![Register Events with jQuery](/anunknown/assets/static/images/liveview-empex2019/register_events.png?raw=true)
 
 We would have some sort API endpoint on the server and decide on the data handshake, where the server has to agree to how the client will call it and the agree needs to agree to how the server will reply.
 
-![Client Server API Implementation](/10xdevelopers/assets/static/images/liveview-empex2019/api_impln.png?raw=true)
+![Client Server API Implementation](/anunknown/assets/static/images/liveview-empex2019/api_impln.png?raw=true)
 
 Our client then updates the display.  Here’s we have plain old HTML templates with javascript, but we could easily be using a templating engine like Mustache or Handlebars, and/or a full on state mangement framework like React, Vue or Angular.
 
-![Client Update](/10xdevelopers/assets/static/images/liveview-empex2019/client_update.png?raw=true)
+![Client Update](/anunknown/assets/static/images/liveview-empex2019/client_update.png?raw=true)
 
 
 ## Ceremony Versus Substance
@@ -86,7 +86,7 @@ Lets not confuse ceremony for substance.  There is a lot of boilerplate involved
 
 ### Managing Portfolio Ceremony Versus Substance
 
-![Managing Portfolio Ceremony Versus Substance](/10xdevelopers/assets/static/images/liveview-empex2019/crud_ceremony_substance.png?raw=true)
+![Managing Portfolio Ceremony Versus Substance](/anunknown/assets/static/images/liveview-empex2019/crud_ceremony_substance.png?raw=true)
 
 Contrast that with the substance of what we are trying to do… ultimately we are trying to do CRUD operations on our stock positions.  How much ceremony is dependent on the framework you are using, but the substance is usually constant regardless of picking Vue over React over jQuery.
 
@@ -94,11 +94,11 @@ Contrast that with the substance of what we are trying to do… ultimately we ar
 
 Our dividending application will support _email_ based authentication, and is implemented with a multi-step form.
 
-![Login Step 1](/10xdevelopers/assets/static/images/liveview-empex2019/login_step_1.png?raw=true)
+![Login Step 1](/anunknown/assets/static/images/liveview-empex2019/login_step_1.png?raw=true)
 
 Some find this annoying, but we can’t please everyone all the time.  Our application, like others that are rarely used, can benefit from pushing authentication in the users email so they don’t have to remember another password.
 
-![Login Step 2](/10xdevelopers/assets/static/images/liveview-empex2019/login_step_2.png?raw=true)
+![Login Step 2](/anunknown/assets/static/images/liveview-empex2019/login_step_2.png?raw=true)
 
 Ultimately we are trying to authenticate a user, which for our rarely used service is all about generating a secure token, sending it via email, and later validating it.
 
@@ -132,28 +132,28 @@ Let’s look at the major moving parts of LiveView
 
 For our login behaviour.
 
-![Login Step 1](/10xdevelopers/assets/static/images/liveview-empex2019/login_step_1.png?raw=true)
+![Login Step 1](/anunknown/assets/static/images/liveview-empex2019/login_step_1.png?raw=true)
 
 We have the following interactions between the client and the server
 
-![LiveView Login Rendering](/10xdevelopers/assets/static/images/liveview-empex2019/liveview_login_rendering.png?raw=true)
+![LiveView Login Rendering](/anunknown/assets/static/images/liveview-empex2019/liveview_login_rendering.png?raw=true)
 
 LiveView is still very much page focussed, so we first grab the page normally.  We return the HTML as we normally would.  Nothing special to see here.
 
-![Mount your LiveView](/10xdevelopers/assets/static/images/liveview-empex2019/mount_your_view.png?raw=true)
+![Mount your LiveView](/anunknown/assets/static/images/liveview-empex2019/mount_your_view.png?raw=true)
 
 But, as we have tagged this view as a LiveView EEX, we now get a socket connection from the client back to our server.  This allows for the client to push events to the server, but also for the server to push updates back to the client without the need for client hook.  This mounted connection typically results in a no-operation on the client, but there will be duplicate calls on the server when things are being setup for the first time.
 
-![Register Your Event](/10xdevelopers/assets/static/images/liveview-empex2019/event_register.png?raw=true)
+![Register Your Event](/anunknown/assets/static/images/liveview-empex2019/event_register.png?raw=true)
 
 Events are sent back to the server through the mounted socket, and our LivewView page is really a GenServer that reacts to events and it returns an optimized encoding of your LEEX template.
 
-![Handle Event Code](/10xdevelopers/assets/static/images/liveview-empex2019/handle_event.png?raw=true)
+![Handle Event Code](/anunknown/assets/static/images/liveview-empex2019/handle_event.png?raw=true)
 
 And much like a react-ive framework, your view is a reflection of the state of the page,
 so it is simply re-rendered based on the new data.
 
-![View Based On State](/10xdevelopers/assets/static/images/liveview-empex2019/view_based_on_state.png?raw=true)
+![View Based On State](/anunknown/assets/static/images/liveview-empex2019/view_based_on_state.png?raw=true)
 
 And that's about it.  The actual talk dived into a few other aspects
 of Live View, some of which have be written up separately and linked below.

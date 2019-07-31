@@ -18,7 +18,7 @@ refreshes itself?
 When ever you return data back to the client through the the websocket,
 consider adding an auto-incrementer.  This will allow you to uniquely track every _liveview_ refresh.
 
-![Adding a tick to every message](/10xdevelopers/assets/static/images/custom_js_liveview/mounting_a_tick.png?raw=true)
+![Adding a tick to every message](/anunknown/assets/static/images/custom_js_liveview/mounting_a_tick.png?raw=true)
 
 In friendly copy and paste code...
 
@@ -38,7 +38,7 @@ This is useful for a bunch of things, but let’s focus on running our custom ja
 
 In your LiveView LEEX, you can add a `script` tag and append the `@tick` to the `id`.   This will force for the MorphDOM differ to always re-render (aka re-run) that code on the client.
 
-![Create a script with tick ID](/10xdevelopers/assets/static/images/custom_js_liveview/script_id_with_tick.png?raw=true)
+![Create a script with tick ID](/anunknown/assets/static/images/custom_js_liveview/script_id_with_tick.png?raw=true)
 
 In friendly copy and paste code...
 
@@ -61,17 +61,17 @@ the system smartly put focus on the most appropriate input.
 So when the page loads, but focus on the input.  This can totally be done without
 JavaScript and plain old `autofocus` works well.
 
-![Autofocus on first input](/10xdevelopers/assets/static/images/custom_js_liveview/focus_one.png?raw=true)
+![Autofocus on first input](/anunknown/assets/static/images/custom_js_liveview/focus_one.png?raw=true)
 
 But, when you want to edit a particular stock, for example, we want to put focus on _that_ input.
 
-![Autofocus edit input](/10xdevelopers/assets/static/images/custom_js_liveview/focus_two.png?raw=true)
+![Autofocus edit input](/anunknown/assets/static/images/custom_js_liveview/focus_two.png?raw=true)
 
 And once done editing, put focus back on the original _new_ input.
 
 This was accomplished with the following code
 
-![Maintaining autofocus using a script](/10xdevelopers/assets/static/images/custom_js_liveview/autofocus_example.png?raw=true)
+![Maintaining autofocus using a script](/anunknown/assets/static/images/custom_js_liveview/autofocus_example.png?raw=true)
 
 In friendly copy and paste code...
 
