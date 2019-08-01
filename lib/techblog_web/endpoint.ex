@@ -29,6 +29,7 @@ defmodule TechblogWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Logger
   plug SiteEncrypt.AcmeChallenge, TechblogWeb.Certbot
+  plug TechblogWeb.Plugs.RedirectPlug
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
