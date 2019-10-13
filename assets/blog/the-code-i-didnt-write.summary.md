@@ -1,5 +1,5 @@
 # The Code I Didn’t Write
-#meta sort 20190706
+#meta sort 2019-07-06
 #meta tags[] software
 
 I enjoy reading job listings.  There's the "what's trending"
