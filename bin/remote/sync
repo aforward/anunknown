@@ -11,7 +11,7 @@ do
   echo "  Installing $GITREPO from github"
   mix doex.ssh $ID "USER_EMAIL=aforward@gmail.com \\
                       USER_NAME=aforward \\
-                      URL=git@github.com:aforward/$GITREPO.git \\
+                      URL=git@github.com:aforward/anunknown.git \\
                       GIT_BRANCH=master \\
                       INSTALL_DIR=/src \\
                       NAME=$GITREPO \\
