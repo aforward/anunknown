@@ -26,5 +26,6 @@ defmodule TechblogWeb.Router do
     live "/demo/hangman", HangmanLiveView
     live "/demo/hanoi", HanoiLiveView
     live "/demo/undo", UndoLiveView
+    live "/leaderboard", LeaderboardLiveView
   end
 end
