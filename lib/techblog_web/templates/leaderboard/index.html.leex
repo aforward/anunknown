@@ -12,7 +12,7 @@
           <td><%= athlete %></td>
           <td><%= data.gender %></td>
           <td><%= data.age_category %></td>
-          <td><%= data.open201.position %> (<%= data.open201.summary %>)</td>
+          <td><%= data.open201.position %> (<%= data.open201.summary %>)<%= if data.open201.mode != "rx", do: " #{data.open201.mode}" %></td>
         </tr>
       <% end %>
     </table>
