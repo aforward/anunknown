@@ -336,7 +336,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
   def mount(_session, socket) do
     # if connected?(socket), do: tick()
     {:ok,
-     socket |> assign(tock: 1) |> assign(:leaderboard, leaderboard(:all) |> sort_by(:open201))}
+     socket |> assign(tock: 1) |> assign(:leaderboard, leaderboard(:all) |> sort_by(:open20x))}
   end
 
   def handle_info(:tick, socket) do
