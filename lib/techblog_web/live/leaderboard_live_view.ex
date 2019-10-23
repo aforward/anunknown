@@ -23,6 +23,114 @@ defmodule TechblogWeb.LeaderboardLiveView do
     end
   end
 
+  @cleanable fn data ->
+    data
+    |> Enum.map(fn
+      [name, mode, time, score] ->
+        [name, mode, @clean_time.(time), @clean_integer.(score)]
+
+      [name, mode, score] ->
+        [name, mode, @clean_integer.(score)]
+    end)
+  end
+
+  @sortable fn data, max ->
+    data
+    |> Enum.map(fn
+      [_name, mode, score] = record ->
+        p1 =
+          case mode do
+            "rx" -> "200"
+            "adaptive" -> "200"
+            "scaled" -> "100"
+            _ -> "000"
+          end
+
+        p2 = String.pad_leading("#{score}", 5, "0")
+        sortable_score = "#{p1}#{p2}" |> String.to_integer()
+        [sortable_score | record]
+
+      [_name, mode, time, score] = record ->
+        sortable_score =
+          case [time, score] do
+            [nil, _] ->
+              0
+
+            [_, nil] ->
+              0
+
+            _ ->
+              p1 =
+                case mode do
+                  "rx" -> "200"
+                  "adaptive" -> "200"
+                  "scaled" -> "100"
+                  _ -> "000"
+                end
+
+              p2 = String.pad_leading("#{score}", 3, "0")
+
+              p3 =
+                time
+                |> String.split(":")
+                |> (fn [m, s] ->
+                      in_seconds = String.to_integer(m) * 60 + String.to_integer(s)
+                      "#{max - in_seconds}"
+                    end).()
+                |> String.pad_leading(4, "0")
+
+              "#{p1}#{p2}#{p3}" |> String.to_integer()
+          end
+
+        [sortable_score | record]
+    end)
+  end
+
+  @sort fn scores ->
+    Enum.sort(scores, fn [sortable1 | _], [sortable2 | _] ->
+      sortable1 > sortable2
+    end)
+  end
+
+  @summary fn scores, max_time, max_score ->
+    scores
+    |> Enum.map(fn
+      [sortable_score, name, mode, score] ->
+        summary =
+          case score do
+            nil -> "--"
+            _ -> "#{score} reps"
+          end
+
+        {name,
+         %{
+           mode: mode,
+           time: max_time,
+           score: score,
+           sortable_score: sortable_score,
+           summary: summary
+         }}
+
+      [sortable_score, name, mode, time, score] ->
+        summary =
+          case [time, score] do
+            [_, nil] -> "--"
+            [^max_time, _] -> "#{score} reps"
+            [_, ^max_score] -> "#{time}"
+            _ -> "--"
+          end
+
+        {name,
+         %{
+           mode: mode,
+           time: time,
+           score: score,
+           sortable_score: sortable_score,
+           summary: summary
+         }}
+    end)
+  end
+
   @athletes [
               ["Alex Davis", "M", "18"],
               ["Amy Morin", "F", "18"],
@@ -150,95 +258,10 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Taylor Steward", "", "00:00", ""],
              ["Rachel Dube", "adaptive", "00:00", ""]
            ]
-           |> Enum.map(fn [name, mode, time, score] ->
-             [name, mode, @clean_time.(time), @clean_integer.(score)]
-           end)
-           |> Enum.map(fn [name, mode, time, score] ->
-             sortable_score =
-               case [time, score] do
-                 [nil, _] ->
-                   0
-
-                 [_, nil] ->
-                   0
-
-                 _ ->
-                   p1 =
-                     case mode do
-                       "rx" -> "200"
-                       "adaptive" -> "200"
-                       "scaled" -> "100"
-                     end
-
-                   p2 = String.pad_leading("#{score}", 3, "0")
-
-                   p3 =
-                     time
-                     |> String.split(":")
-                     |> (fn [m, s] ->
-                           in_seconds = String.to_integer(m) * 60 + String.to_integer(s)
-                           "#{15 * 60 - in_seconds}"
-                         end).()
-                     |> String.pad_leading(4, "0")
-
-                   "#{p1}#{p2}#{p3}" |> String.to_integer()
-               end
-
-             [name, mode, time, score, sortable_score]
-           end)
-           |> Enum.sort(fn [_, _, _, _, sortable1], [_, _, _, _, sortable2] ->
-             sortable1 > sortable2
-           end)
-           |> Enum.reduce({0, 1, nil, []}, fn [_, _, _, _, sortable_score] = data,
-                                              {last_p, ties, last_score, acc} ->
-             {my_position, my_ties} =
-               cond do
-                 last_score == sortable_score -> {last_p, ties + 1}
-                 true -> {last_p + ties, 1}
-               end
-
-             {my_position, my_ties, sortable_score, [[my_position | data] | acc]}
-           end)
-           |> (fn {_, _, _, scores} -> scores end).()
-           |> Enum.map(fn [position, name, mode, time, score, sortable_score] ->
-             summary =
-               case [time, score] do
-                 [_, nil] -> "--"
-                 ["15:00", _] -> "#{score} reps"
-                 [_, 180] -> "#{time}"
-                 _ -> "--"
-               end
-
-             {name,
-              %{
-                position: position,
-                mode: mode,
-                time: time,
-                score: score,
-                sortable_score: sortable_score,
-                summary: summary
-              }}
-           end)
-           |> Enum.into(%{})
-
-  @leaderboard @athletes
-               |> Enum.map(fn {name, data} ->
-                 data
-                 |> Map.put(
-                   :open201,
-                   Map.get(@open201, name) ||
-                     %{
-                       position: nil,
-                       mode: nil,
-                       time: nil,
-                       score: nil,
-                       sortable_score: 0,
-                       summary: "--"
-                     }
-                 )
-                 |> (&{name, &1}).()
-               end)
-               |> Enum.into(%{})
+           |> @cleanable.()
+           |> @sortable.(15 * 60)
+           |> @sort.()
+           |> @summary.("15:00", 180)
 
   def render(assigns) do
     TechblogWeb.LeaderboardView.render("index.html", assigns)
@@ -246,7 +269,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   def mount(_session, socket) do
     # if connected?(socket), do: tick()
-    {:ok, socket |> assign(tock: 1) |> assign(:leaderboard, @leaderboard |> sort_by(:open201))}
+    {:ok,
+     socket |> assign(tock: 1) |> assign(:leaderboard, leaderboard(:all) |> sort_by(:open201))}
   end
 
   def handle_info(:tick, socket) do
@@ -256,11 +280,61 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   defp tick(), do: Process.send_after(self(), :tick, 1000)
 
+  def position(athletes, scores) do
+    scores
+    |> Enum.reduce({0, 1, nil, []}, fn {name, %{sortable_score: sortable_score} = data},
+                                       {last_p, ties, last_score, acc} ->
+      if Map.get(athletes, name) do
+        {my_position, my_ties} =
+          cond do
+            last_score == sortable_score -> {last_p, ties + 1}
+            true -> {last_p + ties, 1}
+          end
+
+        data
+        |> Map.put(:position, my_position)
+        |> (&{name, &1}).()
+        |> (&[&1 | acc]).()
+        |> (&{my_position, my_ties, sortable_score, &1}).()
+      else
+        {last_p, ties, last_score, acc}
+      end
+    end)
+    |> (fn {_, _, _, scores} -> scores end).()
+  end
+
+  def leaderboard(:all) do
+    open201 =
+      @athletes
+      |> position(@open201)
+      |> Enum.into(%{})
+
+    @athletes
+    |> Enum.map(fn {name, data} ->
+      data
+      |> Map.put(:open201, lookup_score(open201, name))
+      |> (&{name, &1}).()
+    end)
+    |> Enum.into(%{})
+  end
+
   defp sort_by(leaderboard, :name) do
     Enum.sort_by(leaderboard, fn {name1, _} -> name1 end)
   end
 
   defp sort_by(leaderboard, :open201) do
     Enum.sort_by(leaderboard, fn {_, %{open201: %{position: position}}} -> position end)
+  end
+
+  defp lookup_score(scores, name) do
+    Map.get(scores, name) ||
+      %{
+        position: nil,
+        mode: nil,
+        time: nil,
+        score: nil,
+        sortable_score: 0,
+        summary: "--"
+      }
   end
 end
