@@ -372,6 +372,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
   end
 
   def leaderboard(:all) do
+    max_position = Enum.count(@athletes)
+
     open201 =
       @athletes
       |> position(@open201)
@@ -382,11 +384,33 @@ defmodule TechblogWeb.LeaderboardLiveView do
       |> position(@open202)
       |> Enum.into(%{})
 
+    open20x =
+      @athletes
+      |> Enum.map(fn {name, data} ->
+        score201 = lookup_score(open201, name)
+        score202 = lookup_score(open202, name)
+        score_overall = sum_scores([score201.position, score202.position], max_position)
+        sortable_score = max_position * 2 - score_overall
+
+        {name,
+         %{
+           mode: nil,
+           time: nil,
+           score: score_overall,
+           sortable_score: sortable_score,
+           summary: "#{score_overall} points"
+         }}
+      end)
+      |> Enum.sort_by(fn {_name, %{score: score}} -> score end)
+      |> position()
+      |> Enum.into(%{})
+
     @athletes
     |> Enum.map(fn {name, data} ->
       data
       |> Map.put(:open201, lookup_score(open201, name))
       |> Map.put(:open202, lookup_score(open202, name))
+      |> Map.put(:open20x, lookup_score(open20x, name))
       |> (&{name, &1}).()
     end)
     |> Enum.into(%{})
@@ -398,6 +422,15 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   defp sort_by(leaderboard, openRecord) do
     Enum.sort_by(leaderboard, fn {_, %{^openRecord => %{position: position}}} -> position end)
+  end
+
+  defp sum_scores(scores, max_position) do
+    scores
+    |> Enum.map(fn
+      nil -> max_position
+      real_score -> real_score
+    end)
+    |> Enum.sum()
   end
 
   defp lookup_score(scores, name) do
