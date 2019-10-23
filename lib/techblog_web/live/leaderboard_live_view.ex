@@ -394,8 +394,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
     Enum.sort_by(leaderboard, fn {name1, _} -> name1 end)
   end
 
-  defp sort_by(leaderboard, :open201) do
-    Enum.sort_by(leaderboard, fn {_, %{open201: %{position: position}}} -> position end)
+  defp sort_by(leaderboard, openRecord) do
+    Enum.sort_by(leaderboard, fn {_, %{^openRecord => %{position: position}}} -> position end)
   end
 
   defp lookup_score(scores, name) do
