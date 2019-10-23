@@ -263,6 +263,72 @@ defmodule TechblogWeb.LeaderboardLiveView do
            |> @sort.()
            |> @summary.("15:00", 180)
 
+  @open202 [
+             ["Andrew Forward", "rx", "513"],
+             ["Stephanie Sloan", "scaled", ""],
+             ["Moses Abraham", "scaled", "460"],
+             ["Keyvan Abedi", "rx", "362"],
+             ["Steve Carriere", "rx", "408"],
+             ["Meredith Rocchi", "", ""],
+             ["Tim Stephens", "rx", "136"],
+             ["Dan Shrum", "rx", "784"],
+             ["Brian Mumba", "", ""],
+             ["Rob Frelich", "scaled", "476"],
+             ["Lyne Burton", "scaled", "238"],
+             ["Dev Vasile", "scaled", "582"],
+             ["Christian Holz", "scaled", "1301"],
+             ["Sonya Leadbetter", "", ""],
+             ["Patrick Pickering", "rx", "409"],
+             ["Gabby Reid", "rx", "260"],
+             ["Ethan Oliveira", "", ""],
+             ["Peter Waisberg", "rx", ""],
+             ["Kevin Lam", "rx", ""],
+             ["Roger Freedman", "rx", ""],
+             ["David Van Gool", "scaled", "452"],
+             ["Amy Morin", "scaled", ""],
+             ["Shauna Fulton", "rx", ""],
+             ["Alex Davis", "scaled", ""],
+             ["Catherine Hovath", "scaled", ""],
+             ["Mack Tommy", "scaled", "587"],
+             ["Daniel Taggart", "rx", "280"],
+             ["Eleonor Buteau", "rx", "578"],
+             ["Elise Bonder", "adaptive", ""],
+             ["Louise Goodman", "rx", "345"],
+             ["Heath Graham", "rx", "239"],
+             ["Honorata Zurakowski", "rx", "310"],
+             ["Guy Monette", "scaled", "624"],
+             ["Nick Loojimas", "rx", "416"],
+             ["Billi Jane", "", ""],
+             ["Paul Robertson", "", ""],
+             ["Livia Pellerin", "rx", ""],
+             ["Audrey Begin", "rx", ""],
+             ["Hannah Cortes", "", ""],
+             ["Kristen Brintnell", "rx", ""],
+             ["Charles Cockerell", "rx", ""],
+             ["Samuel Cullen", "rx", "485"],
+             ["Kevin Deevey", "rx", "422"],
+             ["Matthieu Desloges", "rx", "588"],
+             ["Roni Garrard", "rx", ""],
+             ["Maxime Grenier", "rx", ""],
+             ["Jals Hal", "", ""],
+             ["Lauren Heuvel", "rx", "505"],
+             ["Rena Bivens", "scaled", ""],
+             ["Everett Sloan", "rx", "448"],
+             ["Kevin Sourapha", "rx", "609"],
+             ["Victor Baptista", "rx", ""],
+             ["Claude Mallet", "rx", ""],
+             ["Gregory Ranger", "rx", "476"],
+             ["Natalie River", "rx", ""],
+             ["Malcom Savage", "scaled", "698"],
+             ["Dee Kotsovos", "rx", ""],
+             ["Taylor Steward", "rx", "585"],
+             ["Rachel Dube", "adaptive", ""]
+           ]
+           |> @cleanable.()
+           |> @sortable.(nil)
+           |> @sort.()
+           |> @summary.("20:00", nil)
+
   def render(assigns) do
     TechblogWeb.LeaderboardView.render("index.html", assigns)
   end
@@ -309,10 +375,16 @@ defmodule TechblogWeb.LeaderboardLiveView do
       |> position(@open201)
       |> Enum.into(%{})
 
+    open202 =
+      @athletes
+      |> position(@open202)
+      |> Enum.into(%{})
+
     @athletes
     |> Enum.map(fn {name, data} ->
       data
       |> Map.put(:open201, lookup_score(open201, name))
+      |> Map.put(:open202, lookup_score(open202, name))
       |> (&{name, &1}).()
     end)
     |> Enum.into(%{})

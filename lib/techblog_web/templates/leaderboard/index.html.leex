@@ -6,6 +6,7 @@
         <th>Gender</th>
         <th>Age Category</th>
         <th>20.1 Score</th>
+        <th>20.2 Score</th>
       </tr>
       <%= for {athlete,data} <- @leaderboard do %>
         <tr>
@@ -13,6 +14,7 @@
           <td><%= data.gender %></td>
           <td><%= data.age_category %></td>
           <td><%= data.open201.position %> (<%= data.open201.summary %>)<%= if data.open201.mode != "rx", do: " #{data.open201.mode}" %></td>
+          <td><%= data.open202.position %> (<%= data.open202.summary %>)<%= if data.open202.mode != "rx", do: " #{data.open201.mode}" %></td>
         </tr>
       <% end %>
     </table>
