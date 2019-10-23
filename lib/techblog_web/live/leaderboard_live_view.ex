@@ -348,23 +348,25 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   def position(athletes, scores) do
     scores
+    |> Enum.filter(fn {name, _data} -> Map.get(athletes, name) end)
+    |> position()
+  end
+
+  def position(scores) do
+    scores
     |> Enum.reduce({0, 1, nil, []}, fn {name, %{sortable_score: sortable_score} = data},
                                        {last_p, ties, last_score, acc} ->
-      if Map.get(athletes, name) do
-        {my_position, my_ties} =
-          cond do
-            last_score == sortable_score -> {last_p, ties + 1}
-            true -> {last_p + ties, 1}
-          end
+      {my_position, my_ties} =
+        cond do
+          last_score == sortable_score -> {last_p, ties + 1}
+          true -> {last_p + ties, 1}
+        end
 
-        data
-        |> Map.put(:position, my_position)
-        |> (&{name, &1}).()
-        |> (&[&1 | acc]).()
-        |> (&{my_position, my_ties, sortable_score, &1}).()
-      else
-        {last_p, ties, last_score, acc}
-      end
+      data
+      |> Map.put(:position, my_position)
+      |> (&{name, &1}).()
+      |> (&[&1 | acc]).()
+      |> (&{my_position, my_ties, sortable_score, &1}).()
     end)
     |> (fn {_, _, _, scores} -> scores end).()
   end
