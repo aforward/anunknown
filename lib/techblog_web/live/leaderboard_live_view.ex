@@ -188,7 +188,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
               ["Stephanie Sloan", "F", "40"],
               ["Steve Carriere", "M", "18"],
               ["Taylor Steward", "M", "18"],
-              ["Tim Stephens", "F", "55"],
+              ["Tim Stephens", "M", "55"],
               ["Victor Baptista", "M", "18"],
               ["Rachel Dubenovski", "", ""]
             ]
