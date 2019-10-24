@@ -386,7 +386,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
     open20x =
       @athletes
-      |> Enum.map(fn {name, data} ->
+      |> Enum.map(fn {name, _data} ->
         score201 = lookup_score(open201, name)
         score202 = lookup_score(open202, name)
         score_overall = sum_scores([score201.position, score202.position], max_position)
