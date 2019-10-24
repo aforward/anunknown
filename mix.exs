@@ -36,7 +36,7 @@ defmodule Techblog.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
+      {:phoenix_live_view, "~> 0.3.0"},
       {:diet, github: "pragdave/diet"},
       {:doex, "~> 0.9"},
       {:version_tasks, "~> 0.11"},
