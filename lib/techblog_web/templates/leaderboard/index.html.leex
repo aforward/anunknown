@@ -15,8 +15,9 @@
           <td><%= data.gender %></td>
           <td><%= data.age_category %></td>
           <td><%= data.open20x.position %> (<%= data.open20x.summary %>)</td>
-          <td><%= data.open201.position %> (<%= data.open201.summary %>)<%= if data.open201.mode != "rx", do: " #{data.open201.mode}" %></td>
-          <td><%= data.open202.position %> (<%= data.open202.summary %>)<%= if data.open202.mode != "rx", do: " #{data.open201.mode}" %></td>
+          <%= for open_data <- [data.open201, data.open202] do %>
+            <td><%= open_data.position %> (<%= open_data.summary %>)<%= if open_data.mode != "rx", do: " #{open_data.mode}" %></td>
+          <% end %>
         </tr>
       <% end %>
     </table>
