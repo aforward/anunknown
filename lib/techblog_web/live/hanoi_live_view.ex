@@ -3,7 +3,7 @@ defmodule TechblogWeb.HanoiLiveView do
   import TechblogWeb.Gettext
 
   def render(assigns) do
-    TechblogWeb.HanoiView.render("index.html", assigns)
+    Phoenix.View.render(TechblogWeb.HanoiView, "index.html", assigns)
   end
 
   def mount(_session, socket) do
