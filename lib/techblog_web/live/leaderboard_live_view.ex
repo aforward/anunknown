@@ -350,7 +350,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
   def handle_event("sort_by", value, socket) do
     socket
     |> assign_leaderboard(value)
-    |> (&{:noreply, &1}).()
+    |> (&{:noreply, live_redirect(&1, to: leaderboard_url(&1))}).()
   end
 
   def handle_info(:tick, socket) do
@@ -472,4 +472,21 @@ defmodule TechblogWeb.LeaderboardLiveView do
   defp sort_atom("20.1"), do: :open201
   defp sort_atom("20.2"), do: :open202
   defp sort_atom(_), do: :open20x
+
+  defp leaderboard_url(socket) do
+    sort_param =
+      case socket.assigns[:sort] do
+        :open201 -> "sort=20.1"
+        :open202 -> "sort=20.2"
+        _ -> nil
+      end
+
+    [sort_param]
+    |> Enum.reject(&is_nil/1)
+    |> Enum.join("&")
+    |> case do
+      "" -> "/leaderboard"
+      params -> "/leaderboard?#{params}"
+    end
+  end
 end
