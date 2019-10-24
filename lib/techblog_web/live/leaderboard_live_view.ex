@@ -330,7 +330,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
            |> @summary.("20:00", nil)
 
   def render(assigns) do
-    TechblogWeb.LeaderboardView.render("index.html", assigns)
+    Phoenix.View.render(TechblogWeb.LeaderboardView, "index.html", assigns)
   end
 
   def handle_params(params, _uri, socket) do
