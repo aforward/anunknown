@@ -17,7 +17,7 @@ defmodule TechblogWeb.EmpexlogoLiveView do
   ]
 
   def render(assigns) do
-    TechblogWeb.DemoView.render("empexlogo.html", assigns)
+    Phoenix.View.render(TechblogWeb.DemoView, "empexlogo.html", assigns)
   end
 
   def mount(_session, socket) do
