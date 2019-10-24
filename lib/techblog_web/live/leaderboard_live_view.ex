@@ -38,16 +38,24 @@ defmodule TechblogWeb.LeaderboardLiveView do
     data
     |> Enum.map(fn
       [_name, mode, score] = record ->
-        p1 =
-          case mode do
-            "rx" -> "200"
-            "adaptive" -> "200"
-            "scaled" -> "100"
-            _ -> "000"
+        sortable_score =
+          case score do
+            nil ->
+              0
+
+            _ ->
+              p1 =
+                case mode do
+                  "rx" -> "200"
+                  "adaptive" -> "200"
+                  "scaled" -> "100"
+                  _ -> "000"
+                end
+
+              p2 = String.pad_leading("#{score}", 5, "0")
+              "#{p1}#{p2}" |> String.to_integer()
           end
 
-        p2 = String.pad_leading("#{score}", 5, "0")
-        sortable_score = "#{p1}#{p2}" |> String.to_integer()
         [sortable_score | record]
 
       [_name, mode, time, score] = record ->
