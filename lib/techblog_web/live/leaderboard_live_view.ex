@@ -187,10 +187,11 @@ defmodule TechblogWeb.LeaderboardLiveView do
               ["Sonya Leadbetter", "F", "45"],
               ["Stephanie Sloan", "F", "40"],
               ["Steve Carriere", "M", "18"],
-              ["Taylor Steward", "M", "18"],
-              ["Tim Stephens", "M", "55"],
+              ["Taylor Stewart", "M", "18"],
+              ["Tim Stephens", "M", "60"],
               ["Victor Baptista", "M", "18"],
-              ["Rachel Dubenovski", "", ""]
+              ["Rachel Dubenovski", "F", "18"],
+              ["Grant McSheffrey", "M", "40"]
             ]
             |> Enum.map(fn [name, gender, age] ->
               {name, %{gender: @clean_gender.(gender), age_category: @clean_integer.(age)}}
@@ -256,7 +257,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Malcom Savage", "rx", "15:00", "122"],
              ["Dee Kotsovos", "rx", "15:00", "74"],
              ["Taylor Steward", "", "00:00", ""],
-             ["Rachel Dube", "adaptive", "00:00", ""]
+             ["Rachel Dube", "adaptive", "00:00", ""],
+             ["Grant McSheffrey", "rx", "15:00", "141"]
            ]
            |> @cleanable.()
            |> @sortable.(15 * 60)
@@ -265,8 +267,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   @open202 [
              ["Andrew Forward", "rx", "513"],
-             ["Stephanie Sloan", "scaled", ""],
-             ["Moses Abraham", "scaled", "460"],
+             ["Stephanie Sloan", "scaled", "460"],
+             ["Moses Abraham", "scaled", ""],
              ["Keyvan Abedi", "rx", "362"],
              ["Steve Carriere", "rx", "408"],
              ["Meredith Rocchi", "", ""],
@@ -276,12 +278,12 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Rob Frelich", "scaled", "476"],
              ["Lyne Burton", "scaled", "238"],
              ["Dev Vasile", "scaled", "582"],
-             ["Christian Holz", "scaled", "1301"],
+             ["Christian Holz", "scaled", "893"],
              ["Sonya Leadbetter", "", ""],
              ["Patrick Pickering", "rx", "409"],
              ["Gabby Reid", "rx", "260"],
              ["Ethan Oliveira", "", ""],
-             ["Peter Waisberg", "rx", ""],
+             ["Peter Waisberg", "rx", "355"],
              ["Kevin Lam", "rx", ""],
              ["Roger Freedman", "rx", ""],
              ["David Van Gool", "scaled", "452"],
@@ -301,28 +303,29 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Billi Jane", "", ""],
              ["Paul Robertson", "", ""],
              ["Livia Pellerin", "rx", ""],
-             ["Audrey Begin", "rx", ""],
+             ["Audrey Begin", "rx", "682"],
              ["Hannah Cortes", "", ""],
              ["Kristen Brintnell", "rx", ""],
-             ["Charles Cockerell", "rx", ""],
+             ["Charles Cockerell", "rx", "511"],
              ["Samuel Cullen", "rx", "485"],
              ["Kevin Deevey", "rx", "422"],
              ["Matthieu Desloges", "rx", "588"],
              ["Roni Garrard", "rx", ""],
-             ["Maxime Grenier", "rx", ""],
+             ["Maxime Grenier", "rx", "374"],
              ["Jals Hal", "", ""],
              ["Lauren Heuvel", "rx", "505"],
              ["Rena Bivens", "scaled", ""],
              ["Everett Sloan", "rx", "448"],
              ["Kevin Sourapha", "rx", "609"],
-             ["Victor Baptista", "rx", ""],
+             ["Victor Baptista", "rx", "374"],
              ["Claude Mallet", "rx", ""],
              ["Gregory Ranger", "rx", "476"],
              ["Natalie River", "rx", ""],
-             ["Malcom Savage", "scaled", "698"],
+             ["Malcom Savage", "rx", "115"],
              ["Dee Kotsovos", "rx", ""],
              ["Taylor Steward", "rx", "585"],
-             ["Rachel Dube", "adaptive", ""]
+             ["Rachel Dube", "adaptive", ""],
+             ["Grant McSheffrey", "rx", "306"]
            ]
            |> @cleanable.()
            |> @sortable.(nil)
