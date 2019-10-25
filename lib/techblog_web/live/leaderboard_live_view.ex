@@ -266,7 +266,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Natalie River", "rx", "15:00", "128"],
              ["Malcom Savage", "rx", "15:00", "122"],
              ["Dee Kotsovos", "rx", "15:00", "74"],
-             ["Taylor Steward", "", "00:00", ""],
+             ["Taylor Stewart", "", "00:00", ""],
              ["Rachel Dubenovski", "adaptive", "00:00", ""],
              ["Grant McSheffrey", "rx", "15:00", "141"]
            ]
@@ -324,17 +324,17 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Maxime Grenier", "rx", "374"],
              ["Jals Hal", "", ""],
              ["Lauren Heuvel", "rx", "505"],
-             ["Rena Bivens", "scaled", ""],
+             ["Rena Bivens", "scaled", "714"],
              ["Everett Sloan", "rx", "448"],
              ["Kevin Sourapha", "rx", "609"],
              ["Victor Baptista", "rx", "374"],
-             ["Claude Mallet", "rx", ""],
+             ["Claude Mallet", "rx", "204"],
              ["Gregory Ranger", "rx", "476"],
              ["Natalie River", "rx", ""],
              ["Malcom Savage", "rx", "115"],
              ["Dee Kotsovos", "rx", ""],
-             ["Taylor Steward", "rx", "585"],
-             ["Rachel Dubenovski", "adaptive", ""],
+             ["Taylor Stewart", "rx", "585"],
+             ["Rachel Dubenovski", "adaptive", "450"],
              ["Grant McSheffrey", "rx", "306"]
            ]
            |> @cleanable.()
