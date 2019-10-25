@@ -165,8 +165,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
               ["Victor Baptista", "M", "18"],
               ["Rachel Dubenovski", "F", "18"],
               ["Grant McSheffrey", "M", "40"],
-              ["Kristen Brintnell", "F", "18"],
-              ["Malcom Savage", "M", "18"]
+              ["Kristen Brintnell", "F", "18"]
             ]
             |> Enum.map(fn [name, gender, age] ->
               {name, %{gender: @clean_gender.(gender), age_category: @clean_integer.(age)}}
@@ -229,7 +228,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Claude Mallet", "rx", "15:00", "158"],
              ["Gregory Ranger", "rx", "15:00", "143"],
              ["Natalie River", "rx", "15:00", "128"],
-             ["Malcom Savage", "rx", "15:00", "122"],
+             ["Malcolm Savage", "rx", "15:00", "122"],
              ["Dee Kotsovos", "rx", "15:00", "74"],
              ["Taylor Stewart", "", "00:00", ""],
              ["Rachel Dubenovski", "adaptive", "00:00", ""],
@@ -305,7 +304,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Claude Mallet", "rx", "204"],
              ["Gregory Ranger", "rx", "476"],
              ["Natalie River", "rx", ""],
-             ["Malcom Savage", "rx", "115"],
+             ["Malcolm Savage", "rx", "115"],
              ["Dee Kotsovos", "rx", ""],
              ["Taylor Stewart", "rx", "585"],
              ["Rachel Dubenovski", "adaptive", "450"],
