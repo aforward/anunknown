@@ -5,9 +5,10 @@
         <th>Name</th>
         <th>Gender</th>
         <th>Age Category</th>
-        <th class="sortable-column" phx-click="sort_by" phx-value-sort="all">Open Score</th>
-        <th class="sortable-column" phx-click="sort_by" phx-value-sort="20.1">20.1 Score</th>
-        <th class="sortable-column" phx-click="sort_by" phx-value-sort="20.2">20.2 Score</th>
+        <th class="sortable-column" phx-click="sort_by" phx-value-sort="all">Overall</th>
+        <th class="sortable-column" phx-click="sort_by" phx-value-sort="20.1">20.1</th>
+        <th class="sortable-column" phx-click="sort_by" phx-value-sort="20.2">20.2</th>
+        <th class="sortable-column" phx-click="sort_by" phx-value-sort="20.3">20.3</th>
       </tr>
       <%= for {athlete,data} <- @leaderboard do %>
         <tr>
@@ -15,7 +16,7 @@
           <td><%= data.gender %></td>
           <td><%= data.age_category %></td>
           <td><%= data.open20x.position %> (<%= data.open20x.summary %>)</td>
-          <%= for open_data <- [data.open201, data.open202] do %>
+          <%= for open_data <- [data.open201, data.open202, data.open203] do %>
             <td><%= open_data.position %> (<%= open_data.summary %>)<%= if open_data.mode != "rx", do: " #{open_data.mode}" %></td>
           <% end %>
         </tr>
