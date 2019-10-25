@@ -11,132 +11,97 @@ defmodule TechblogWeb.LeaderboardLiveView do
   @clean_integer fn s ->
     case s do
       "" -> nil
+      0 -> nil
       _ -> String.to_integer(s)
     end
   end
 
-  @clean_time fn t ->
-    case t do
-      "" -> nil
-      "00:00" -> nil
-      _ -> t
-    end
+  @clean_time fn
+    "" ->
+      nil
+
+    "00:00" ->
+      nil
+
+    time ->
+      time
+      |> String.split(":")
+      |> (fn [m, s] -> String.to_integer(m) * 60 + String.to_integer(s) end).()
   end
 
-  @cleanable fn data ->
-    data
-    |> Enum.map(fn
-      [name, mode, time, score] ->
-        [name, mode, @clean_time.(time), @clean_integer.(score)]
+  @display_time fn time ->
+    "#{time |> div(60) |> Integer.to_string() |> String.pad_leading(2, "0")}:#{
+      time |> rem(60) |> Integer.to_string() |> String.pad_leading(2, "0")
+    }"
+  end
 
-      [name, mode, score] ->
-        [name, mode, @clean_integer.(score)]
+  @summary fn athletes ->
+    athletes
+    |> Enum.map(fn {name, %{scores: scores} = data} ->
+      scores
+      |> Enum.map(fn
+        {_, {nil, _}} ->
+          nil
+
+        {:time, {time, time}} ->
+          nil
+
+        {:time, {time, _max_time}} ->
+          @display_time.(time)
+
+        {:reps, {reps, reps}} ->
+          nil
+
+        {:reps, {reps, _max_reps}} ->
+          "#{reps} reps"
+      end)
+      |> Enum.reject(&is_nil/1)
+      |> List.first()
+      |> (&{name, Map.put(data, :summary, &1 || "--")}).()
     end)
   end
 
-  @sortable fn data, max ->
-    data
-    |> Enum.map(fn
-      [_name, mode, score] = record ->
-        sortable_score =
-          case score do
-            nil ->
+  @sortable fn athletes ->
+    athletes
+    |> Enum.map(fn {name, %{mode: mode, scores: scores} = data} ->
+      [{:mode, mode} | scores]
+      |> Enum.map(fn
+        {:mode, "rx"} ->
+          2
+
+        {:mode, "adaptive"} ->
+          2
+
+        {:mode, "scaled"} ->
+          1
+
+        {:mode, _} ->
+          0
+
+        {_, {nil, _}} ->
+          nil
+
+        {:time, {my_time, max_time}} ->
+          max_time - my_time
+
+        {:reps, {my_reps, _max_reps}} ->
+          my_reps
+      end)
+      |> (fn sortable_score ->
+            if Enum.any?(sortable_score, &is_nil/1) do
               0
-
-            _ ->
-              p1 =
-                case mode do
-                  "rx" -> "200"
-                  "adaptive" -> "200"
-                  "scaled" -> "100"
-                  _ -> "000"
-                end
-
-              p2 = String.pad_leading("#{score}", 5, "0")
-              "#{p1}#{p2}" |> String.to_integer()
-          end
-
-        [sortable_score | record]
-
-      [_name, mode, time, score] = record ->
-        sortable_score =
-          case [time, score] do
-            [nil, _] ->
-              0
-
-            [_, nil] ->
-              0
-
-            _ ->
-              p1 =
-                case mode do
-                  "rx" -> "200"
-                  "adaptive" -> "200"
-                  "scaled" -> "100"
-                  _ -> "000"
-                end
-
-              p2 = String.pad_leading("#{score}", 3, "0")
-
-              p3 =
-                time
-                |> String.split(":")
-                |> (fn [m, s] ->
-                      in_seconds = String.to_integer(m) * 60 + String.to_integer(s)
-                      "#{max - in_seconds}"
-                    end).()
-                |> String.pad_leading(4, "0")
-
-              "#{p1}#{p2}#{p3}" |> String.to_integer()
-          end
-
-        [sortable_score | record]
+            else
+              sortable_score
+            end
+          end).()
+      |> (&{name, Map.put(data, :sortable_score, &1)}).()
     end)
   end
 
   @sort fn scores ->
-    Enum.sort(scores, fn [sortable1 | _], [sortable2 | _] ->
-      sortable1 > sortable2
-    end)
-  end
-
-  @summary fn scores, max_time, max_score ->
     scores
-    |> Enum.map(fn
-      [sortable_score, name, mode, score] ->
-        summary =
-          case score do
-            nil -> "--"
-            _ -> "#{score} reps"
-          end
-
-        {name,
-         %{
-           mode: mode,
-           time: max_time,
-           score: score,
-           sortable_score: sortable_score,
-           summary: summary
-         }}
-
-      [sortable_score, name, mode, time, score] ->
-        summary =
-          case [time, score] do
-            [_, nil] -> "--"
-            [^max_time, _] -> "#{score} reps"
-            [_, ^max_score] -> "#{time}"
-            _ -> "--"
-          end
-
-        {name,
-         %{
-           mode: mode,
-           time: time,
-           score: score,
-           sortable_score: sortable_score,
-           summary: summary
-         }}
-    end)
+    |> Enum.sort_by(fn {_name, %{sortable_score: score}} -> score end)
+    |> Enum.reverse()
   end
 
   @athletes [
@@ -270,10 +235,19 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Rachel Dubenovski", "adaptive", "00:00", ""],
              ["Grant McSheffrey", "rx", "15:00", "141"]
            ]
-           |> @cleanable.()
-           |> @sortable.(15 * 60)
+           |> Enum.map(fn [name, mode, time, reps] ->
+             {name,
+              %{
+                mode: mode,
+                scores: [
+                  {:time, {@clean_time.(time), 15 * 60}},
+                  {:reps, {@clean_integer.(reps), 180}}
+                ]
+              }}
+           end)
+           |> @summary.()
+           |> @sortable.()
            |> @sort.()
-           |> @summary.("15:00", 180)
 
   @open202 [
              ["Andrew Forward", "rx", "513"],
@@ -337,10 +311,18 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Rachel Dubenovski", "adaptive", "450"],
              ["Grant McSheffrey", "rx", "306"]
            ]
-           |> @cleanable.()
-           |> @sortable.(nil)
+           |> Enum.map(fn [name, mode, reps] ->
+             {name,
+              %{
+                mode: mode,
+                scores: [
+                  {:reps, {@clean_integer.(reps), nil}}
+                ]
+              }}
+           end)
+           |> @summary.()
+           |> @sortable.()
            |> @sort.()
-           |> @summary.("20:00", nil)
 
   def render(assigns) do
     Phoenix.View.render(TechblogWeb.LeaderboardView, "index.html", assigns)
