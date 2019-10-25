@@ -195,7 +195,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
               ["Sonya Leadbetter", "F", "45"],
               ["Stephanie Sloan", "F", "40"],
               ["Steve Carriere", "M", "18"],
-              ["Taylor Steward", "M", "18"],
+              ["Taylor Stewart", "M", "18"],
               ["Tim Stephens", "M", "60"],
               ["Victor Baptista", "M", "18"],
               ["Rachel Dubenovski", "F", "18"],
