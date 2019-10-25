@@ -379,33 +379,37 @@ defmodule TechblogWeb.LeaderboardLiveView do
     |> (fn {_, _, _, scores} -> scores end).()
   end
 
+  defp workout_scores(athletes, scores) do
+    athletes
+    |> position(scores)
+    |> Enum.into(%{})
+  end
+
   def leaderboard(:all) do
     max_position = Enum.count(@athletes)
 
-    open201 =
-      @athletes
-      |> position(@open201)
-      |> Enum.into(%{})
-
-    open202 =
-      @athletes
-      |> position(@open202)
-      |> Enum.into(%{})
+    open201 = workout_scores(@athletes, @open201)
+    open202 = workout_scores(@athletes, @open202)
 
     open20x =
       @athletes
       |> Enum.map(fn {name, _data} ->
-        score201 = lookup_score(open201, name)
-        score202 = lookup_score(open202, name)
-        score_overall = sum_scores([score201.position, score202.position], max_position)
-        sortable_score = max_position * 2 - score_overall
+        athlete_scores = [
+          lookup_score(open201, name),
+          lookup_score(open202, name)
+        ]
+
+        score_overall =
+          athlete_scores
+          |> Enum.map(& &1.position)
+          |> sum_scores(max_position)
 
         {name,
          %{
            mode: nil,
            time: nil,
            score: score_overall,
-           sortable_score: sortable_score,
+           sortable_score: max_position * Enum.count(athlete_scores) - score_overall,
            summary: "#{score_overall} points"
          }}
       end)
