@@ -18,11 +18,49 @@ table.leaderboard {
   }
 }
 
-
 .sortable-column {
+  svg.sortable {
+    width: $size-6;
+  }
+}
+
+.sortable-column.on {
+  background-color: $blue-9;
+  color: $blue-1;
+  svg.sortable {
+    .primary {
+      fill: $blue-0;
+    }
+    .secondary {
+      fill: $blue-0;
+    }
+  }
+}
+
+.sortable-column.off {
+  background-color: $blue-1;
+
+  svg.sortable {
+    .primary {
+      fill: $blue-0;
+    }
+    .secondary {
+      fill: $blue-0;
+    }
+  }
+
   &:hover {
     background-color: $blue-9;
+    border: 1px solid $blue-0;
     cursor: pointer;
     color: $blue-1;
+    svg.sortable {
+      .primary {
+        fill: $blue-3;
+      }
+      .secondary {
+        fill: $blue-3;
+      }
+    }
   }
 }

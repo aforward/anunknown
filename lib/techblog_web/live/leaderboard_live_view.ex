@@ -550,8 +550,19 @@ defmodule TechblogWeb.LeaderboardLiveView do
     leaderboard = socket.assigns[:leaderboard] || leaderboard(:all)
 
     socket
-    |> assign(:sort, sort)
+    |> assign_sort(sort)
     |> assign(:leaderboard, leaderboard |> sort_by(sort))
+  end
+
+  defp assign_sort(socket, sort) do
+    selected_atom = String.to_atom("sort_#{sort}")
+    socket
+    |> assign(:sort, sort)
+    |> assign(:sort_open20x, :off)
+    |> assign(:sort_open201, :off)
+    |> assign(:sort_open202, :off)
+    |> assign(:sort_open203, :off)
+    |> assign(selected_atom, :on)
   end
 
   defp sort_atom(%{"sort" => value}), do: sort_atom(value)
