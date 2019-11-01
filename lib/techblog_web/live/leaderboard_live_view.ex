@@ -468,7 +468,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Dee Kotsovos", "", "00:00", "", "00:00"],
              ["Taylor Stewart", "", "00:00", "", "00:00"],
              ["Rachel Dubenovski", "", "00:00", "", "00:00"],
-             ["Grant McSheffrey", "rx", "20:00", "130", "10:22"],
+             ["Grant McSheffrey", "rx", "20:00", "120", "13:31"],
              ["Kyle Kraglund", "", "00:00", "", "00:00"]
            ]
            |> Enum.map(fn [name, mode, time, reps, tiebreak] ->
