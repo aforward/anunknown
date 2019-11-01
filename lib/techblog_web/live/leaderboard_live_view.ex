@@ -476,9 +476,9 @@ defmodule TechblogWeb.LeaderboardLiveView do
               %{
                 mode: mode,
                 scores: [
-                  {:time, {@clean_time.(time), 9 * 60}},
-                  {:reps, {@clean_integer.(reps), 165}},
-                  {:time, {@clean_time.(tiebreak), 9 * 60}}
+                  {:time, {@clean_time.(time), 20 * 60}},
+                  {:reps, {@clean_integer.(reps), 240}},
+                  {:time, {@clean_time.(tiebreak), 20 * 60}}
                 ]
               }}
            end)
