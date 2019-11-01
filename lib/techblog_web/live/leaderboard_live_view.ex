@@ -556,6 +556,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
 
   defp assign_sort(socket, sort) do
     selected_atom = String.to_atom("sort_#{sort}")
+
     socket
     |> assign(:sort, sort)
     |> assign(:sort_open20x, :off)
