@@ -1,21 +1,48 @@
 
+
+@include portrait_phone() {
+  table.leaderboard {
+    th {
+      font-size: $size-10;
+    }
+    td {
+      font-size: $size-13;
+      overflow: scroll;
+    }
+  }
+}
+
+@include desktop() {
+  table.leaderboard {
+    th {
+      font-size: $size-6;
+    }
+    td {
+      font-size: $size-8;
+    }
+  }
+}
+
 table {
   border-collapse: collapse;
 }
 
 table.leaderboard {
+  table-layout: fixed;
   tr {
     th {
       background-color: $blue-1;
       border: 1px solid $blue-9;
-      font-size: $size-6;
     }
     td {
-      font-size: $size-8;
       vertical-align: top;
       border: 1px dotted $blue-9;
     }
   }
+}
+
+.data-cell {
+  text-align: center;
 }
 
 .sortable-column {

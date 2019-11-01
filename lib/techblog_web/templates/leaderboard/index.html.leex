@@ -2,11 +2,9 @@
   <div class="container">
     <table class="leaderboard">
       <tr>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Age Category</th>
+        <th class="fullwidth-column">Athlete</th>
         <th class="sortable-column <%= @sort_open20x %>" phx-click="sort_by" phx-value-sort="all">
-          Overall
+          Points
           <%= Phoenix.View.render TechblogWeb.LeaderboardView, "icon.html", name: "icon-order-vertical", class: "sortable" %>
         </th>
         <th class="sortable-column <%= @sort_open201 %>" phx-click="sort_by" phx-value-sort="20.1">
@@ -21,15 +19,20 @@
           20.3
           <%= Phoenix.View.render TechblogWeb.LeaderboardView, "icon.html", name: "icon-order-vertical", class: "sortable" %>
         </th>
+        <th class="sortable-column <%= @sort_open204 %>" phx-click="sort_by" phx-value-sort="20.4">
+          20.4
+          <%= Phoenix.View.render TechblogWeb.LeaderboardView, "icon.html", name: "icon-order-vertical", class: "sortable" %>
+        </th>
       </tr>
       <%= for {athlete,data} <- @leaderboard do %>
         <tr>
-          <td><%= athlete %></td>
-          <td><%= data.gender %></td>
-          <td><%= data.age_category %></td>
-          <td><%= data.open20x.position %> (<%= data.open20x.summary %>)</td>
-          <%= for open_data <- [data.open201, data.open202, data.open203] do %>
-            <td><%= open_data.position %> (<%= open_data.summary %>)<%= if open_data.mode != "rx", do: " #{open_data.mode}" %></td>
+          <td>
+            <%= athlete %>
+            <br>(<%= data.gender %> / <%= data.age_category %>)
+          </td>
+          <td class="data-cell"><%= data.open20x.position %> (<%= data.open20x.summary %>)</td>
+          <%= for open_data <- [data.open201, data.open202, data.open203, data.open204] do %>
+            <td class="data-cell"><%= open_data.position %> (<%= open_data.summary %>)<%= if open_data.mode != "rx", do: " #{open_data.mode}" %></td>
           <% end %>
         </tr>
       <% end %>
