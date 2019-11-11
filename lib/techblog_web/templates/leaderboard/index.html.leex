@@ -23,6 +23,10 @@
           20.4
           <%= Phoenix.View.render TechblogWeb.LeaderboardView, "icon.html", name: "icon-order-vertical", class: "sortable" %>
         </th>
+        <th class="sortable-column <%= @sort_open205 %>" phx-click="sort_by" phx-value-sort="20.5">
+          20.5
+          <%= Phoenix.View.render TechblogWeb.LeaderboardView, "icon.html", name: "icon-order-vertical", class: "sortable" %>
+        </th>
       </tr>
       <%= for {athlete,data} <- @leaderboard do %>
         <tr>
@@ -31,7 +35,7 @@
             <br>(<%= data.gender %> / <%= data.age_category %>)
           </td>
           <td class="data-cell"><%= data.open20x.position %> (<%= data.open20x.summary %>)</td>
-          <%= for open_data <- [data.open201, data.open202, data.open203, data.open204] do %>
+          <%= for open_data <- [data.open201, data.open202, data.open203, data.open204, data.open205] do %>
             <td class="data-cell"><%= open_data.position %> (<%= open_data.summary %>)<%= if open_data.mode != "rx", do: " #{open_data.mode}" %></td>
           <% end %>
         </tr>

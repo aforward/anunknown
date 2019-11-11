@@ -16,6 +16,17 @@ defmodule TechblogWeb.LeaderboardLiveView do
     end
   end
 
+  @clean_integers fn all_s ->
+    all_s
+    |> Enum.map(@clean_integer)
+    |> Enum.reject(&is_nil/1)
+    |> Enum.sum()
+    |> case do
+      0 -> nil
+      clean -> clean
+    end
+  end
+
   @clean_time fn
     "" ->
       nil
@@ -486,6 +497,84 @@ defmodule TechblogWeb.LeaderboardLiveView do
            |> @sortable.()
            |> @sort.()
 
+  @open205 [
+             ["Andrew Forward", "rx", "20:00", "20", "80", "120", "13:27"],
+             ["Stephanie Sloan", "", "00:00", "", "", "", "00:00"],
+             ["Moses Abraham", "", "00:00", "", "", "", "00:00"],
+             ["Keyvan Abedi", "", "00:00", "", "", "", "00:00"],
+             ["Steve Carriere", "", "00:00", "", "", "", "00:00"],
+             ["Meredith Rocchi", "", "00:00", "", "", "", "00:00"],
+             ["Tim Stephens", "", "00:00", "", "", "", "00:00"],
+             ["Dan Shrum", "", "00:00", "", "", "", "00:00"],
+             ["Brian Mumba", "", "00:00", "", "", "", "00:00"],
+             ["Rob Frelich", "", "00:00", "", "", "", "00:00"],
+             ["Lyne Burton", "", "00:00", "", "", "", "00:00"],
+             ["Dev Vasile", "", "00:00", "", "", "", "00:00"],
+             ["Christian Holz", "", "00:00", "", "", "", "00:00"],
+             ["Sonya Leadbetter", "", "00:00", "", "", "", "00:00"],
+             ["Patrick Pickering", "", "00:00", "", "", "", "00:00"],
+             ["Gabby Reid", "", "00:00", "", "", "", "00:00"],
+             ["Ethan Oliveira", "", "00:00", "", "", "", "00:00"],
+             ["Peter Waisberg", "", "00:00", "", "", "", "00:00"],
+             ["Kevin Lam", "", "00:00", "", "", "", "00:00"],
+             ["Roger Freedman", "", "00:00", "", "", "", "00:00"],
+             ["David Van Gool", "", "00:00", "", "", "", "00:00"],
+             ["Amy Morin", "", "00:00", "", "", "", "00:00"],
+             ["Shauna Fulton", "", "00:00", "", "", "", "00:00"],
+             ["Alex Davis", "", "00:00", "", "", "", "00:00"],
+             ["Catherine Hovath", "", "00:00", "", "", "", "00:00"],
+             ["Mack Tommy", "", "00:00", "", "", "", "00:00"],
+             ["Daniel Taggart", "", "00:00", "", "", "", "00:00"],
+             ["Eleonor Buteau", "", "00:00", "", "", "", "00:00"],
+             ["Elise Bonder", "", "00:00", "", "", "", "00:00"],
+             ["Louise Goodman", "", "00:00", "", "", "", "00:00"],
+             ["Heath Graham", "", "00:00", "", "", "", "00:00"],
+             ["Honorata Zurakowski", "", "00:00", "", "", "", "00:00"],
+             ["Guy Monette", "", "00:00", "", "", "", "00:00"],
+             ["Nick Loojimas", "", "00:00", "", "", "", "00:00"],
+             ["Billi Jane", "", "00:00", "", "", "", "00:00"],
+             ["Paul Robertson", "", "00:00", "", "", "", "00:00"],
+             ["Livia Pellerin", "", "00:00", "", "", "", "00:00"],
+             ["Audrey Begin", "", "00:00", "", "", "", "00:00"],
+             ["Hannah Cortes", "", "00:00", "", "", "", "00:00"],
+             ["Kristen Brintnell", "", "00:00", "", "", "", "00:00"],
+             ["Charles Cockerell", "", "00:00", "", "", "", "00:00"],
+             ["Samuel Cullen", "", "00:00", "", "", "", "00:00"],
+             ["Kevin Deevey", "", "00:00", "", "", "", "00:00"],
+             ["Matthieu Desloges", "", "00:00", "", "", "", "00:00"],
+             ["Roni Garrard", "", "00:00", "", "", "", "00:00"],
+             ["Maxime Grenier", "", "00:00", "", "", "", "00:00"],
+             ["Jals Hal", "", "00:00", "", "", "", "00:00"],
+             ["Lauren Heuvel", "", "00:00", "", "", "", "00:00"],
+             ["Rena Bivens", "", "00:00", "", "", "", "00:00"],
+             ["Everett Sloan", "", "00:00", "", "", "", "00:00"],
+             ["Kevin Sourapha", "", "00:00", "", "", "", "00:00"],
+             ["Victor Baptista", "", "00:00", "", "", "", "00:00"],
+             ["Claude Mallet", "", "00:00", "", "", "", "00:00"],
+             ["Gregory Ranger", "", "00:00", "", "", "", "00:00"],
+             ["Natalie River", "", "00:00", "", "", "", "00:00"],
+             ["Malcom Savage", "", "00:00", "", "", "", "00:00"],
+             ["Dee Kotsovos", "", "00:00", "", "", "", "00:00"],
+             ["Taylor Stewart", "", "00:00", "", "", "", "00:00"],
+             ["Rachel Dubenovski", "", "00:00", "", "", "", "00:00"],
+             ["Grant McSheffrey", "rx", "20:00", "0", "80", "120", "12:17"],
+             ["Kyle Kraglund", "rx", "20:00", "0", "80", "120", "13:00"]
+           ]
+           |> Enum.map(fn [name, mode, time, mu_reps, cal_reps, wb_reps, tiebreak] ->
+             {name,
+              %{
+                mode: mode,
+                scores: [
+                  {:time, {@clean_time.(time), 20 * 60}},
+                  {:reps, {@clean_integers.([mu_reps, cal_reps, wb_reps]), 220}},
+                  {:time, {@clean_time.(tiebreak), 20 * 60}}
+                ]
+              }}
+           end)
+           |> @summary.()
+           |> @sortable.()
+           |> @sort.()
+
   def render(assigns) do
     Phoenix.View.render(TechblogWeb.LeaderboardView, "index.html", assigns)
   end
@@ -555,6 +644,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
     open202 = workout_scores(@athletes, @open202)
     open203 = workout_scores(@athletes, @open203)
     open204 = workout_scores(@athletes, @open204)
+    open205 = workout_scores(@athletes, @open205)
 
     open20x =
       @athletes
@@ -563,7 +653,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
           lookup_score(open201, name),
           lookup_score(open202, name),
           lookup_score(open203, name),
-          lookup_score(open204, name)
+          lookup_score(open204, name),
+          lookup_score(open205, name)
         ]
 
         score_overall =
@@ -591,6 +682,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
       |> Map.put(:open202, lookup_score(open202, name))
       |> Map.put(:open203, lookup_score(open203, name))
       |> Map.put(:open204, lookup_score(open204, name))
+      |> Map.put(:open205, lookup_score(open205, name))
       |> Map.put(:open20x, lookup_score(open20x, name))
       |> (&{name, &1}).()
     end)
@@ -645,6 +737,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
     |> assign(:sort_open202, :off)
     |> assign(:sort_open203, :off)
     |> assign(:sort_open204, :off)
+    |> assign(:sort_open205, :off)
     |> assign(selected_atom, :on)
   end
 
@@ -653,6 +746,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
   defp sort_atom("20.2"), do: :open202
   defp sort_atom("20.3"), do: :open203
   defp sort_atom("20.4"), do: :open204
+  defp sort_atom("20.5"), do: :open205
   defp sort_atom(_), do: :open20x
 
   defp leaderboard_url(socket) do
@@ -662,6 +756,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
         :open202 -> "sort=20.2"
         :open203 -> "sort=20.3"
         :open204 -> "sort=20.4"
+        :open205 -> "sort=20.5"
         _ -> nil
       end
 
