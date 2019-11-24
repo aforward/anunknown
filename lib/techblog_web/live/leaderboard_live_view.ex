@@ -555,7 +555,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
              ["Natalie River", "", "00:00", "", "", "", "00:00"],
              ["Malcom Savage", "rx", "20:00", "0", "80", "120", "12:14"],
              ["Dee Kotsovos", "", "00:00", "", "", "", "00:00"],
-             ["Taylor Stewart", "", "00:00", "", "", "", "00:00"],
+             ["Taylor Stewart", "rx", "20:00", "32", "80", "120", "20:00"],
              ["Rachel Dubenovski", "", "00:00", "", "", "", "00:00"],
              ["Grant McSheffrey", "rx", "20:00", "0", "80", "120", "12:17"],
              ["Kyle Kraglund", "rx", "20:00", "0", "80", "120", "13:00"]
