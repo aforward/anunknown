@@ -6,13 +6,19 @@ defmodule TechblogWeb.Plugs.RedirectPlug do
   end
 
   def call(conn, _options) do
-    if conn.host == "10xdevelopers.com" do
-      conn
-      |> put_status(:moved_permanently)
-      |> Phoenix.Controller.redirect(external: canonical_domain())
-      |> halt()
-    else
-      conn
+    case conn.host do
+      "10xdevelopers.local" ->
+        conn
+        |> put_status(:moved_permanently)
+        |> Phoenix.Controller.redirect(external: "http://anunknown.local:4000")
+        |> halt()
+      "10xdevelopers.com" ->
+        conn
+        |> put_status(:moved_permanently)
+        |> Phoenix.Controller.redirect(external: canonical_domain())
+        |> halt()
+      _ ->
+        conn
     end
   end
 

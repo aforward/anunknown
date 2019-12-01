@@ -2,6 +2,7 @@ use Mix.Config
 
 config :techblog,
   domain: {:system, "DOMAIN"},
+  extra_domains: {:system, "EXTRA_DOMAINS"},
   acme_server: :prod,
   port: 80,
   ssl_port: 443,

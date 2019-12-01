@@ -15,7 +15,7 @@ defmodule TechblogWeb.Certbot do
       run_client?: unquote(Mix.env() != :test),
       ca_url: Application.get_env(:techblog, :acme_server) |> ca_url(),
       domain: Application.get_env(:techblog, :domain),
-      extra_domains: [],
+      extra_domains: Application.get_env(:techblog, :extra_domains) |> String.split(";"),
       email: Application.get_env(:techblog, :email),
       base_folder: Application.get_env(:techblog, :acme_server) |> base_folder(),
       cert_folder: Application.get_env(:techblog, :acme_server) |> base_folder(),

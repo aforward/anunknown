@@ -9,6 +9,7 @@ use Mix.Config
 
 config :techblog,
   domain: "localhost",
+  extra_domains: "anunknown.local;10xdevelopers.local",
   acme_server: :local,
   port: 4000,
   ssl_port: 4001,
