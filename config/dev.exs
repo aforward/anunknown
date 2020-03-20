@@ -2,7 +2,6 @@ use Mix.Config
 
 config :techblog,
   domain: "localhost",
-  acme_server: :local,
   port: 4000,
   ssl_port: 4001,
   host: "127.0.0.1",

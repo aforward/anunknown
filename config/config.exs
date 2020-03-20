@@ -8,11 +8,9 @@
 use Mix.Config
 
 config :techblog,
-  domain: "localhost",
-  extra_domains: "anunknown.local;10xdevelopers.local",
-  acme_server: :local,
-  port: 4000,
-  ssl_port: 4001,
+  domain: "127.0.0.1",
+  port: 4010,
+  ssl_port: 4011,
   host: "127.0.0.1"
 
 # Configures the endpoint

@@ -1,13 +1,11 @@
 use Mix.Config
 
 config :techblog,
-  domain: {:system, "DOMAIN"},
-  extra_domains: {:system, "EXTRA_DOMAINS"},
-  acme_server: :prod,
-  port: 80,
-  ssl_port: 443,
-  host: {:system, "DOMAIN"},
-  email: {:system, "EMAIL"}
+  domain: "127.0.0.1",
+  port: 4010,
+  ssl_port: 4011,
+  host: "127.0.0.1",
+  email: "aforward@gmail.com"
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
@@ -19,9 +17,8 @@ config :techblog,
 # which you should run after static files are built and
 # before starting your production server.
 config :techblog, TechblogWeb.Endpoint,
-  http: [:inet6, port: 80],
-  url: [port: 80],
-  force_ssl: [hsts: false, rewrite_on: [:x_forwarded_proto], host: nil],
+  http: [:inet6, port: 4000],
+  url: [port: 4000],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   live_view: [
     signing_salt: {:system, "SIGNING_SALT"}

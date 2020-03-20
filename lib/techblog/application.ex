@@ -9,7 +9,7 @@ defmodule Techblog.Application do
     DeferredConfig.populate(:techblog)
 
     children = [
-      SiteEncrypt.Phoenix.child_spec({TechblogWeb.Certbot, TechblogWeb.Endpoint})
+      TechblogWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

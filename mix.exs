@@ -40,7 +40,6 @@ defmodule Techblog.MixProject do
       {:diet, github: "pragdave/diet"},
       {:doex, "~> 0.9"},
       {:version_tasks, "~> 0.11"},
-      {:site_encrypt, github: "aforward-oss/site_encrypt", branch: "f/num_acceptors"},
       {:fn_expr, "~> 0.3"},
       {:deferred_config, "~> 0.1.0"},
       {:earmark, "~> 1.3"},

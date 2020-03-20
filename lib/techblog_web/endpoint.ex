@@ -28,7 +28,6 @@ defmodule TechblogWeb.Endpoint do
 
   plug Plug.RequestId
   plug Plug.Logger
-  plug SiteEncrypt.AcmeChallenge, TechblogWeb.Certbot
   plug TechblogWeb.Plugs.RedirectPlug
 
   plug Plug.Parsers,
@@ -48,36 +47,4 @@ defmodule TechblogWeb.Endpoint do
     signing_salt: "qF5BEhB6"
 
   plug TechblogWeb.Router
-
-  @doc """
-  Callback invoked for dynamically configuring the endpoint.
-
-  It receives the endpoint configuration and checks if
-  configuration should be loaded from the system environment.
-  """
-  def init(_key, config) do
-    port = Application.get_env(:techblog, :port)
-    host = Application.get_env(:techblog, :host)
-    ssl_port = Application.get_env(:techblog, :ssl_port)
-
-    config
-    |> Keyword.put(:url, host: host, port: port)
-    |> Keyword.put(:http, [:inet6, port: port])
-    |> invoke(fn cfg ->
-      case TechblogWeb.Certbot.https_keys() do
-        [] ->
-          cfg
-          |> Keyword.put(:https, false)
-
-        keys ->
-          if File.exists?(keys[:keyfile]) do
-            cfg
-            |> Keyword.put(:https, [port: ssl_port] ++ keys)
-          else
-            cfg |> Keyword.put(:https, false)
-          end
-      end
-    end)
-    |> invoke({:ok, &1})
-  end
 end
