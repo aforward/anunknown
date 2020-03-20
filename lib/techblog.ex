@@ -12,7 +12,7 @@ defmodule Techblog do
     real = _slugs(path, ".summary.md")
 
     cond do
-      Map.size(real) == 0 -> _slugs(path, ".summary.md.example")
+      map_size(real) == 0 -> _slugs(path, ".summary.md.example")
       :else -> real
     end
   end
