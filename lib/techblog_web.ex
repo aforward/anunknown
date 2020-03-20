@@ -23,7 +23,6 @@ defmodule TechblogWeb do
 
       import Plug.Conn
       import TechblogWeb.Gettext
-      import Phoenix.LiveView.Controller
       alias TechblogWeb.Router.Helpers, as: Routes
     end
   end
@@ -37,22 +36,32 @@ defmodule TechblogWeb do
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-      # Import convenience functions for LiveView rendering
-      import Phoenix.LiveView,
-        only: [live_render: 2, live_render: 3, live_link: 1, live_link: 2]
+      # Include shared imports and aliases for views
+      unquote(view_helpers())
+    end
+  end
 
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
+  def live_view do
+    quote do
+      use Phoenix.LiveView,
+        layout: {TechblogWeb.LayoutView, "live.html"}
 
-      import TechblogWeb.ErrorHelpers
-      import TechblogWeb.Gettext
-      alias TechblogWeb.Router.Helpers, as: Routes
+      unquote(view_helpers())
+    end
+  end
+
+  def live_component do
+    quote do
+      use Phoenix.LiveComponent
+
+      unquote(view_helpers())
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+
       import Plug.Conn
       import Phoenix.Controller
       import Phoenix.LiveView.Router
@@ -63,6 +72,20 @@ defmodule TechblogWeb do
     quote do
       use Phoenix.Channel
       import TechblogWeb.Gettext
+    end
+  end
+
+  defp view_helpers do
+    quote do
+      # Use all HTML functionality (forms, tags, etc)
+      use Phoenix.HTML
+
+      # Import convenience functions for LiveView rendering
+      import Phoenix.LiveView.Helpers
+
+      import TechblogWeb.ErrorHelpers
+      import TechblogWeb.Gettext
+      alias TechblogWeb.Router.Helpers, as: Routes
     end
   end
 

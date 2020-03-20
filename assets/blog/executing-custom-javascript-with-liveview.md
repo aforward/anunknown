@@ -23,7 +23,7 @@ consider adding an auto-incrementer.  This will allow you to uniquely track ever
 In friendly copy and paste code...
 
 ```elixir
-def mount(_assigns, socket) do
+def mount(_params, _session, socket) do
   {:ok, assign(socket, tick: 1)}
 end
 

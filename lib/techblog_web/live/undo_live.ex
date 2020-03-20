@@ -1,9 +1,8 @@
-defmodule TechblogWeb.UndoLiveView do
-  use Phoenix.LiveView
+defmodule TechblogWeb.UndoLive do
+  use TechblogWeb, :live_view
 
   def render(assigns) do
     ~L"""
-
     <style>
       .record {
         margin: 10px 0;
@@ -31,13 +30,13 @@ defmodule TechblogWeb.UndoLiveView do
     <%= for {id, r} <- @records do %>
       <div class="record <%= r.status%>">
         <span><%= r.name %></span>
-        <button phx-click="delete" phx-value="<%= id %>">Delete</button>
+        <button phx-click="delete" phx-value-id="<%= id %>">Delete</button>
       </div>
     <% end %>
     """
   end
 
-  def mount(_session, socket) do
+  def mount(_params, _session, socket) do
     socket
     |> assign(:records, %{
       "1" => %{name: "Alice", status: "ok"},
@@ -59,7 +58,7 @@ defmodule TechblogWeb.UndoLiveView do
     |> socket_reply()
   end
 
-  def handle_event("delete", id, %{assigns: %{undo_counter: time}} = socket) do
+  def handle_event("delete", %{"id" => id}, %{assigns: %{undo_counter: time}} = socket) do
     if time == 0 do
       Process.send_after(self(), :countdown, 1000)
     end

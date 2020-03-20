@@ -9,7 +9,14 @@ defmodule Techblog.Application do
     DeferredConfig.populate(:techblog)
 
     children = [
+      # Start the Telemetry supervisor
+      TechblogWeb.Telemetry,
+      # Start the PubSub system
+      {Phoenix.PubSub, name: Techblog.PubSub},
+      # Start the Endpoint (http/https)
       TechblogWeb.Endpoint
+      # Start a worker by calling: Techblog.Worker.start_link(arg)
+      # {Techblog.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

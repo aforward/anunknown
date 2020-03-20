@@ -1,5 +1,5 @@
-defmodule TechblogWeb.HangmanLiveView do
-  use Phoenix.LiveView
+defmodule TechblogWeb.HangmanLive do
+  use TechblogWeb, :live_view
   alias Diet.Stepper
 
   @colours [
@@ -61,13 +61,17 @@ defmodule TechblogWeb.HangmanLiveView do
     """
   end
 
-  def mount(_session, socket) do
+  def mount(_params, _session, socket) do
     {:ok, socket |> assign_game()}
   end
 
   def handle_event("guess", %{"letter" => l}, socket) do
     {r, s} = Stepper.run(socket.assigns.stepper, {:make_move, l})
     {:noreply, socket |> assign_game(s) |> assign_reply(l, r)}
+  end
+
+  def handle_event("guess", %{}, socket) do
+    {:noreply, socket}
   end
 
   def handle_event("new-game", _, socket) do

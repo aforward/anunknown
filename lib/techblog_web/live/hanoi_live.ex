@@ -1,12 +1,11 @@
-defmodule TechblogWeb.HanoiLiveView do
-  use Phoenix.LiveView
-  import TechblogWeb.Gettext
+defmodule TechblogWeb.HanoiLive do
+  use TechblogWeb, :live_view
 
   def render(assigns) do
     Phoenix.View.render(TechblogWeb.HanoiView, "index.html", assigns)
   end
 
-  def mount(_session, socket) do
+  def mount(_params, _session, socket) do
     {:ok, socket |> assign_game()}
   end
 

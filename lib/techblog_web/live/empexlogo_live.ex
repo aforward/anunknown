@@ -1,5 +1,5 @@
-defmodule TechblogWeb.EmpexlogoLiveView do
-  use Phoenix.LiveView
+defmodule TechblogWeb.EmpexlogoLive do
+  use TechblogWeb, :live_view
 
   @colours [
     "#5ED0FA",
@@ -16,12 +16,8 @@ defmodule TechblogWeb.EmpexlogoLiveView do
     "#147D64"
   ]
 
-  def render(assigns) do
-    Phoenix.View.render(TechblogWeb.DemoView, "empexlogo.html", assigns)
-  end
-
-  def mount(_session, socket) do
-    if connected?(socket), do: tick()
+  def mount(_params, _session, socket) do
+    tick()
     {:ok, socket |> assign(tock: 1) |> assign_colours()}
   end
 

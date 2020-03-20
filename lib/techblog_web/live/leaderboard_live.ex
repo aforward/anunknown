@@ -1,5 +1,5 @@
-defmodule TechblogWeb.LeaderboardLiveView do
-  use Phoenix.LiveView
+defmodule TechblogWeb.LeaderboardLive do
+  use TechblogWeb, :live_view
 
   @clean_gender fn g ->
     case g do
@@ -585,8 +585,8 @@ defmodule TechblogWeb.LeaderboardLiveView do
     |> (&{:noreply, &1}).()
   end
 
-  def mount(_session, socket) do
-    # if connected?(socket), do: tick()
+  def mount(_params, _session, socket) do
+    tick()
     {:ok,
      socket
      |> assign(tock: 1)
@@ -596,7 +596,7 @@ defmodule TechblogWeb.LeaderboardLiveView do
   def handle_event("sort_by", value, socket) do
     socket
     |> assign_leaderboard(value)
-    |> (&{:noreply, live_redirect(&1, to: leaderboard_url(&1))}).()
+    |> (&{:noreply, push_patch(&1, to: leaderboard_url(&1))}).()
   end
 
   def handle_info(:tick, socket) do

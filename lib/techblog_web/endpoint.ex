@@ -2,11 +2,21 @@ defmodule TechblogWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :techblog
   use FnExpr
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
+  @session_options [
+    store: :cookie,
+    key: "_techblog_key",
+    signing_salt: "qF5BEhB6"
+  ]
+
   socket "/socket", TechblogWeb.UserSocket,
     websocket: true,
     longpoll: false
 
-  socket "/live", Phoenix.LiveView.Socket
+  socket "/live", Phoenix.LiveView.Socket,
+    websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -15,7 +25,7 @@ defmodule TechblogWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :techblog,
-    gzip: true,
+    gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -29,6 +39,7 @@ defmodule TechblogWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Logger
   plug TechblogWeb.Plugs.RedirectPlug
+  plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
@@ -37,14 +48,6 @@ defmodule TechblogWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
-
-  # The session will be stored in the cookie and signed,
-  # this means its contents can be read but not tampered with.
-  # Set :encryption_salt if you would also like to encrypt it.
-  plug Plug.Session,
-    store: :cookie,
-    key: "_techblog_key",
-    signing_salt: "qF5BEhB6"
-
+  plug Plug.Session, @session_options
   plug TechblogWeb.Router
 end
