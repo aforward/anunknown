@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source $HOME/.bash_aliases && \
+  MIX_ENV=prod ./bin/package/prerelease && \
+  MIX_ENV=prod mix phx.server

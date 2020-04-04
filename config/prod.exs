@@ -17,8 +17,7 @@ config :techblog,
 # which you should run after static files are built and
 # before starting your production server.
 config :techblog, TechblogWeb.Endpoint,
-  http: [:inet6, port: 4000],
-  url: [port: 4000],
+  http: [port: 4010],
   secret_key_base: {:system, "SECRET_KEY_BASE"},
   live_view: [
     signing_salt: {:system, "SIGNING_SALT"}
@@ -67,4 +66,3 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
-import_config "prod.secret.exs"

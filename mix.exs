@@ -43,7 +43,7 @@ defmodule Techblog.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:diet, github: "pragdave/diet"},
-      {:doex, "~> 0.9"},
+      {:doex, "~> 0.10"},
       {:version_tasks, "~> 0.11"},
       {:fn_expr, "~> 0.3"},
       {:deferred_config, "~> 0.1.0"},
