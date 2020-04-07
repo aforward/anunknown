@@ -6,8 +6,8 @@
 
 export MIX_ENV=${MIX_ENV-prod}
 
-(DIR=$(pwd) && \
-  cd ${DIR} && \
+(DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" && \
+  cd ${DIR}/.. && \
   mix deps.get --only $MIX_ENV && \
   mix compile && \
   npm run deploy --prefix ./assets && \

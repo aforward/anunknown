@@ -4,6 +4,6 @@ export MIX_ENV=${MIX_ENV-prod}
 export SECRET_KEY_BASE=$(mix phx.gen.secret)
 export SIGNING_SALT=$(mix phx.gen.secret)
 
-(DIR=$(pwd) && \
-  cd ${DIR} && \
+(DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" && \
+  cd ${DIR}/.. && \
   mix phx.server)
