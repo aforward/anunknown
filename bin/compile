@@ -8,10 +8,10 @@ export MIX_ENV=${MIX_ENV-prod}
 
 (DIR=$(pwd) && \
   cd ${DIR} && \
-  mix deps.unlock --all && \
-  mix deps.get && \
+  mix deps.get --only $MIX_ENV && \
   mix compile && \
-  (cd assets && npm install --unsafe-perm node-sass) && \
-  (cd assets && npm install --force phoenix_live_view) && \
-  (cd assets && npm install --no-optional && webpack --mode production) && \
+  npm run deploy --prefix ./assets && \
+  # (cd assets && npm install --unsafe-perm node-sass) && \
+  # (cd assets && npm install --force phoenix_live_view) && \
+  # (cd assets && npm install --no-optional && webpack --mode production) && \
   mix phx.digest)
