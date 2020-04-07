@@ -1,14 +1,9 @@
 #!/bin/bash
 
-SECRET_KEY_BASE=$(mix phx.gen.secret)
-SIGNING_SALT=$(mix phx.gen.secret)
+export MIX_ENV=${MIX_ENV-prod}
+export SECRET_KEY_BASE=$(mix phx.gen.secret)
+export SIGNING_SALT=$(mix phx.gen.secret)
 
-source $HOME/.bash_aliases && \
-  MIX_ENV=prod \
-    SECRET_KEY_BASE=$SECRET_KEY_BASE \
-    SIGNING_SALT=$SIGNING_SALT \
-    ./bin/package/prerelease && \
-  MIX_ENV=prod \
-    SECRET_KEY_BASE=$SECRET_KEY_BASE \
-    SIGNING_SALT=$SIGNING_SALT \
-    mix phx.server
+(DIR=$(pwd) && \
+  cd ${DIR} && \
+  mix phx.server)

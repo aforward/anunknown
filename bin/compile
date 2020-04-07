@@ -4,10 +4,14 @@
 # Otherwise you will a permissions error
 # https://github.com/sass/node-sass/issues/1098
 
-mix deps.unlock --all && \
+export MIX_ENV=${MIX_ENV-prod}
+
+(DIR=$(pwd) && \
+  cd ${DIR} && \
+  mix deps.unlock --all && \
   mix deps.get && \
   mix compile && \
   (cd assets && npm install --unsafe-perm node-sass) && \
   (cd assets && npm install --force phoenix_live_view) && \
   (cd assets && npm install --no-optional && webpack --mode production) && \
-  mix phx.digest
+  mix phx.digest)
