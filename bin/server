@@ -1,5 +1,14 @@
 #!/bin/bash
 
+SECRET_KEY_BASE=$(mix phx.gen.secret)
+SIGNING_SALT=$(mix phx.gen.secret)
+
 source $HOME/.bash_aliases && \
-  MIX_ENV=prod ./bin/package/prerelease && \
-  MIX_ENV=prod mix phx.server
+  MIX_ENV=prod \
+    SECRET_KEY_BASE=$SECRET_KEY_BASE \
+    SIGNING_SALT=$SIGNING_SALT \
+    ./bin/package/prerelease && \
+  MIX_ENV=prod \
+    SECRET_KEY_BASE=$SECRET_KEY_BASE \
+    SIGNING_SALT=$SIGNING_SALT \
+    mix phx.server
