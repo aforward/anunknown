@@ -1,0 +1,8 @@
+<article class="publication">
+  <p class="label">Modelsward - 2014</p>
+  <h3>Investigation And Evaluation Of UML Action Languages</h3>
+  <p class="abstract">
+  We analyze the current direction of UML Action Language development and provide a classification of the proposed action language structure and statements. We also present a functioning implementation of an action language and discuss our platform for experimenting with Action Language based systems. We propose a novel approach that adopts a bottom-up technique to defining an action language. This approach embeds the action language into a textual environment that includes the UML modeling elements. Unlike current action languages that typically address class diagrams only, our proposal includes class and state machine modeling abstractions as part of the action language. We tackle the problem of modeling-in-text not by introducing yet another programming language, but instead by providing an increased level of abstraction to existing high level programming languages. Both, a textual representation of the model and its visual view represent the same underlying model but from different vantage points.
+  </p>
+  <p class="citation">Omar Badreddin, Timothy C. Lethbridge, Andrew Forward. Investigation And Evaluation Of UML Action Languages. Modelsward 2014.</p>
+</article>

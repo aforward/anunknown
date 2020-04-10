@@ -1,0 +1,8 @@
+<article class="publication">
+  <p class="label">RSP - 2010</p>
+  <h3>Umple: Towards Combining Model Driven with Prototype Driven System Development</h3>
+  <p class="abstract">
+    The emergence of model driven methodologies is bringing new challenges for software prototyping. Models tend to focus on the design of the system, and are less concerned with, or less able to, support prototype qualities like re-use, evolution, or weaving together independently designed parts. This paper presents a model-oriented prototyping tool called Umple that supports model driven engineering and overcomes some of the challenges related to prototyping in a modeling environment. Umple allows end users to quickly model class and state machine models and to incrementally embed implementation artifacts.  At any point in the modeling process, users can quickly generate a fully functional prototype that exposes modeling implications on the user interface, and allows stakeholders to quickly get a feel of how the full system will behave.
+  </p>
+  <p class="citation">Forward, A., Badreddin, O., and Lethbridge T.C. (2010), "Umple: Towards Combining Model Driven with Prototype Driven System Development", 21st IEEE International Symposium on Rapid System Prototyping, Fairfax VA, June.</p>
+</article>

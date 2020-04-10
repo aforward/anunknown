@@ -1,0 +1,8 @@
+<article class="publication">
+  <p class="label">RE - 2010</p>
+  <h3>Umplification: Refactoring to Incrementally Add Abstraction to a Program</h3>
+  <p class="abstract">
+    Umple adds UML abstractions to a base programming language. The resulting program can be seen as both model and code at the same time. Base languages currently supported include Java, PHP, and Ruby. Umplification is the process of converting a base language program to Umple by a series of refactorings. The result is a program that is semantically equivalent to the original, but which can be rendered and edited as UML diagrams by any modeling tool. Yet, it can still be manipulated as a textual program for those who prefer. In this paper we discuss the basic principles of Umple, the general process of umplification, and our experiences performing it in real contexts, including umplification of the Umple compiler itself.
+  </p>
+  <p class="citation">Lethbridge, T.C., Forward, A. and Badreddin, O. (2010), "Umplification: Refactoring to Incrementally Add Abstraction to a Program", Working Conference on Reverse Engineering, Boston, October 2010, pp. 220-224.</p>
+</article>

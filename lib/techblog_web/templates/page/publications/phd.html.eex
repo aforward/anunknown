@@ -1,0 +1,10 @@
+<article class="publication">
+  <p class="label"><a href="https://eecs.uottawa.ca/~tcl/gradtheses/aforwardphd/">PhD Thesis - 2010</a></p>
+  <h3>The Convergence of Modeling and Programming: Facilitating the Representation of Attributes and Associations in the Umple Model-Oriented Programming Language</h3>
+  <p class="abstract">
+    This thesis  investigates  approaches to model-driven development (MDD) in which developers
+    can keep using their familiar textual programming languages, but with additional modeloriented concepts. The added concepts include associations and attributes as found in the
+    Unified Modeling Language  (UML),  as  well  as  concepts  from  software  patterns  and  other
+    common programming abstractions.
+  </p>
+</article>
