@@ -1,0 +1,7 @@
+<div class="snippet">
+<h2>Scratch The Card Below</h2>
+<p>A simple implementation of a scratch card program using JQuery.</p>
+<div class="effect" id="scratchcard">
+  Does this work?
+</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="snippet">
+<h2>Which Port is a Process Running On</h2>
+
+<p>Find which process is listening on a certain port</p>
+
+<pre>
+  lsof -i :12345 # for port 12345
+</pre>
+</div>

@@ -1,0 +1,8 @@
+<div class="snippet">
+  <h2>
+    Create a public / private key
+  </h2>
+<pre>
+ssh-keygen -t rsa
+</pre>
+</div>

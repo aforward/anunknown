@@ -1,0 +1,12 @@
+<div class="snippet">
+  <h2>
+    Checking Out New Git Branches
+  </h2>
+  <p>
+    First locat the branches, then checkout the one you want (e.g. origin/demo1)
+  </p>
+<pre>
+git branch -r
+git checkout --track -b demo1 origin/demo1
+</pre>
+</div>

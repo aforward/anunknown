@@ -1,0 +1,11 @@
+<div class="snippet">
+<h2>Destroy All RabbitMQ Queues</h2>
+<p>Should only be done on a dev machine:</p>
+<pre class="code">
+  rabbitmqctl stop_app
+  rabbitmqctl reset
+  rabbitmqctl start_app
+</pre>
+</div>
+
+

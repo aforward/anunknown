@@ -1,0 +1,12 @@
+<div class="snippet">
+  <h2>
+    Undo the last pushed commited
+  </h2>
+  <p>
+    If you already committed the change, then you need to do hard resets:
+  </p>
+<pre>
+git reset --hard HEAD~1
+git push -f
+</pre>
+</div>

@@ -1,0 +1,7 @@
+<div class="snippet">
+<h2>Faster Macbook Pro Wakeups</h2>
+<p>A longer discussion at <a href="https://blog.ewal.net/fixing-slow-wake-for-macbook-pro-w-retina-display/">ewal.net</a>.</p>
+<pre>
+  sudo pmset -a standbydelay 86400 # only standby after 24 hours
+</pre>
+</div>

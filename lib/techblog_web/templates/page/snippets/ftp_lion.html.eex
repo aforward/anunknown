@@ -1,0 +1,11 @@
+
+<div class="snippet">
+<h2>Enable FTP on Mac OS X Lion</h2>
+<pre>
+  # enable the ftp server
+  sudo -s launchctl load -w /System/Library/LaunchDaemons/ftp.plist
+
+  #disable the server when you are done
+  sudo -s launchctl unload -w /System/Library/LaunchDaemons/ftp.plist
+</pre>
+</div>

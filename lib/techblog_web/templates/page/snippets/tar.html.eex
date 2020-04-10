@@ -1,0 +1,22 @@
+<div class="snippet">
+<h2>Tar / Untar a file</h2>
+
+<p>Compress a directly into a tar.gz file:</p>
+
+<pre>
+  tar cvzf myapp.tar.gz myapp/
+</pre>
+
+<p>Uncompress that file back into a directory:</p>
+
+<pre>
+  tar zxfv myapp.tar.gz
+</pre>
+
+<p>Uncompress a gz zip (no tar):</p>
+
+<pre>
+gzcat x.txt.gz >x.txt
+gunzip -c x.txt.gz >x.txt
+</pre>
+</div>

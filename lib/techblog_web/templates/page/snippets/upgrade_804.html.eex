@@ -1,0 +1,23 @@
+<div class="snippet">
+<h2>Fixing Mount Issues When Upgrading to From Ubuntu 8.04</h2>
+
+<p>The following will get you SSH access back</p>
+<pre>
+mount -n -o remount,rw /
+mkdir /var/run/network
+/etc/init.d/networking restart
+mkdir /dev/pts
+mount /dev/pts
+/etc/init.d/ssh restart
+</pre>
+
+<p>Next to start-up the services you care about</p>
+<pre>
+  sudo /etc/init.d/apache2 start
+  sudo /etc/init.d/cron start
+  sudo service mysql start
+</pre>
+
+<!-- http://ubuntuforums.org/showthread.php?p=8761758 -->
+<!-- http://ubuntuforums.org/showthread.php?t=1423305 -->
+</div>

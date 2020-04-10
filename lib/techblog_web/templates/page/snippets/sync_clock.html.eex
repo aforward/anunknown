@@ -1,0 +1,16 @@
+
+S3 Error: The difference between the request time and the current time is too large
+
+sudo date 073014202013.00
+
+nn is a two digit month, between 01 to 12
+dd is a two digit day, between 01 and 31, with the regular rules for days according to month and year applying
+hh is two digit hour, using the 24-hour period so it is between 00 and 23
+mm is two digit minute, between 00 and 59
+yyyy is the year; it can be two digit or four digit: your choice. I prefer to use four digit years whenever I can for better clarity and less confusion
+ss is two digit seconds. Notice the period ‘.’ before the ss.
+
+
+https://www.google.ca/search?q=current+utc+time&oq=current+utc+time&aqs=chrome.0.69i57j5j0l2j69i62l2.2109j0&sourceid=chrome&ie=UTF-8
+http://codeghar.wordpress.com/2007/12/06/manage-time-in-ubuntu-through-command-line/
+http://stackoverflow.com/questions/4770635/s3-error-the-difference-between-the-request-time-and-the-current-time-is-too-la

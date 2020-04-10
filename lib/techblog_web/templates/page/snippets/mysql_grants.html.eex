@@ -1,0 +1,19 @@
+<div class="snippet">
+<h2>Granting access to mysql users</h2>
+<pre class="code brush: sql;">
+  SHOW GRANTS FOR deployer
+  # ALL ACCESS
+  GRANT ALL ON myshop.* TO 'deployer'@'%' IDENTIFIED BY 'pass' ;
+  # SELECT ONLY, and filtered by IP
+  GRANT SELECT ON myshop.* TO deployer@'192.168.1.%' IDENTIFIED BY 'pass';
+  # Or by domain name
+  GRANT SELECT ON myshop.* TO deployer@'webapp.myserver.com' IDENTIFIED BY 'pass';
+  FLUSH PRIVILEGES;
+</pre>
+
+<h2>Removing access to mysql users</h2>
+
+<pre class="code brush: sql;">
+  REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'deployer'@'%';
+</pre>
+</div>

@@ -1,0 +1,9 @@
+<div class="snippet">
+  <h2>Clean / Clear / Delete Rails Databse Sessions</h2>
+
+  <p>Don't forget to clear your sessions every once in a while</p>
+
+  <pre>
+    rake db:sessions:clear
+  </pre>
+</div>

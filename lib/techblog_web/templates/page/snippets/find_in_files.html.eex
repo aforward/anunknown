@@ -1,0 +1,9 @@
+
+<div class="snippet">
+<h2>Find text in files within a directory</h2>
+<pre>
+  grep -r "some words reward" /path/tp/look/*
+</pre>
+</div>
+
+

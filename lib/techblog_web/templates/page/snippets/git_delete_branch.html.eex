@@ -1,0 +1,16 @@
+<div class="snippet">
+  <h2>Deleting Git Branches</h2>
+  <p>
+    Delete the "demo_maintenance" branch on the "origin" remote server.
+  </p>
+<pre>
+git push origin :demo_maintenance # deletes the remote branch
+git branch -d demo_maintenance # deletes the local branch
+</pre>
+  <p>
+    If you need to 'force' the delete on your local machine, use -D
+  </p>
+<pre>
+git branch -D demo_maintenance # deletes the local branch
+</pre>
+</div>

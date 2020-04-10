@@ -1,0 +1,18 @@
+<div class="snippet">
+<h2>Granting passwordless access to root on RHEL</h2>
+
+<p>
+  When running CHEF, it needs root access, so if you are using something like chef-solo, and you like
+  automated scripts, then here is how grant that access.  PLEASE NOTE, THIS IS VERY UNSAFE, to
+  avoid try, consider using <a href="https://github.com/aforward/chef-bootstrap">CHEF BOOTSTRAP</a>.
+</p>
+
+<pre>
+  $ mkdir -p /root/.ssh
+  $ chmod 700 /root/.ssh
+  $ chmod 600 /roiot/.ssh/authorized_keys
+  $ restorecon -R -v /root/.ssh
+</pre>
+</div>
+
+

@@ -1,0 +1,21 @@
+
+<div class="snippet">
+  <h2>Install older version of HTML to PDF (wkhtmltopdf) using Homebrew on a Mac</h2>
+  <p>Bug with current version that will cause the process to not exit properly:</p>
+  <pre>
+    brew uninstall wkhtmltopdf
+    cd /usr/local/Library/Formula/
+    git checkout 6e2d550 /usr/local/Library/Formula/wkhtmltopdf.rb
+    brew install wkhtmltopdf
+    wkhtmltopdf --version | grep 0.9.9
+  </pre>
+
+  <p>
+    Ticket was described <a href="https://code.google.com/p/wkhtmltopdf/issues/detail?id=141">here</a>, but now the site (and history)
+    have for <a href="https://wkhtmltopdf.org/">wkhtmltopdf.org</a> have moved.
+    Thank you to <a href="http://wearepandr.com/blog/article/homebrew-and-installing-old-package-versions">wearepandr</a></p>
+</div>
+
+
+
+

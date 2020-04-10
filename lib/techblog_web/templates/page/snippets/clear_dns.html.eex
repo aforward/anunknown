@@ -1,0 +1,10 @@
+<div class="snippet">
+<h2>Clear Your Local DNS Cache</h2>
+<pre>
+  dscacheutil -flushcache
+</pre>
+<p>On newer Macs, somethings this works too.</p>
+<pre>
+  sudo killall -HUP mDNSResponder
+</pre>
+</div>

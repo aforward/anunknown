@@ -1,0 +1,4 @@
+
+
+docker run -p 5000 samalba/docker-registry
+docker tag busybox reg.mydomain.com:5000/busybox

@@ -1,0 +1,25 @@
+<class class="snippet">
+<script type="text/javascript" src="scripts/tempconvert/paper.js"></script>
+<script type="text/paperscript" src="scripts/tempconvert/paper_loader.js" canvas="temperature"></script>
+<link rel="stylesheet" href="styles.css"> 
+
+<style>
+.wrapper { border: 1px solid white; height:150px; width:250px; padding: 20px; background-color:#DDD; color: #777; }
+.canvas { float: left; height:150px; width:70px; }
+.numbers { padding: 0 0 0 5px; float: left; }
+.numbers input { width: 50px; border: 1px solid #222222; }
+.numbers div { padding: 2px 0 0 0;}
+.clear-all { clear:both; }
+</style>
+
+  <h1>Using Paper.js To Create a Simple Temperature Converter</h1>
+  
+  <div class="wrapper">
+    <div class="canvas"><canvas id="temperature" height="500px" width="70px"> </canvas></div>
+    <div class="numbers">
+      <div><input id="celcius" value="0" /> Celcius</div>
+      <div><input id="fahrenheit" value="32" /> Fahrenheit</div>
+    </div>
+    <div class="clear-all"> </div>
+  </div>
+</div>

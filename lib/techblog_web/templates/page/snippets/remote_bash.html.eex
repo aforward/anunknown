@@ -1,0 +1,15 @@
+<div class="snippet">
+<h2>Run A Script Remotely Using SSH</h2>
+
+<p>For simple scripts, just pass them via a quoted string.</p>
+
+<pre>
+  ssh name@server.com 'ls -la'
+</pre>
+
+<p>For more complicated scripts, put them in a local file and stream them to the server.</p>
+
+<pre>
+  ssh name@server.com 'bash -s' < local_script.sh
+</pre>
+</div>

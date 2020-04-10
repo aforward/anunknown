@@ -1,0 +1,33 @@
+<div class="snippet">
+<h2>Dealing with CSV files and MS Excel (.xls / .xlsx)</h2>
+
+<p>When dealing with CSV, you need to get your encodings correct.Excel will typically export to ISO-8859-1. This is not good, and should be converted to UTF-8 to support non english files.</p>
+
+<p>To check the encoding of a file
+
+<pre>
+  file -I original_file.csv
+</pre>
+
+<p>To convert between encodings (a few common examples)</p>
+
+<pre>
+  iconv --from-code=ISO-8859-1 --to-code=UTF-8 original_file.csv > new_file.utf8.csv
+  iconv --from-code=MacRoman --to-code=UTF-8 original_file.csv > new_file.utf8.csv
+</pre>
+
+<p>When exporting files to be read within Excel, you will need to convert the CSV based on the target platform.</p>
+
+<p>For MAC</p>
+
+<pre>
+  iconv --from-code=UTF-8 --to-code=MacRoman downloaded_file.csv > downloaded_file_mac.excel.csv
+</pre>
+
+<p>For PC (untested)</p>
+
+<pre>
+  iconv --from-code=UTF-8 --to-code=Windows-1252 downloaded_file.csv > downloaded_file_windows.excel.csv
+</pre>
+
+</div>

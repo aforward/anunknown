@@ -1,0 +1,11 @@
+<div class="snippet">
+  <h2>
+    Undo a local commit
+  </h2>
+  <p>
+    If you committing a git change locally, you can undo it using the following command:
+  </p>
+<pre>
+git reset --soft HEAD^
+</pre>
+</div>

@@ -1,0 +1,7 @@
+<div class="snippet">
+<h2>Execute a single MySQL statement from command line</h2>
+
+<pre>
+  mysql -u myname -pmypassword -D mydb -e "show tables"
+</pre>
+</div>
