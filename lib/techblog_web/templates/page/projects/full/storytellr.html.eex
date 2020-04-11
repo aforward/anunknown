@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <div class="row project_summary">
+    <div class="project_content blah">
+      <h1>Storytellr, Tell the same story - better</h1>
+      <p>
+        The <a href="https://cruise.site.uottawa.ca/storytellr/" title="Storytellr multimedia authoring tool" class="external">Storytellr</a> authoring tool generates multimedia stories from user-provided sources.
+        Stories are written in grin and presented as multimedia movies played on a story canvas.
+      </p>
+
+      <p>
+        The intended audience is lightly-technical, and / or end-user technical. The end users may be
+        familiar with how to use a computer, but are unaware and indifferent to technologies like Java,
+        XML, and <a href="http://www.w3.org/TR/REC-smil/" class="external">SMIL</a>. The users are only casually interested in storytelling and do not have enough
+        interest in learning (or acquiring) authoring tools such as PowerPoint, iMovie, or Adobe Premiere.
+      </p>
+
+      <p>
+        An example story is shown below:
+      </p>
+
+      <div class="example">
+        @default {duration:3 sec}
+        @default {bgcolor: black}
+        @fast {duration: 2sec}
+
+        My dear animals
+
+        play qo.mp3
+        image 03.jpg This was my first pet ever
+        image 03.jpg But it ate way too much!
+        text
+          So I had to give it
+          to the zoo :(
+        endtext
+        label
+          Then a friend got me
+          this one for christmas
+        endlabel
+        image 04.jpg
+        image 05.jpg But she fell for this guy and ran away :S
+        stop
+
+        {duration:1 sec; position: top-left}Then I decided
+        {duration:1 sec; position: middle}I wanted
+        {duration:1 sec; position: bottom-right}a small pet
+
+        play roar.wav
+        {duration:4 sec;position: top}image 10.jpg So I ended up keeping this little guy!
+        {duration:30 sec}THE END
+        stop
+      </div>
+
+      <p>
+        The Storytellr compiler was written in Java using a Flash library to translate the stories for
+        presentation on the web.  Storytellr also supports SMIL, a multimedia XML language.  The
+        <a href="https://cruise.site.uottawa.ca/storytellr/" title="Storytellr Web Application" class="external">web application</a> is written in PHP.
+      </p>
+
+    </div>
+  </div>
+</div>

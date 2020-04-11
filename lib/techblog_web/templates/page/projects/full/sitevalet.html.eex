@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="row project_summary">
+    <h1>SiteValet - Hospitality Websites</h1>
+    <p>
+      SiteValet is a simple online tool to create, manage and host your website. It’s built specifically for inns, B&Bs and small hotels.
+    </p>
+
+    <div class="project_content">
+      <img src="/i/sitevalet/homepage.png" alt="SiteValet - Hospitality Websites" class="screen_shot" />
+
+      <h3>Application Overview</h3>
+      <p>
+        SiteValet is developed in Ruby (1.8) and Rails (2.3.4).  Andrew Forward was a senior software architect
+        dealing with all aspects of the software development life-cycle including requirements, design, implementation,
+        testing, deployment, maintenance, and monitoring.  The back-end is data is stored in MySQL and photos and documents
+        at stored in the cloud using Amazon S3 APIs.
+      </p>
+
+      <p>
+        The application is deployed using Capistrano and is run on an Enterprise Ruby edition integrated with Nginx
+        and Passenger.
+      </p>
+
+      <p>The application is tested using RubyUnit and Parallel (to execute the tests on all available test machine CPUs).
+        We have started to use both Selenium and WebTest as part of our pre-deploy UAT smoke test.  The code is managed
+        in a GIT repository and the central repository is managed by GitHub.  Our application servers are hosted at
+        Rackspace, and our staging environment is available at Slicehost.
+      </p>
+
+      <img src="/i/sitevalet/inn.png" alt="SiteValet - Hospitality Websites" class="screen_shot" />
+
+      <p>
+        Andrew managed client expectations, progress and defect tracking using Lighthouse App.  The process allowed our team to work remotely and stay coordinated regarding which issues had been resolved, which were pending resolution and which were still outstanding.  Andrew worked closely with several graphic designers to align the development of the CSS and stylesheets with the graphic design templates.
+      </p>
+
+      <img src="/i/sitevalet/lighthouse.png" alt="SiteValet - Lighthouse defect tracking" class="screen_shot" />
+
+      <p>
+        Andrew developed a back-end facility to manage the upload of several gigabytes of images using a secure channel that bypassed the web server front-end.  From our monitoring metrics, this had a positive impact on the responsiveness of the application.  Andrew developed a similar ability for the bulk upload of plain and rich text; all based on our existing infrastructure, but consolidated into one component for massively large edits.
+      </p>
+
+      <p>SiteValet allows custom domains (e.g. Hillhurst Inn) to manage the data within SiteValet, but present
+        the website itself at its own address (e.g. hillhurst.com).
+      </p>
+
+      <img src="/i/sitevalet/example.png" alt="SiteValet - Example Generated Inn" class="screen_shot" />
+
+
+      <h3>Technology Overview</h3>
+      <p>
+        AJAX, Amazon S3, crontab, CSS 2.0, DNS, FireFox, GIT, Internet Explorer 6 (IE 7, IE 8), ImageMagick, ImageScience, JavaScript, JQuery, LighthouseApp, Linux (Ubtuntu 8.04), Max OS X, Mongrel, MySQL, Nginx, Passenger, Prototype, Rackspace, Ruby (1.8), Ruby on Rails (2.3.4), RubyUnit, Selenium, Slicehost, XHTML, XML
+      </p>
+
+    </div>
+
+  </div>
+</div>

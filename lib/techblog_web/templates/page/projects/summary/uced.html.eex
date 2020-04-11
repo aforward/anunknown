@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "uced",
+  title: "UCed - Use Case Editor",
+  description: "A tool to document and simulate use cases within a particular domain.",
+  status: "Completed",
+  dates: "2002",
+  technologies: "Java, SWT, Ant",
+  image: "images/projects/uced/uced_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

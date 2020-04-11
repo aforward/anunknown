@@ -1,0 +1,23 @@
+
+<div class="wrapper">
+  <div class="row project_summary">
+    <div class="project_content blah">
+      <h1>Use Case Editor</h1>
+
+      <p>
+        The <a href="https://eecs.uottawa.ca/~ssome/Use_Case_Editor_UCEd.html" class="external">Use Case Editor</a> integrates a set of tools for use cases edition, domain model edition and
+        requirements simulation. Based on use cases and a domain model description, UCEd generates a
+        state model that realizes the use case.
+      </p>
+
+      <img src="/i/uced/screen_shot.png" class="screen_shot" title="UCed screen shot" />
+
+      <p>
+        Dr. Forward was the lead designer building a Use Case Editor with Dr. Stephane Somé at the University of
+        Ottawa to development, maintain and simulate a user case domain model.  The project was built using
+        Java and SWT user interface library.  The application was tested using JUnit and built using Ant.
+      </p>
+
+    </div>
+  </div>
+</div>

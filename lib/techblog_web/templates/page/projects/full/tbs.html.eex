@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="row project_summary">
+    <div class="image">
+      <img src="/i/tbs/tbs.png" alt="A set of internal applications to help the Federal Government publish their yearly numbers in the Blue Book" class="project" />
+    </div>
+    
+    <div class="project_content">
+      
+      <p>
+      Andrew was involved with bringing the Treasury Board Secretariat's Blue Book application online.  We
+      helped transform a set of distinct internal silo application into a consolidated and online version.
+      </p>
+      
+      <p>
+      Involved in the entire software development life-cycle from shaping the methodology itself to supporting the 
+      software once deployed.  Highlights from this experience include:
+      </p>
+      
+      <ul>
+        <li>Helped deliver the first iteration using an agile approach (elements of eXtreme Programming)</li>
+        <li>Introduced coding techniques to simplify automated testing</li>
+        <li>Managed a small team of four developers</li>
+      </ul>
+    
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<?php
+  $project = $GLOBALS["viewables"]["locals"]["project"]
+?>
+<div class="span4">
+  <div class="project_portfolio">
+    <div class="project_image"><?php echo $project->homepage(); ?></div>
+    <h3><?php echo $project->anchor($project->getName()); ?></h3>
+    
+    <div class="summary">
+      <?php echo $project->getSummary(); ?>
+    </div>
+    <dl>
+      <dt>Status:</dt>
+      <dd><?php echo $project->getStatus(); ?></dd>
+      <dt>Technologies:</dt>
+      <dd><?php echo $project->getTechnologies(); ?></dd>
+    </dl>
+    <?php $project ?>
+    <div class="clearall">&nbsp</div>
+  </div>  
+</div>

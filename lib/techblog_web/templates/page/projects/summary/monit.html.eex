@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "monit",
+  title: "Monit - Monitoring System Health",
+  description: Phoenix.HTML.raw("<a href=\"https://mmonit.com/monit/\" class=\"external\">Monit</a> is a monitoring tool to <b>manage your server</b> including running processes, memory and cpu usage, and file and filesystem monitoring."),
+  status: "Completed",
+  dates: "2010-2015",
+  technologies: "Monit, M/Monit, Chef",
+  image: "images/projects/monit/monit_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

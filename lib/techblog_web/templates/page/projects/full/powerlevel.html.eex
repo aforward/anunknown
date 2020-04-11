@@ -1,0 +1,186 @@
+
+<div class="wrapper">
+  <div class="row project_summary">
+    <div class="project_content blah">
+      <h1>PowerLevel</h1>
+      <p>
+        The software, a Customer–to–Customer platform for Real Money Trades (RMT) has been built as a software application,
+        not simply a website.  The strict development process is based on software quality and automation.
+        The platform itself has transformed the concept basic auction software into a full-featured system geared specifically to
+        MMORPG (Massively Multiplayer Online Role Playing Games).  <a href="/i/powerlevel/C2CPlatformSpec.pdf" class="internal">Detailed Platform Specification</a>
+      </p>
+
+      <img src="/i/powerlevel/logo.png" title="PowerLevel Logo" class="screen_shot" />
+
+      <p>
+        The application supports the following services:
+      </p>
+      <ul>
+        <li>Various Listing Types including Currency, Accounts, Items, and Guides</li>
+        <li>Currency Manager for high volume sellers</li>
+        <li>Service Manager for power levellers</li>
+        <li>Inquiry / Order mechanism integrated with PayPal</li>
+        <li>Instant messaging client (for Inquiry / Order mechanism)</li>
+        <li>Feedback mechanism</li>
+        <li>3rd party integration with Ebay and Google (Froogle)</li>
+      </ul>
+
+      <img src="/i/powerlevel/screenshot1.png" title="PowerLevel screen shot" class="screen_shot" />
+
+      <p>The application was later rebranded as LootXchange.</p>
+
+      <img src="/i/powerlevel/screenshot2.png" title="LootXchange screen shot" class="screen_shot" />
+
+      <h2>Technology Overview</h2>
+
+      <p>
+        PowerLevel was implemented using ASP.Net 1.1 (C#), MySql, and IIS 6 running on a Windows 2003 Server.  The
+        user interface was built using HTML, CSS, Javascript, and AJAX.  The application integrates with PayPal, Ebay and
+        PlayerAuctions.com.
+      </p>
+
+      <img src="/i/powerlevel/technologies.png" title="ASP.Net, MySql, Javascript, Ajax, Windows 2003 Server" class="screen_shot" />
+
+      <h3>Subversion and Ant (Build and Deploy)</h3>
+      <p>
+        The application was deployed using Subversion and Ant.  These scripts were used to not only build and deploy
+        the application, but also used to automate other aspects of the project including unit and integration testing,
+        back-up and recovery routines, application versionning, metrics collection and source code documentation.
+      </p>
+
+      <img src="/i/powerlevel/automation.png" title="automation" class="screen_shot" />
+
+      <h3>CruiseControl.net (Continuous Integration)</h3>
+
+      <p>
+        We used
+        <a href="https://sourceforge.net/projects/ccnet/" title="CruiseControl.net" class="external">CruiseControl.Net</a> to
+        manage our continuous integrate and build server.
+      </p>
+
+      <img src="/i/powerlevel/cruisecontrol.png" title="build process" class="screen_shot" />
+
+      <p>
+        The benefits of continuous integration include prompt resolution of issues that arise in multi-person teams;
+        Most bugs are identified within minutes of being introduced (as opposed to days or weeks).  This immediate feedback can be easily traced back to the interactions causing the failure.
+        Continuous integration itself does not reduce bugs, but rather it is the discipline of developer testing, code coverage and analysis required for continuous integration.
+      </p>
+
+      <p>
+        The net result of continuous integration will be increased productivity by reducing the time spent chasing down integration bugs.  As testing becomes the foundation for development, the application will be actually become more testable, have fewer bugs (all types) and will promote a more modular design.
+        Quality can improve as developers are consistency working with the latest version of the code.
+        Increased productivity can be achieved as less time is spent verifying consistency / regressions across the entire suite of applications.
+        There are low implementation costs to achieve continuous integration as most tools are freely available as open source.
+      </p>
+
+      <h3>WebTest (ASP.Net UI Testing)</h3>
+
+      <p>
+        We also developed a web testing framework called WebTest to enable more efficient testing of web pages by
+        emulating web specific attributes like sessions, requests and cookies.  This module allowed most aspects of the UI
+        to be tested using NUnit.
+      </p>
+
+      <h3>Selenium (UAT Testing)</h3>
+
+      <p>For aspects that could not be easily tested using NUnit, we used a testing tool called
+        <a href="https://www.selenium.dev/" title="Using Selenium for UAT Testing" class="external">Selenium</a>.  Selenium is
+        a replay testing tool
+        written in an instruction-oriented domain specific language (DSL).  Selenium allows for test execution performed within a
+        browser and reflects the actual use of the application, not a simulation.  Selenium is best suited for UAT,
+        and configuration / smoke testing.
+      </p>
+
+      <img src="/i/powerlevel/selenium.png" title="UAT testing using Selenium" class="screen_shot" />
+
+      <h2>User Base</h2>
+
+      <p>
+        The PowerLevel application was available online from April 2005 to Feb 2007.
+        During that time, 1080 users signed up for an account, of which 709 completed the registration process.
+      </p>
+
+      <h2>Software Quality</h2>
+
+      <p>
+        The software development approach to PowerLevel promoted the idea of software health.  This approach to software development looks
+        at quality as a property of software over a period of time (instead of at a particular moment in time).  Automated
+        testing helps to determine the quality at a particular moment, but additional key factors when evaluating
+        software health include looking at properties such as: number of defects / bugs, compiling
+        (i.e. how often build fails), running tests (i.e. how often/many tests are run), regressions (i.e. how long to fix failures),
+        and code coverage.
+      </p>
+
+      <p>
+      By promoting consistent developer testing the internal quality of the software remains high and this promotes better software health.
+      That does not mean the software will be defect free, but rather, dealing with these issues is more manageable.
+      </p>
+
+      <p>
+        The project had over 8000 unit tests split between five projects.
+      </p>
+
+      <img src="/i/powerlevel/testing.png" title="Testing results using NUnit" class="screen_shot" />
+
+      <p>
+        A summary of the unit testing results from <a href="#" class="external">NUnit</a> is shown below.
+      </p>
+
+      <table class="chart">
+        <tr>
+          <th>Name</th><th>Tests</th><th>Failures</th><th>Errors</th><th>Success Rate</th><th>Time(s)</th>
+        </tr>
+        <tr>
+          <td>Summary</td><td>8667</td><td>0</td><td>0</td><td>100.00%</td><td>3140.750</td>
+        </tr>
+        <tr>
+          <td>plnetItemsImporter.exe</td><td>60</td><td>0</td><td>0</td><td>100.00%</td><td>0.594</td>
+        </tr>
+        <tr>
+          <td>powerlevel.deploy.dll</td><td>833</td><td>0</td><td>0</td><td>100.00%</td><td>1083</td>
+        </tr>
+        <tr>
+          <td>powerlevel.dll</td><td>5218</td><td>0</td><td>0</td><td>100.00%</td><td>2008</td>
+        </tr>
+        <tr>
+          <td>powerlevel.schedule.dll</td><td>53</td><td>0</td><td>0</td><td>100.00%</td><td>1.797</td>
+        </tr>
+        <tr>
+          <td>powerlevel.website.dll</td><td>2501</td><td>0</td><td>0</td><td>100.00%</td><td>46</td>
+        </tr>
+        <tr>
+          <td colspan="6">Note: failures are anticipated and checked for with assertions while errors are unanticipated.</td>
+        </tr>
+      </table>
+
+      <p>
+        Using NCover, the unit tests above produce the following statement coverage of the application.
+      </p>
+
+      <table class="chart">
+        <tr>
+          <th>Name</th><th>% Statement Covered</th><th>% Not Covered</th>
+        </tr>
+        <tr>
+          <td>plnetItemsImporter.exe</td><td>91.08%</td><td>8.92%</td>
+        </tr>
+        <tr>
+          <td>powerlevel.deploy.dll*</td><td>15.22%</td><td>84.78%</td>
+        </tr>
+        <tr>
+          <td>powerlevel.dll</td><td>84.33%</td><td>15.67%</td>
+        </tr>
+        <tr>
+          <td>powerlevel.schedule.dll</td><td>97.63%</td><td>2.37%</td>
+        </tr>
+        <tr>
+          <td>powerlevel.website.dll</td><td>95.66%</td><td>4.34%</td>
+        </tr>
+        <tr>
+          <td colspan="6">*Note: The powerlevel.deploy.dll was used for testing (not a production component), hence the low coverage.</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>

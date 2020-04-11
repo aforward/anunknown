@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "devops",
+  title: "DevOps - Automating Automation",
+  description: "Units tests are never enough.  We automate the running of the tests, the deployment of your apps, the configuration of your cloud, etc.",
+  status: "Active",
+  dates: "2000-",
+  technologies: "Git, xUnit, Bash, Travis CI, Circle CI, Amazon S3, Chef, Puppet",
+  image: "images/projects/devops/devops_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

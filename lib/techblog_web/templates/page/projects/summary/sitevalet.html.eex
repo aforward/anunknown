@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "sitevalet",
+  title: "SiteValet - Hospitality Websites",
+  description: "SiteValet is a simple online tool to create, manage and host your website. It’s built specifically for inns, B&Bs and small hotels.",
+  status: "Inactive",
+  dates: "2008-2018",
+  technologies: "Ruby On Rails, JavaScript, MySql, Amazon S3, RackSpace",
+  image: "images/projects/sitevalet/sitevalet_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

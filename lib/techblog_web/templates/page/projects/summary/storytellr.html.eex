@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "storytellr",
+  title: "Stortellr - Slideshow DSL",
+  description: "A simple text based language for creating online stories - mixing text, images and music.",
+  status: "Inactive",
+  dates: "2006",
+  technologies: "Java, Flash, PHP, HTML, CSS",
+  image: "images/projects/storytellr/storytellr_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

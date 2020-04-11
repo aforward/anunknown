@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "keg",
+  title: "Ottawa Keg Schedules",
+  description: "Allows management to post schedules onlines to allow access 24/7 to all staff",
+  status: "Inactive",
+  dates: "2007-2016",
+  technologies: "PHP, JavaScript, HTML, CSS, PDFs, Apache",
+  image: "images/projects/keg/keg_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

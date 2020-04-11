@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <div class="row project_summary">
+    <h1>Ottawa Keg Schedules</h1>
+    <p>
+      Allows management to post schedules onlines to allow access 24/7 to over 100 staff
+      from servers, bartenders, cooks and dishwashers.  Simple design,
+      simple features.
+      Developed using <a href="https://www.php.net/" class="external">PHP</a>, HTML, <a href="http://sass-lang.com/">SASS</a>, CSS, <a href="https://gumbyframework.com" class="external">GumbyFramework</a> and running on Nginx.  Version control and
+      deployment using GIT.
+    </p>
+
+    <div class="project_content">
+
+      <img src="/i/keg/homepage_large.png" alt="The Keg Schedules Home Page" class="screen_shot" />
+
+      <h3>Upload new schedules</h3>
+      <p>The management from each keg can upload either Front-of-House (servers / bartenders),
+      or Back-of-House (cooks, salad tenders) schedules.</p>
+      <img src="/i/keg/admin.png" alt="the Keg Schedules Administration Page" class="screen_shot" />
+
+      <h3>View schedules</h3>
+      <p>Each keg restaurant is assigned an access code, and using that passcode staff members
+      are given access to only their schedules</p>
+      <img src="/i/keg/staff.png" alt="the Keg Schedules Staff Page" class="screen_shot" />
+
+      <h3>Pick-up or Drop Shifts</h3>
+      <p>Finally, staff members might need to drop a shift due to a scheduling conflict,
+      or to pick up a shift to earn extra money.  This feature provides a virtual wall
+      for staff to post pick-up or drop requests.</p>
+      <img src="/i/keg/pickup_or_drop.png" alt="the Keg Schedules Staff Pick Up/Drop Page" class="screen_shot" />
+
+      <h2>Technology, Process and Project Overview</h2>
+
+      <p>
+      This application is very simple, and serves a very specific need.  It
+      was developed using <a href="https://www.php.net/" class="external">PHP</a>, and runs on an
+      <a href="https://nginx.org/" class="external">Nginx</a> web server.
+      Although a small application, the project's process is fairly formal.  The application
+      is versionned using a <a href="https://git-scm.com/" class="external">Git</a> repository.  Git is also
+      used to deploy the application to our QA and PROD environments.
+      </p>
+      <img src="/i/keg/project_structure.png" alt="the Keg Schedules Staff project structure" class="screen_shot" />
+
+      <h4>The SimpleTest automated Test Suite</h4>
+      <p>The model layer was tested using SimpleTest.</p>
+      <img src="/i/keg/simpletest.png" alt="The Keg Schedules simple test results" class="screen_shot" />
+
+      <h4>Application Monitoring</h4>
+      <p>The application uses <a href="https://mon.itor.us" class="external">mon.itor.us</a> to monitor
+      the status of our application.  Email notifications help our team to reach to issues
+      within minutes instead of days.</p>
+      <img src="/i/keg/monitorus.png" alt="Mon.itor.us Web Service" class="screen_shot" />
+
+      <div style="display:none">
+        <h4>Project Structure</h4>
+        <p>We store schedules
+        on the file-system outside of the websites public path (so files cannot be accessed
+        directly); providing sufficient security to manage the privacy needs of the users.
+        </p>
+        <img src="/i/keg/project_structure.jpg" alt="The Keg Schedules development project structure" class="screen_shot" />
+      </div>
+    </div>
+
+  </div>
+</div>

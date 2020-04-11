@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "chef",
+  title: "Engineering in the Cloud Using Chef",
+  description: "Using CHEF to automate your infrastructure.  DevOps provides an excellent framework for managing even the smallest of projects in a consistent, measured and controlled way (i.e. like an engineer).  Also includes an introduction to MapReduce.",
+  status: "Completed",
+  dates: "2015",
+  technologies: "Chef, Ruby, Bash, Elixir, Erlang, MapReduce, Hadoop",
+  image: "images/projects/chef/chef_thumbnail.png",
+}
+render("projects/summary.html", %{data: data})
+%>

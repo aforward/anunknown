@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "tbs",
+  title: "Treasury Board Secretariat",
+  description: "A set of internal applications for Treasury Board of Canada Secretariat (TBS) to help the Federal Government publish their yearly numbers in the Blue Book.",
+  status: "Completed",
+  dates: "2003-2005",
+  technologies: "ASP.Net, C#, Ant, CruiseControl.Net, RedAntz, SqlServer",
+  image: "images/projects/tbs/tbs_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

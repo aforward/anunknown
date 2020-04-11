@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "umple",
+  title: "Umple - A model oriented programming language",
+  description: "A programming language (and suite of tools) that supports modeling concepts like associations and statemachines. Online editor, comand line parser, Eclipse / IBM RSX plugins.",
+  status: "Active",
+  dates: "2006-2012",
+  technologies: "Java, PHP, C, Ruby, JavaScript, Ecplise, CruiseControl",
+  image: "images/projects/umple/umple_thumbnail.png",
+}
+render("projects/summary.html", %{data: data})
+%>

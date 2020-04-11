@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "documentation",
+  title: "Documentation - Automate It!",
+  description: "Documentation Driven Design (DDD), documentation as a first class entity, code now reflect business level info and easily publishes to HTML, WIKI, XLS and TXT",
+  status: "Active",
+  dates: "2000-",
+  technologies: "Ruby, Elixir, Git, Bash, Markdown, DocTest, Curl",
+  image: "images/projects/documentation/documentation_thumbnail.png",
+}
+render("projects/summary.html", %{data: data})
+%>

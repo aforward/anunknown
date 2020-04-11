@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "lac",
+  title: "Library and Archives Canada",
+  description: "A set of internal applications for Library and Archives Canada (LAC) under the Amican Project to help with the circulation and management of published and archival materials",
+  status: "Completed",
+  dates: "2005-2010",
+  technologies: "PHP, Zend, JavaScript, HTML, CSS, Oracle",
+  image: "images/projects/lac/lac_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

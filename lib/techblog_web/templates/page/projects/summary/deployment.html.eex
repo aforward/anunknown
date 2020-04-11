@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "deployment",
+  title: "Continuous Deployment",
+  description: "Continuous Deployment is the natural progression of Continuous Integration. After app is built, and QA succeeds - deploy!",
+  status: "Active",
+  dates: "2000-",
+  technologies: "Git, Bash, Ruby, Elixir, RackSpace, Digital Ocean, AWS",
+  image: "images/projects/deployment/deployment_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>

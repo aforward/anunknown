@@ -1,0 +1,55 @@
+<div class="wrapper">
+  <div class="row project_summary">
+    <div class="project_content blah">
+      <h1>Library and Archives Canada</h1>
+
+      <p>Senior Application Developer / Software Architect.</p>
+
+      <p>
+        Involved with the design, development, testing and maintenance of enterprise-level Intranet applications.
+        The applications provided physical management, circulation and disposition of the archival and published
+        holdings.
+      </p>
+        
+      <p>
+        The applications were built using PHP, Oracle 9i using the Fusebox and Zend Framework.  Helped to upgrade
+        to a subversion (SVN) repository (from RCS), and introduce continuous integration using phpUnderControl,
+        Ant, and Phing.  Other tools in use include Eclipse, PhpUnit, SimpleTest, Selenium, WebTest, and Ingres.
+      </p>
+      
+      <h2>Collection Management System</h2>
+      
+      <p>
+      The Collections Management System (CMS) is an enterprise-level Intranet application that provides a single point 
+      of access to LAC's published and archival collections.  The bilingual application has several primary modules 
+      bringing together physical and intellectual management as well as access to the institutions holdings by 
+      delivering functions of circulation, maintenance, conservation treatment, digitization, imaging, microfilming 
+      and audio-visual preservation.
+      </p>
+
+      <p>
+      Mr. Andrew Forward had the following duties and accomplishments during this project:
+      </p>
+      
+      <ul>
+      <li>Clarified business requirements, work-flows and project objectives, via feedback sessions and client meetings, in collaboration with project leads, business analysts and stakeholders</li>
+      <li>Worked in large team environments collaboratively alongside over 30 colleagues</li>
+      <li>Developed CLF 1.0 compliant and W3C Accessible interfaces, including data-intensive forms, wizards, search pages and paginated results, using PHP, XHTML, CSS, JavaScript and Ajax</li>
+      <li>Coded and optimized PL/SQL queries, stored procedures, triggers and view to manipulate data stored on a multi-million record Oracle and Ingres database schemata</li>
+      <li>Developed PHP business objects to parse large XML documents, produced from hand-held barcode scanners, containing data describing the physical movements of individual holdings between locations at several sites</li>
+      <li>Programmed PHP software to dynamically produce PDF and other office documents for downloads, in-line viewing as well as for conversion to postscript files used in automated print jobs</li>
+      <li>Developed CLI bash scripts enabling application functionalities to be called at scheduled intervals by Control-M agents</li>
+      <li>Developed PHP application code in a clustered server environment running SUSE Linux</li>
+      <li>Provided regular status reports to team leads providing updates the state development deliverables</li>
+      <li>Developed and deployed user acceptance/unit testing using Selenium and SimpleTest</li>
+      <li>Responsible for testing, reporting, enhancing and troubleshooting bugs/functionality changes using the Mantis bug reporting application</li>
+      <li>Safeguarded source code changes and managed code branching/merging using Subversion (SVN)</li>
+      
+      <h3>Environment:</h3>
+      <p>
+      PHP 5.1.4, Fusebox 3 Framework, Oracle 10g, Ingres, PL/SQL, SOAP 1.2, XHTML 1.0 Strict, JavaScript 1.6, AJAX, XML, JSON, CSS 2.0, , Common Look and Feel 1.0, W3C Accessibility Guidelines, TOAD, Putty 0.5, SVN 1.1,  Mantis 0.18, Control-M Server 6.3, SUSE Linux 2.6.x, Tru64 UNIX V5.x, Apache 1.3, Eclipse 3.x,  PhpDocumentor, Selenium 0.82, SimpleTest 1.x
+      </p>
+      
+    </div>
+  </div>
+</div>

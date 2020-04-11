@@ -1,0 +1,12 @@
+<%=
+data = %{
+  key: "powerlevel",
+  title: "Powerlevel - Real Money Trades",
+  description: "An online marketplace geared towards high-volume resellers and casual gamers for artifacts like coins, and characters",
+  status: "Inactive",
+  dates: "2004-2008",
+  technologies: "ASP.Net, C#, NAnt, CruiseControl.Net",
+  image: "images/projects/powerlevel/powerlevel_thumbnail.jpg",
+}
+render("projects/summary.html", %{data: data})
+%>
