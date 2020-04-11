@@ -1,36 +1,198 @@
-<div class="block-homepage">
-  <div class="container">
-    <div class="left-block">
-      <div class="recent-articles">
-        <h2>Recent Articles</h2>
-        <ul>
-          <%= for {slug, details} <- @slugs do %>
-            <li><a href="/articles/<%= slug %>"><%= details.title %></a></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="article-tags">
-        <h2 class="summary-tags">Tags</h2>
-        <ul>
-          <%= for {tag, num} <- @tags do %>
-            <li><a href="/articles?tags[]=<%= tag %>"><%= tag %> (<%= num %>)</a></li>
-          <% end %>
-        </ul>
-      </div>
+<main class="flex-1 relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabindex="0" x-data x-init="$el.focus()">
+  <div class="mx-auto mt-1 lg:mt-12 md:mt-6 max-w-screen-lg px-4">
+    <div class="text-center">
+      <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+        Deliver Early;
+        <br class="sm:hidden" />
+        <span class="text-blue-500">Often.</span>
+      </h2>
+      <p class="mt-3 text-2xl text-pink-600 mx-auto text-base text-gray-500 md:mt-5 md:mx-20">
+        Test-driven development, infrastructure as code,
+        manage, design, development, automate
+        and continuous everything.
+      </p>
     </div>
-    <div class="right-block">
-      <%= for {slug, %{html: html} = article} <- @summaries do %>
-        <%= raw(html) %>
-        <%= render TechblogWeb.LayoutView, "tags.html", article: article %>
-        <div class="read-more">
-          <a href="/articles/<%= slug%>">
-            <span>Read More</span>
-            <%= render TechblogWeb.LayoutView, "icon.html", name: "icon-arrow-right" %>
-          </a>
+
+    <div class="lg:py-12 bg-white">
+      <div class="lg:max-w-xl mx-auto px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div class="mt-10 lg:mt-0">
+            <a href="https://dividends.io">
+              <div class="mt-5 flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                  <img class="w-full object-cover" src="/images/projects/dividends/dividends_thumbnail.png" alt="Dividends" />
+                </div>
+                <div class="px-6 pb-4">
+                  <h3 class="mt-2 text-xl leading-7 font-semibold underline text-gray-600">
+                    Dividends.io
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="http://letscode.ca">
+              <div class="mt-5 flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                  <img class="w-full object-cover" src="/images/projects/letscode/letscode_thumbnail.png" alt="LetsCode.ca" />
+                </div>
+                <div class="px-6 pb-4">
+                  <h3 class="mt-2 text-xl leading-7 font-semibold underline text-gray-600">
+                    LetsCode.ca
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="https://retirementinview.ca">
+              <div class="mt-5 flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                  <img class="w-full object-cover" src="/images/projects/riv/riv_thumbnail.png" alt="RetirementInView.ca" />
+                </div>
+                <div class="px-6 pb-4">
+                  <h3 class="mt-2 text-xl leading-7 font-semibold underline text-gray-600">
+                    RetirementInView.ca
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="http://umple.org">
+              <div class="mt-5 flex flex-col rounded-lg shadow-lg overflow-hidden">
+                <div class="flex-shrink-0">
+                  <img class="w-full object-cover" src="/images/projects/umple/umple_thumbnail.png" alt="Umple.org" />
+                </div>
+                <div class="px-6 pb-4">
+                  <h3 class="mt-2 text-xl leading-7 font-semibold underline text-gray-600">
+                    Umple.org
+                  </h3>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0 row-span-3 align-middle h-full">
+            <h2 class="mt-6 text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9 text-center">
+              Andrew Forward
+            </h2>
+            <p class="mt-3 text-lg leading-6 text-gray-500">
+              I have a software engineering background with advanced degrees in computer science
+              (<a class="underline text-blue-500" href="https://engineering.uottawa.ca/undergraduate-programs/software-engineering">BASc</a>,
+               <a class="underline text-blue-500" href="https://eecs.uottawa.ca/~tcl/gradtheses/aforward/">MSc</a>,
+               <a class="underline text-blue-500" href="https://eecs.uottawa.ca/~tcl/gradtheses/aforwardphd/">PhD</a>).
+              I am proficient with Java, PHP, Ruby on Rails, C# (ASP.Net), HTML/XHTML, JavaScript, CSS, Oracle, MySql,
+              and Cloud Computing (Amazon S3).  You can view <a href="/portfolio" class="underline text-blue-500">my portfolio</a> or
+              email me for a copy of my resume.
+            </p>
+            <dl class="mt-8 text-base leading-6 text-gray-500">
+              <div class="text-center">
+                <dt class="sr-only">Postal address</dt>
+                <dd>
+                  <p>Ottawa, Canada</p>
+                </dd>
+              </div>
+              <div class="mt-3">
+                <dt class="sr-only">Phone number</dt>
+                <dd class="flex justify-center">
+                  <svg class="h-6 w-6 text-gray-400 mr-1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                  <span class="xml-3">
+                    +1 (613) 795-5273
+                  </span>
+                </dd>
+              </div>
+              <div class="mt-3">
+                <dt class="sr-only">Email</dt>
+                <dd class="flex justify-center">
+                  <svg class="flex-shrink-0 h-6 w-6 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <span class="ml-3 underline">
+                    <a href="mailto:aforward@gmail.com">aforward@gmail.com</a>
+                  </span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="/blog">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500 hover:text-blue-600 underline">
+                  Blog
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  I don't often blog, but when I do
+                  I reach for Markdown.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="/publications">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500  hover:text-blue-600 underline">
+                  Publications
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  Formal (academic) writing and speaking (comporate) engagements.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="/snippets">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500  hover:text-blue-600 underline">
+                  Snippets
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  Oft forgotten, difficult to remember, occasionally needed scripts.
+                </p>
+              </div>
+            </a>
+          </div>
+<!--
+          <div class="mt-10 lg:mt-0 row-span-3">
+            <a href="/resume">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500  hover:text-blue-600 underline">
+                  Resume
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  Short, long and book-length versions of my resume.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="/portfolio">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500  hover:text-blue-600 underline">
+                  Portfolio
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  A collection of past client work.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <a href="/courses">
+              <div class="mt-5">
+                <h5 class="text-2xl leading-6 font-extrabold text-blue-500  hover:text-blue-600 underline">
+                  Courses
+                </h5>
+                <p class="mt-2 text-xl leading-6 text-gray-500">
+                  To learn, I teach.
+                </p>
+              </div>
+            </a>
+          </div>
+-->
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
-<%= render TechblogWeb.LayoutView, "version.html", assigns %>
-<%= render TechblogWeb.LayoutView, "spinner.html" %>
+</main>

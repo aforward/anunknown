@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= live_title_tag assigns[:page_title] || "Techblog", suffix: " · Phoenix Framework" %>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Catamaran|Chango|Erica+One|Montserrat|Open+Sans|Roboto|Droid+Sans|Fjalla+One|Dokdo" rel="stylesheet">
     <%= csrf_meta_tag() %>
   </head>

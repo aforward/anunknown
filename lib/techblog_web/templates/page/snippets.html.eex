@@ -1,0 +1,47 @@
+<div class="bg-white pt-8 pb-20 px-8 lg:pt-10 lg:pb-28 lg:px-8">
+  <div class="relative max-w-lg mx-auto lg:max-w-7xl">
+    <div>
+      <h1 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+        Technical Tidbits
+      </h1>
+      <p class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+        A collection of code snippets of sometimes rarely used, or perhaps difficult to remember tasks, commands and code snippets.
+      </p>
+    </div>
+    <div class="mt-8 grid gap-16 border-t-2 border-gray-100 pt-6 lg:grid-cols-1 lg:col-gap-5 lg:row-gap-10">
+
+      <%= render("snippets/git_delete_branch.html"); %>
+      <%= render("snippets/git_remote_branches.html"); %>
+      <%= render("snippets/git_undo_local_commit.html"); %>
+      <%= render("snippets/git_undo_pushed_commit.html"); %>
+      <%= render("snippets/public_private_key.html"); %>
+      <%= render("snippets/clear_dns.html"); %>
+      <%= render("snippets/csv_encodings.html"); %>
+      <%= render("snippets/remote_bash.html"); %>
+      <%= render("snippets/ftp_lion.html"); %>
+      <%= render("snippets/find_in_files.html"); %>
+      <%= render("snippets/large_files.html"); %>
+      <%= render("snippets/which_port.html"); %>
+      <%= render("snippets/upgrade_804.html"); %>
+      <%= render("snippets/rabbitmqreset.html"); %>
+      <%= render("snippets/tar.html"); %>
+      <%= render("snippets/rails_clear_sessions.html"); %>
+      <%= render("snippets/measure_php_memory_usage.html"); %>
+      <%= render("snippets/memcache.html"); %>
+      <%= render("snippets/scratchcard.html"); %>
+      <%= render("snippets/clean_rails_sessions.html"); %>
+      <%= render("snippets/edit_yaml_files.html"); %>
+      <%= render("snippets/mysql_from_command_line.html"); %>
+      <%= render("snippets/mysql_grants.html"); %>
+      <%= render("snippets/postgres_permissions.html"); %>
+      <%= render("snippets/kill_defunct_processes.html"); %>
+      <%= render("snippets/remove_quarantine.html"); %>
+      <%= render("snippets/fast_mac_wakeups.html"); %>
+      <%= render("snippets/htmltopdf.html"); %>
+      <%= render("snippets/root_ssh_access.html"); %>
+      <%= render("snippets/psql_permissions.html"); %>
+      <%= render("snippets/rspec_should_remove_warnings.html"); %>
+
+    </div>
+  </div>
+</div>

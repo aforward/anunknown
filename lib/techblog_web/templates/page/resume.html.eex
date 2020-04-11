@@ -1,0 +1,82 @@
+<main class="flex-1 relative z-0 pt-2 pb-6 focus:outline-none md:py-6" tabindex="0" x-data x-init="$el.focus()">
+  <div class="mx-auto mt-1 lg:mt-12 md:mt-6 max-w-screen-xl px-4">
+    <div class="text-center">
+      <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+        Andrew Forward
+      </h2>
+    </div>
+
+    <div class="py-12 bg-white">
+      <div class="max-w-xl mx-auto px-4 sm:px-6 lg:max-w-screen-xl lg:px-8">
+        <div class="lg:grid xl:grid-cols-2 lg:gap-8">
+          <div class="mt-10 lg:mt-0">
+            <div class="mt-5">
+              <h5 class="text-2xl leading-6 font-extrabold text-blue-500">
+                Education
+              </h5>
+              <p class="mt-2 text-xl leading-6 text-gray-500">
+                I have a software engineering background with advanced degrees in computer science
+                (<a href="https://engineering.uottawa.ca/undergraduate-programs/software-engineering" class="underline">BASc</a>,
+                 <a href="https://eecs.uottawa.ca/~tcl/gradtheses/aforward/" class="underline">MSc</a>,
+                 <a href="https://eecs.uottawa.ca/~tcl/gradtheses/aforwardphd/" class="underline">PhD</a>).
+              </p>
+            </div>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <div class="mt-5">
+              <h5 class="text-2xl leading-6 font-extrabold text-blue-500">
+                Technologies
+              </h5>
+              <p class="mt-2 text-xl leading-6 text-gray-500">
+                I am very proficient with Java, PHP, Ruby on Rails, C# (ASP.Net), HTML/XHTML, JavaScript, CSS, Oracle, MySql,
+                and Cloud Computing (Amazon S3, Digital Ocean).
+              </p>
+            </div>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <div class="mt-5">
+              <h5 class="text-2xl leading-6 font-extrabold text-blue-500">
+                Clients
+              </h5>
+              <p class="mt-2 text-xl leading-6 text-gray-500">
+                I have extensive federal government experience designing, building and maintaining large software applications,
+                with some private sector experience. My latest public site is <a href="sitevalet.php" class="underline">SiteValet</a>,
+                an online tool to build and manage your hotel's website.
+              </p>
+            </div>
+          </div>
+          <div class="mt-10 lg:mt-0">
+            <div class="mt-5">
+              <h5 class="text-2xl leading-6 font-extrabold text-blue-500">
+                Research
+              </h5>
+              <p class="mt-2 text-xl leading-6 text-gray-500">
+                I am also involved in software development in the
+                research community having been involved with a use case editor <a href="uced.php" class="underline">UCed</a>
+                and more recently a model-oriented language, called <a href="https://cruise.site.uottawa.ca/umpleonline/" class="underline">Umple</a>.
+              </p>
+            </div>
+          </div>
+          <!--
+          <div class="col-span-2 text-center">
+            <div class="mt-5">
+              <h3 class="text-4xl tracking-tight leading-10 font-extrabold text-pink-600 sm:text-5xl sm:leading-none md:text-6xl">
+              Need help?
+              </h3>
+              <p class="text-2xl mt-4 text-base leading-6 text-pink-900">
+                <span class="ml-3 underline">
+                  <a href="mailto:aforward@gmail.com">aforward@gmail.com</a>
+                </span>
+              </p>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+

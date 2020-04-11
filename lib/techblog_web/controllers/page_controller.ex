@@ -1,57 +1,35 @@
 defmodule TechblogWeb.PageController do
   use TechblogWeb, :controller
+  plug :put_layout, "page.html"
 
-  @slugs Techblog.slugs()
-  @articles Techblog.articles()
-  @summaries Techblog.summaries()
-  @tags Techblog.tags()
-
-  def index(conn, params) do
+  def index(conn, _params) do
     conn
-    |> assign(:tags, tags())
-    |> assign(:slugs, slugs() |> Techblog.filter(params["tags"]) |> Techblog.sort())
-    |> assign(:summaries, summaries() |> Techblog.filter(params["tags"]) |> Techblog.sort())
-    |> render("index.html")
+    |> assign(:page_id, :home)
+    |> render("index.html", layout: {TechblogWeb.LayoutView, "app.html"})
   end
 
-  def show(conn, %{"slug" => slug}) do
-    case slugs()[slug] do
-      nil ->
-        redirect(conn, to: "/")
-
-      _details ->
-        conn
-        |> assign(:slug, slug)
-        |> assign(:article, articles()[slug])
-        |> render("show.html")
-    end
+  def resume(conn, _params) do
+    conn
+    |> assign(:page_id, :resume)
+    |> render("resume.html")
   end
 
-  def slugs() do
-    case Mix.env() do
-      :dev -> Techblog.slugs()
-      _ -> @slugs
-    end
+  def portfolio(conn, _params) do
+    conn
+    |> assign(:page_id, :portfolio)
+    |> render("portfolio.html")
   end
 
-  def articles() do
-    case Mix.env() do
-      :dev -> Techblog.articles()
-      _ -> @articles
-    end
+  def publications(conn, _params) do
+    conn
+    |> assign(:page_id, :publications)
+    |> render("publications.html")
   end
 
-  def summaries() do
-    case Mix.env() do
-      :dev -> Techblog.summaries()
-      _ -> @summaries
-    end
+  def snippets(conn, _params) do
+    conn
+    |> assign(:page_id, :snippets)
+    |> render("snippets.html")
   end
 
-  def tags() do
-    case Mix.env() do
-      :dev -> Techblog.tags()
-      _ -> @tags
-    end
-  end
 end

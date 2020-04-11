@@ -1,0 +1,35 @@
+<svg class="<%= @class %>" width="<%= @width %>" height="<%= @width %>" viewBox="0 0 225 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g class="logo" transform="translate(4.000000, -15.000000)">
+        <path d="M61.8450864,232.585662 C25.6888626,218.817806 0,183.828493 0,142.839225 C0,89.8198895 42.980664,46.8392255 96,46.8392255 C149.019336,46.8392255 192,89.8198895 192,142.839225 C192,184.159007 165.895187,219.381683 129.278251,232.914563 L95.5,142.839225 L61.8450864,232.585662 Z" class="combined-shape" stroke="#781244" stroke-width="8" fill="#C42D78"></path>
+        <rect class="rectangle" fill="#781244" x="81" y="198.839225" width="30" height="20"></rect>
+        <g class="d" transform="translate(119.000000, 142.000000)">
+            <circle class="oval" stroke="#FFE0F0" fill="#CF1124" cx="27.5" cy="28.5" r="27.5"></circle>
+            <text font-family="Bauhaus93, Bauhaus 93" font-size="50" font-weight="normal" fill="#FFFFFF">
+                <tspan x="13" y="45">d</tspan>
+            </text>
+        </g>
+        <g class="4" transform="translate(17.000000, 142.000000)">
+            <circle class="oval" stroke="#FFE0F0" fill="#B6E0FE" cx="27.5" cy="28.5" r="27.5"></circle>
+            <text font-family="Bauhaus93, Bauhaus 93" font-size="50" font-weight="normal" fill="#FFFFFF">
+                <tspan x="10" y="45">4</tspan>
+            </text>
+        </g>
+        <g class="w" transform="translate(34.000000, 63.000000)">
+            <circle class="oval" stroke="#FFE0F0" fill="#0FB5BA" cx="32.0081967" cy="37.9918033" r="32.0081967"></circle>
+            <text font-family="Bauhaus93, Bauhaus 93" font-size="58" font-weight="normal" fill="#FFFFFF">
+                <tspan x="9" y="52">w</tspan>
+            </text>
+        </g>
+        <g class="face" transform="translate(161.246212, 74.246212) rotate(45.000000) translate(-161.246212, -74.246212) translate(115.246212, 15.246212)">
+            <path d="M65.1336425,29.2679085 L72.1336425,29.2679085 L72.1336425,19.0829876 L73.3726006,18.8640332 C78.6864802,17.9249397 82.1336425,15.5290703 82.1336425,13.2679085 C82.1336425,10.2368409 76.1957778,7.26790853 68.6336425,7.26790853 C61.0715072,7.26790853 55.1336425,10.2368409 55.1336425,13.2679085 C55.1336425,15.5290703 58.5808048,17.9249397 63.8946844,18.8640332 L65.1336425,19.0829876 L65.1336425,29.2679085 Z" class="right" stroke="#186FAF" stroke-width="3" fill="#B6E0FE" transform="translate(68.633642, 18.267909) rotate(20.000000) translate(-68.633642, -18.267909) "></path>
+            <path d="M27.5,28.5 L34.5,28.5 L34.5,18.3150791 L35.7389581,18.0961247 C41.0528377,17.1570312 44.5,14.7611617 44.5,12.5 C44.5,9.46893235 38.5621353,6.5 31,6.5 C23.4378647,6.5 17.5,9.46893235 17.5,12.5 C17.5,14.7611617 20.9471623,17.1570312 26.2610419,18.0961247 L27.5,18.3150791 L27.5,28.5 Z" class="left" stroke="#199473" stroke-width="3" fill="#8EEDC7" transform="translate(31.000000, 17.500000) rotate(-20.000000) translate(-31.000000, -17.500000) "></path>
+            <circle class="oval" stroke="#C99A2E" stroke-width="5" fill="#E9B949" cx="46.3189438" cy="71.7610628" r="45.5"></circle>
+            <text class="r" font-family="Bauhaus93, Bauhaus 93" font-size="60" font-weight="normal" fill="#FFFFFF">
+                <tspan x="52" y="73">r</tspan>
+            </text>
+            <text class="o" font-family="Bauhaus93, Bauhaus 93" font-size="60" font-weight="normal" fill="#FFFFFF">
+                <tspan x="19" y="73">o</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

@@ -38,8 +38,12 @@ module.exports = (env, options) => ({
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               sourceMap: devMode
             }
+          },
+          {
+            loader: 'postcss-loader',
           },
           {
             loader: 'sass-loader',

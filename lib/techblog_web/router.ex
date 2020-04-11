@@ -17,8 +17,15 @@ defmodule TechblogWeb.Router do
   scope "/", TechblogWeb do
     pipe_through :browser
     get("/", PageController, :index)
-    get("/articles", PageController, :index)
-    get("/articles/:slug", PageController, :show)
+    get("/resume", PageController, :resume)
+    get("/portfolio", PageController, :portfolio)
+    get("/publications", PageController, :publications)
+    get("/snippets", PageController, :snippets)
+
+    get("/blog", BlogController, :index)
+    get("/blog/:slug", BlogController, :show)
+    get("/articles", BlogController, :index)
+    get("/articles/:slug", BlogController, :show)
 
     get("/demo/flash", DemoController, :show_flash)
 
