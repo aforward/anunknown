@@ -28,29 +28,29 @@ defmodule TechblogWeb.BlogController do
   end
 
   def slugs() do
-    case Mix.env() do
-      :dev -> Techblog.slugs()
+    case Application.get_env(:techblog, :blog_mode) do
+      :reload -> Techblog.slugs()
       _ -> @slugs
     end
   end
 
   def articles() do
-    case Mix.env() do
-      :dev -> Techblog.articles()
+    case Application.get_env(:techblog, :blog_mode) do
+      :reload -> Techblog.articles()
       _ -> @articles
     end
   end
 
   def summaries() do
-    case Mix.env() do
-      :dev -> Techblog.summaries()
+    case Application.get_env(:techblog, :blog_mode) do
+      :reload -> Techblog.summaries()
       _ -> @summaries
     end
   end
 
   def tags() do
-    case Mix.env() do
-      :dev -> Techblog.tags()
+    case Application.get_env(:techblog, :blog_mode) do
+      :reload -> Techblog.tags()
       _ -> @tags
     end
   end

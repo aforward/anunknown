@@ -11,7 +11,9 @@ config :techblog,
   domain: "127.0.0.1",
   port: 4010,
   ssl_port: 4011,
-  host: "127.0.0.1"
+  host: "127.0.0.1",
+  blog_mode: :reload,
+  blog_path: "assets/blog"
 
 # Configures the endpoint
 config :techblog, TechblogWeb.Endpoint,

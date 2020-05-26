@@ -5,7 +5,9 @@ config :techblog,
   port: 4010,
   ssl_port: 4011,
   host: "127.0.0.1",
-  email: "aforward@gmail.com"
+  email: "aforward@gmail.com",
+  blog_mode: :static,
+  blog_path: "/src/anunknown/assets/blog"
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information

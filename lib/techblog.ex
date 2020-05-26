@@ -2,7 +2,7 @@ defmodule Techblog do
   @moduledoc false
   @version Mix.Project.config()[:version]
 
-  @default_path "assets/blog"
+  @default_path Application.get_env(:techblog, :blog_path)
 
   def formatted_version, do: "v" <> @version
 
