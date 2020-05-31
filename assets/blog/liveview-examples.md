@@ -89,19 +89,19 @@ Below are a variety of articles on LiveView from mange perspectives.
 
 #### How to Create a Counter with Phoenix LiveView
 
-<a href="https://dennisbeatty.com/2019/03/19/how-to-create-a-counter-with-phoenix-live-view.html" target="_blank"><img src="http://img.youtube.com/vi/2bipVjOcvdI/0.jpg" alt="How to Create a Counter with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://dennisbeatty.com/2019/03/19/how-to-create-a-counter-with-phoenix-live-view.html" target="_blank"><img src="https://img.youtube.com/vi/2bipVjOcvdI/0.jpg" alt="How to Create a Counter with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### How to Create a Todo List with Phoenix LiveView
 
-<a href="https://dennisbeatty.com/2019/04/24/how-to-create-a-todo-list-with-phoenix-liveview.html" target="_blank"><img src="http://img.youtube.com/vi/qpaFivCmJOY/0.jpg" alt="How to Create a Todo List with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://dennisbeatty.com/2019/04/24/how-to-create-a-todo-list-with-phoenix-liveview.html" target="_blank"><img src="https://img.youtube.com/vi/qpaFivCmJOY/0.jpg" alt="How to Create a Todo List with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### Integrating Phoenix LiveView
 
-<a href="https://blog.smartlogic.io/integrating-phoenix-liveview/" target="_blank"><img src="http://img.youtube.com/vi/FfpRBh2kWCI/0.jpg" alt="Integrating Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://blog.smartlogic.io/integrating-phoenix-liveview/" target="_blank"><img src="https://img.youtube.com/vi/FfpRBh2kWCI/0.jpg" alt="Integrating Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### Live Coding LiveView w/ Bruce Tate
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=-wzabRyc-0M" target="_blank"><img src="http://img.youtube.com/vi/-wzabRyc-0M/0.jpg" alt="Live Coding LiveView w/ Bruce Tate" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=-wzabRyc-0M" target="_blank"><img src="https://img.youtube.com/vi/-wzabRyc-0M/0.jpg" alt="Live Coding LiveView w/ Bruce Tate" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### Getting Started With Phoenix LiveView 3 Parts (Elixircasts)
 
@@ -113,11 +113,11 @@ Below are a variety of articles on LiveView from mange perspectives.
 
 #### Setup Phoenix Live View
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=5PWUTABsCmQ" target="_blank"><img src="http://img.youtube.com/vi/5PWUTABsCmQ/0.jpg" alt="Setup Phoenix Live View" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=5PWUTABsCmQ" target="_blank"><img src="https://img.youtube.com/vi/5PWUTABsCmQ/0.jpg" alt="Setup Phoenix Live View" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 #### Phoenix Live View in action
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=vHKSY5dLK5Y" target="_blank"><img src="http://img.youtube.com/vi/vHKSY5dLK5Y/0.jpg" alt="Phoenix Live View in action" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+<a href="https://www.youtube.com/watch?feature=player_embedded&v=vHKSY5dLK5Y" target="_blank"><img src="https://img.youtube.com/vi/vHKSY5dLK5Y/0.jpg" alt="Phoenix Live View in action" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
 
 
 ## Audios
