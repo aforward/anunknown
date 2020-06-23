@@ -35,6 +35,8 @@ defmodule TechblogWeb.Router do
     live "/demo/undo", UndoLive
     live "/demo/phoenix", PageLive, :index
     live "/leaderboard", LeaderboardLive
+
+    get("/demo/gpay", GpayController, :index)
   end
 
   # Other scopes may use custom stacks.

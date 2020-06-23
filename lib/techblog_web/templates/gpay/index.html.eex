@@ -1,0 +1,170 @@
+
+<script>
+const AnyPay = (function() {
+
+  let entity = {
+    selected: {
+      totalStatus: 'FINAL',
+      total: 1.00,
+      currencyCode: 'CAD',
+      countryCode: 'CA',
+    }
+  }
+
+  entity.enableMultiPayments = function(PayMode) {
+    // do nothing
+  }
+
+  return entity;
+
+})();
+
+const GooglePay = (function(){
+
+  let entity = {
+    name: "googlePay",
+    containerId: "googlePayContainer",
+    container: null,
+    options: null,
+    client: null,
+    enabled: false,
+    status: "unknown",
+  };
+
+  entity.init = function() {
+    const me = this;
+    me.options = document.getElementById(me.name);
+    me.container = document.getElementById(me.containerId);
+    me.client = new google.payments.api.PaymentsClient({
+      environment: me.attr('environment')
+    });
+    // TODO: uncomment to enable on front-end
+    me.addIsReadyToPay();
+  };
+
+  const baseCardPaymentMethod = {
+      type: 'CARD',
+      parameters: {
+        allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+        allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"],
+      }
+  };
+
+  entity.addIsReadyToPay = function() {
+    let me = this;
+    me.client.isReadyToPay(
+      obj(
+        me,
+        {
+          allowedPaymentMethods: [baseCardPaymentMethod]
+        }
+      )
+    ).then(function(response) {
+      if (response.result) {
+        me.status = "supported";
+        me.enabled = true;
+        me.createButton();
+        AnyPay.enableMultiPayments(me);
+      } else {
+        me.status = "unsupported";
+      }
+    }).catch(function(err) {
+      console.log(err);
+      me.status = "error";
+    });
+  }
+
+  entity.createButton = function() {
+    let me = this;
+    const button = me.client.createButton({
+      buttonType: "short",
+      onClick: payWithGooglePay,
+    });
+    me.container.appendChild(button);
+  }
+
+  entity.attr = function(label) {
+    return this.options.getAttribute(`data-${label}`);
+  }
+
+  entity.transactionAttr = function(label) {
+    return this.container.getAttribute(`data-${label}`);
+  }
+
+  entity.payload = function() {
+    let me = this;
+    const cardPaymentMethod = Object.assign(
+        {
+          tokenizationSpecification: {
+            type: 'PAYMENT_GATEWAY',
+            parameters: {
+              'gateway': me.attr("gateway"),
+              'gatewayMerchantId': me.attr("merchantid")
+            },
+          },
+        },
+        baseCardPaymentMethod
+    );
+
+    return obj(
+      me,
+      {
+        allowedPaymentMethods: [cardPaymentMethod],
+        transactionInfo: {
+          totalPriceStatus: AnyPay.selected.totalStatus,
+          totalPrice: `${AnyPay.selected.total}`,
+          currencyCode: AnyPay.selected.currencyCode,
+          countryCode: AnyPay.selected.countryCode,
+        },
+        merchantInfo: {
+          merchantId: me.attr("merchantid"),
+          merchantName: me.attr("merchantname"),
+        }
+      }
+    );
+  }
+
+  const payWithGooglePay = function() {
+    console.log(entity.payload());
+    entity.client.loadPaymentData(entity.payload())
+    .then(function(paymentData) {
+      const token = paymentData.paymentMethodData.tokenizationData.token;
+      console.log(token);
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  const obj = function(entity, moreData) {
+    return Object.assign(
+      {},
+      {
+        apiVersion: 2,
+        apiVersionMinor: 0,
+      },
+      moreData
+    );
+  }
+
+  return entity;
+})();
+
+window.GooglePay = GooglePay;
+</script>
+
+<script
+  async
+  src="https://pay.google.com/gp/p/js/pay.js"
+  onload="GooglePay.init()">
+</script>
+
+<div id="googlePay"
+  data-gateway="stripe"
+  data-merchantid="BCR2DN6TTPX6ZFRM"
+  data-merchantname="4079914 Canada Inc"
+  data-environment="TEST" ></div>
+
+<h1>Pay Now</h1>
+<h2>$1.00 donation</h2>
+<div id="googlePayContainer"></div>
