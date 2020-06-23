@@ -7,7 +7,7 @@ An exploration of the Go language (golang) to build a simple webcrawler, all cod
 
 ## Installation
 
-The webcrawler uses [Redit](https://redis.io), to store results. Please install it and ensure it is running before starting.</p>
+The webcrawler uses [Redis](https://redis.io), to store results. Please install it and ensure it is running before starting.</p>
 
 Grab the three projects:
 
