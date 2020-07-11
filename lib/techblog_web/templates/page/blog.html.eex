@@ -4,7 +4,7 @@
       <div class="recent-articles">
         <h2>Recent Articles</h2>
         <ul>
-          <%= for {slug, details} <- @slugs do %>
+          <%= for {slug, details} <- @slugs |> Enum.take(5) do %>
             <li><a href="/articles/<%= slug %>"><%= details.title %></a></li>
           <% end %>
         </ul>
