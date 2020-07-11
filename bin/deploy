@@ -1,0 +1,20 @@
+#!/bin/bash
+
+NAME=${NAME-fivedollars-v022}
+
+if [ -e /src/anunknown ]; then
+  (echo "Deploying anunknown" && \
+   touch /opt/anunknown_deploy.start && \
+   source $HOME/.bash_aliases && \
+   cd /src/anunknown && \
+   git fetch && \
+   git reset --hard origin/main && \
+   ./bin/compile 2>&1 && \
+   systemctl restart anunknown && \
+   rm /opt/anunknown_deploy.start && \
+   touch /opt/anunknown_deploy.bits && \
+   echo "... done deploying anunknown")
+else
+  doex scp $NAME ./bin/deploy /tmp/anunknown_deploy
+  doex ssh $NAME "/tmp/anunknown_deploy"
+fi
