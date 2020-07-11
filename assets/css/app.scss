@@ -251,6 +251,17 @@ code.markdown {
         }
         margin-bottom: $size-10;
       }
+
+      ul {
+        @include opensans-font(300);
+        color: $grey-8;
+        margin: $size-8 0 $size-8 0;
+        list-style-type: circle;
+        li {
+          margin-left: $size-3;
+          font-size: $size-7;
+        }
+      }
     }
   }
 }
@@ -371,6 +382,7 @@ code.markdown {
       margin: $size-8 0 $size-8 0;
       list-style-type: circle;
       li {
+        margin-left: $size-3;
         font-size: $size-7;
       }
     }
