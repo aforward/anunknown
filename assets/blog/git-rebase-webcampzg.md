@@ -1,21 +1,16 @@
-# git rebase -i HEAD~25
+# git rebase -i HEAD\~25
 ### Oct 11, 2019
-
 
 ![git rebase -i HEAD~25 slide 01](/anunknown/assets/static/images/gitrebase_webcampzg/gitrebase.001.png?raw=true)
 
-WebCamp Zagreb finished up last week.  Here's a
-review of my talk on time travel and git rebase.
+You can watch the video below, or keep reading for a transcript.
 
-Once the videos are ready, I'll post a link here.
+[![Andrew Forward's talk on git rebase -i HEAD~25 at WebCamp Zagreb](https://img.youtube.com/vi/V53cpDt2dr0/0.jpg){: .w-full}](https://www.youtube.com/watch?v=V53cpDt2dr0)
 
-Thank you to the organizing committee of Web Camp Zagreb,
-everything was amazing.
-
+## Git is complicated.
 
 ![git rebase -i HEAD~25 slide 02](/anunknown/assets/static/images/gitrebase_webcampzg/gitrebase.002.png?raw=true)
 
-Git is complicated.
 There are concepts known as threshold concepts or [threshold knowledge](https://en.wikipedia.org/wiki/Threshold_knowledge),
 where once you cross a certain level of understanding it completely changes your perception of
 that concept.

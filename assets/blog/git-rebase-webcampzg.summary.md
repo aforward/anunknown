@@ -1,14 +1,11 @@
-# git rebase -i HEAD~25
+# git rebase -i HEAD\~25
 #meta sort 2019-10-11
 #meta tags[] talks
 ### Oct 11, 2019
 
-![git rebase -i HEAD~25 slide 01](/anunknown/assets/static/images/gitrebase_webcampzg/gitrebase.001.png?raw=true)
+[![Andrew Forward's talk on git rebase -i HEAD~25 at WebCamp Zagreb](https://img.youtube.com/vi/V53cpDt2dr0/0.jpg){: .w-full}](https://www.youtube.com/watch?v=V53cpDt2dr0)
 
-WebCamp Zagreb finished up last week.  Here's a
-review of my talk on time travel and git rebase.
+[WebCamp Zagreb 2019](https://2019.webcampzg.org/talks/git-rebase-i-head25/) was great.
+Here's areview of my talk on time travel and git rebase.
 
-Once the videos are ready, I'll post a link here.
-
-Thank you to the organizing committee of Web Camp Zagreb,
-everything was amazing.
+Thank you to the organizing committee of Web Camp Zagreb, everything was amazing.
