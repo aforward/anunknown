@@ -12,7 +12,7 @@ to the public and I hope I did not disappoint.
 
 Here is the actual talk from May 2019
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=KvvkWiECvjY" target="_blank"><img src="https://img.youtube.com/vi/KvvkWiECvjY/0.jpg" alt="Andrew Forward's talk on LiveView at Empex 2019" width="100%" height="auto" border="0" /></a>
+[![Andrew Forward's talk on LiveView at Empex 2019](https://img.youtube.com/vi/KvvkWiECvjY/0.jpg){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=KvvkWiECvjY)
 
 ## Getting Started
 
