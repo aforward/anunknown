@@ -31,5 +31,4 @@ defmodule TechblogWeb.PageController do
     |> assign(:page_id, :snippets)
     |> render("snippets.html")
   end
-
 end

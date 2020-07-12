@@ -12,11 +12,13 @@ defmodule TechblogWeb.Plugs.RedirectPlug do
         |> put_status(:moved_permanently)
         |> Phoenix.Controller.redirect(external: "http://anunknown.local:4000")
         |> halt()
+
       "10xdevelopers.com" ->
         conn
         |> put_status(:moved_permanently)
         |> Phoenix.Controller.redirect(external: canonical_domain())
         |> halt()
+
       _ ->
         conn
     end

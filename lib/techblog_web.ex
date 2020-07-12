@@ -31,7 +31,8 @@ defmodule TechblogWeb do
     quote do
       use Phoenix.View,
         root: "lib/techblog_web/templates",
-        pattern: "**/*",  # <---- add this to compile subdirs
+        # <---- add this to compile subdirs
+        pattern: "**/*",
         namespace: TechblogWeb
 
       # Import convenience functions from controllers

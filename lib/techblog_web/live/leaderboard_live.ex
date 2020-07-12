@@ -587,6 +587,7 @@ defmodule TechblogWeb.LeaderboardLive do
 
   def mount(_params, _session, socket) do
     tick()
+
     {:ok,
      socket
      |> assign(tock: 1)
