@@ -47,7 +47,7 @@ defmodule Techblog.MixProject do
       {:version_tasks, "~> 0.11"},
       {:fn_expr, "~> 0.3"},
       {:deferred_config, "~> 0.1.0"},
-      {:earmark, "~> 1.3"}
+      {:earmark, "~> 1.4"}
     ]
   end
 end
