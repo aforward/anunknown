@@ -81,43 +81,44 @@ Below are a variety of articles on LiveView from mange perspectives.
 
 #### Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=Z2DU0qLfPIY" target="_blank" style="text-align: left"><img src="/anunknown/assets/static/images/liveview-examples/video_elixirconf_2018_chrismccord.png?raw=true" alt="Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Chris McCord Keynote: ElixirConf 2018 (LiveView Sneak Peak)](/anunknown/assets/static/images/liveview-examples/video_elixirconf_2018_chrismccord.png?raw=true){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=Z2DU0qLfPIY)
 
 #### Chris McCord Keynote: ElixirConf EU 2019 (LiveView Released)
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=8xJzHq8ru0M" target="_blank"><img src="/anunknown/assets/static/images/liveview-examples/video_elixirconfeu_2019_chrismccord.png?raw=true" alt="Chris McCord Keynote: Code Sync 2019 (LiveView Released)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Chris McCord Keynote: Code Sync 2019 (LiveView Released)](/anunknown/assets/static/images/liveview-examples/video_elixirconfeu_2019_chrismccord.png?raw=true){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=8xJzHq8ru0M)
 
 #### How to Create a Counter with Phoenix LiveView
 
-<a href="https://dennisbeatty.com/2019/03/19/how-to-create-a-counter-with-phoenix-live-view.html" target="_blank"><img src="https://img.youtube.com/vi/2bipVjOcvdI/0.jpg" alt="How to Create a Counter with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![How to Create a Counter with Phoenix LiveView](https://img.youtube.com/vi/2bipVjOcvdI/0.jpg){: .w-full}](https://dennisbeatty.com/2019/03/19/how-to-create-a-counter-with-phoenix-live-view.html)
 
 #### How to Create a Todo List with Phoenix LiveView
 
-<a href="https://dennisbeatty.com/2019/04/24/how-to-create-a-todo-list-with-phoenix-liveview.html" target="_blank"><img src="https://img.youtube.com/vi/qpaFivCmJOY/0.jpg" alt="How to Create a Todo List with Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![How to Create a Todo List with Phoenix LiveView](https://img.youtube.com/vi/qpaFivCmJOY/0.jpg){: .w-full}](https://dennisbeatty.com/2019/04/24/how-to-create-a-todo-list-with-phoenix-liveview.html)
 
 #### Integrating Phoenix LiveView
 
-<a href="https://blog.smartlogic.io/integrating-phoenix-liveview/" target="_blank"><img src="https://img.youtube.com/vi/FfpRBh2kWCI/0.jpg" alt="Integrating Phoenix LiveView" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Integrating Phoenix LiveView](https://img.youtube.com/vi/FfpRBh2kWCI/0.jpg){: .w-full}](https://blog.smartlogic.io/integrating-phoenix-liveview/)
 
 #### Live Coding LiveView w/ Bruce Tate
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=-wzabRyc-0M" target="_blank"><img src="https://img.youtube.com/vi/-wzabRyc-0M/0.jpg" alt="Live Coding LiveView w/ Bruce Tate" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Live Coding LiveView w/ Bruce Tate](https://img.youtube.com/vi/-wzabRyc-0M/0.jpg){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=-wzabRyc-0M)
 
 #### Getting Started With Phoenix LiveView 3 Parts (Elixircasts)
 
-<a href="https://elixircasts.io/phoenix-liveview-part-1" target="_blank"><img src="/anunknown/assets/static/images/liveview-examples/video_elixircasts_part1.png?raw=true" alt="Getting Started With Phoenix LiveView Part 1 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Getting Started With Phoenix LiveView Part 1 (Free)](/anunknown/assets/static/images/liveview-examples/video_elixircasts_part1.png?raw=true){: .w-full}](https://elixircasts.io/phoenix-liveview-part-1)
 
-<a href="https://elixircasts.io/phoenix-liveview-part-2" target="_blank"><img src="/anunknown/assets/static/images/liveview-examples/video_elixircasts_part2.png?raw=true" alt="Getting Started With Phoenix LiveView Part 2 (Free)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Getting Started With Phoenix LiveView Part 2 (Subscription)](/anunknown/assets/static/images/liveview-examples/video_elixircasts_part2.png?raw=true){: .w-full}](https://elixircasts.io/phoenix-liveview-part-2)
 
-<a href="https://elixircasts.io/phoenix-liveview-part-3" target="_blank"><img src="/anunknown/assets/static/images/liveview-examples/video_elixircasts_part3.png?raw=true" alt="Getting Started With Phoenix LiveView Part 3 (Subscription)" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Getting Started With Phoenix LiveView Part 3 (Subscription)](/anunknown/assets/static/images/liveview-examples/video_elixircasts_part3.png?raw=true){: .w-full}](https://elixircasts.io/phoenix-liveview-part-3)
+
 
 #### Setup Phoenix Live View
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=5PWUTABsCmQ" target="_blank"><img src="https://img.youtube.com/vi/5PWUTABsCmQ/0.jpg" alt="Setup Phoenix Live View" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Setup Phoenix Live View](https://img.youtube.com/vi/5PWUTABsCmQ/0.jpg){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=5PWUTABsCmQ)
 
 #### Phoenix Live View in action
 
-<a href="https://www.youtube.com/watch?feature=player_embedded&v=vHKSY5dLK5Y" target="_blank"><img src="https://img.youtube.com/vi/vHKSY5dLK5Y/0.jpg" alt="Phoenix Live View in action" width="500px" style="margin-left: 0" height="auto" border="0" /></a>
+[![Phoenix Live View in action](https://img.youtube.com/vi/vHKSY5dLK5Y/0.jpg){: .w-full}](https://www.youtube.com/watch?feature=player_embedded&v=vHKSY5dLK5Y)
 
 
 ## Audios
