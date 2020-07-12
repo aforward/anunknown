@@ -70,11 +70,11 @@ Context matters.  Tabs or Spaces; it depends.  Ruby or Java; it depends.  Rebase
 
 Regardless how pure you want your answer to be, in this context it is being asked as a means to evaluate your job application.  We are trying to demonstrate how **great** a candidate you are, or at the least to make enough of an impression to make it to the next step in the process.
 
-In one (of many) great talks from <a href="http://chadfowler.com/">Chad Fowler</a>, we get some insight into the [dangers of stability and homeostatis](https://www.youtube.com/watch?v=sAsRtZEGMMQ).  The system _should_ be heterogenous by default and getting into the habit of throwing code away.
+In one (of many) great talks from [Chad Fowler](http://chadfowler.com/), we get some insight into the [dangers of stability and homeostatis](https://www.youtube.com/watch?v=sAsRtZEGMMQ).  The system _should_ be heterogenous by default and getting into the habit of throwing code away.
 
 ![Heterogenous By Default](/anunknown/assets/static/images/code_i_didnt_write/heterogenous_by_default.png?raw=true)
 
-Contrast that with an tweet from from <a href="https://dhh.dk/">David Heinemeier Hansson</a> at Basecamp.
+Contrast that with an tweet from from [David Heinemeier Hansson](https://dhh.dk/) at Basecamp.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Fun fact: The <a href="https://twitter.com/basecamp?ref_src=twsrc%5Etfw">@basecamp</a> billing script that runs once a day was written by <a href="https://twitter.com/jamis?ref_src=twsrc%5Etfw">@jamis</a> more than a decade ago, and has barely been touched since. 135 lines of Ruby that&#39;s responsible for collecting hundreds of millions of dollars in revenues 🤑</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/1098007632852336640?ref_src=twsrc%5Etfw">February 19, 2019</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -118,7 +118,7 @@ So despite the fact that I actually _did_ write the MySQL adapter, as it was nev
 
 ### Zero Caching
 
-I wrote a mortgage calculator API for a new mortgage broker (<a href="https://hatchmortgage.com/">Hatch Mortgage</a>) that wanted to make things like _affordability_ and _payouts schedules_ much easier for people to navigate and understand.  This company was more interested in helping it's client answer questions from their perspective:
+I wrote a mortgage calculator API for a new mortgage broker ([Hatch Mortgage](https://hatchmortgage.com/)) that wanted to make things like _affordability_ and _payouts schedules_ much easier for people to navigate and understand.  This company was more interested in helping it's client answer questions from their perspective:
 
 * I make this this much, how much house can I afford
 * I want this big a house, how much downpayment do I need
