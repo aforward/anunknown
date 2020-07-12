@@ -61,4 +61,15 @@ defmodule TechblogTest do
 
     assert "Leave me alone" == Techblog.format_images("Leave me alone")
   end
+
+  test "format anchors with images" do
+    markdown = """
+    [![Highlights of Kent Beck's 'Beauty In Code'](https://img.youtube.com/vi/tM1iOJsR7p4/0.jpg)](https://www.youtube.com/watch?feature=player_embedded&v=tM1iOJsR7p4)
+    """
+
+    expected = """
+    <p>\n<a href=\"https://www.youtube.com/watch?feature=player_embedded&v=tM1iOJsR7p4\">  <img src=\"https://img.youtube.com/vi/tM1iOJsR7p4/0.jpg\" alt=\"Highlights of Kent Beck&#39;s &#39;Beauty In Code&#39;\" />\n</a></p>
+    """
+    assert expected == Earmark.as_html!(markdown)
+  end
 end
