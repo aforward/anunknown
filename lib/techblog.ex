@@ -27,7 +27,7 @@ defmodule Techblog do
   (aka newest if using a timestamp) first.
 
   To add a custom sort, add the following meta information into
-  your .summary.md filename
+  your summary.md filename
 
       # How To Deploy to Digital Ocean
       #meta sort 2019-09-21
