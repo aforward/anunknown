@@ -23,7 +23,7 @@ defmodule TechblogTest do
     assert %{
              "setting-up-blog" => %{
                html:
-                 "<h1>\nSetting Up Your Blog</h1>\n<h2>\nApril 20, 2019</h2>\n<p>\nThis is your full-length article.</p>\n<p>\nTo display images that will display in github and\non your website, follow this pattern.</p>\n<p>\n  <img src=\"/images/artboard.png\" alt=\"Art\" />\n</p>\n",
+                 "<h1>\nSetting Up Your Blog</h1>\n<h2>\nApril 20, 2019</h2>\n<p>\nThis is your full-length article.</p>\n<p>\nTo display images that will display in github and\non your website, follow this pattern.</p>\n<p>\n  <img src=\"/assets/setting-up-blog/artboard.png\" alt=\"Art\" />\n</p>\n",
                sort: "20190420",
                tags: ["elixir", "erlang"],
                title: "Setting Up Your Blog"
@@ -48,18 +48,16 @@ defmodule TechblogTest do
   end
 
   test "format_images looks for ?raw=true in an image block" do
-    assert "![My Image](/images/a.png)" ==
-             Techblog.format_images("![My Image](/assets/static/images/a.png?raw=true)")
+    assert "![My Image](/assets/my-blog/a.png)" ==
+             Techblog.format_images("![My Image](a.png?raw=true)", "my-blog")
 
-    assert "/assets/static/images/a.png?raw=true" ==
-             Techblog.format_images("/assets/static/images/a.png?raw=true")
-
-    assert "This is a smple ![My Image](/images/a.png) substitution\n" ==
+    assert "This is a smple ![My Image](/assets/your-blog/a.png) substitution\n" ==
              Techblog.format_images(
-               "This is a smple ![My Image](/assets/static/images/a.png?raw=true) substitution\n"
+               "This is a smple ![My Image](a.png?raw=true) substitution\n",
+               "your-blog"
              )
 
-    assert "Leave me alone" == Techblog.format_images("Leave me alone")
+    assert "Leave me alone" == Techblog.format_images("Leave me alone", "my-blog")
   end
 
   test "format anchors with images" do

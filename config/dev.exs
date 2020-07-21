@@ -7,7 +7,6 @@ config :techblog,
   host: "127.0.0.1",
   email: "admin@localhost",
   blog_mode: :reload,
-  blog_assets: "../writing",
   blog_path: "../writing/blog"
 
 

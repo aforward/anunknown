@@ -79,52 +79,52 @@ defmodule Techblog do
   @doc """
   The URL for displaying images within your GitHub repo is
 
-      ![My Image](/assets/static/images/a.png?raw=true)
-      ![My Image](/myawesomeblog/assets/static/images/a.png?raw=true)
-      <img src="/assets/static/images/a.png?raw=true" />
-      <img src="/myawesomeblog/assets/static/images/a.png?raw=true" />
+      ![My Image](a.png?raw=true)
+      ![My Image](myawesomebloga.png?raw=true)
+      <img src="a.png?raw=true" />
+      <img src="myawesomebloga.png?raw=true" />
 
   But in your website, you want to strip out a few things
 
-      ![My Image](/images/a.png)
-      ![My Image](/images/a.png)
-      <img src="/images/a.png" />
-      <img src="/images/a.png" />
+      ![My Image](/assets/a.png)
+      ![My Image](/assets/a.png)
+      <img src="/assets/a.png" />
+      <img src="/assets/a.png" />
 
   We don't (yet) support optional titles like
 
-      ![My Image](/assets/static/images/a.png?raw=true "Optional Title")
+      ![My Image](a.png?raw=true "Optional Title")
 
   This function will help do that transformation.
 
   ## Example
 
-      iex> Techblog.format_images("![My Image](/assets/static/images/a.png?raw=true)")
-      "![My Image](/images/a.png)"
+      iex> Techblog.format_images("![My Image](a.png?raw=true)", "my-blog")
+      "![My Image](/assets/my-blog/a.png)"
 
-      iex> Techblog.format_images("![My Image](/myawesomeblog/assets/static/images/a.png?raw=true)")
-      "![My Image](/images/a.png)"
+      iex> Techblog.format_images("![My Image](myawesomebloga.png?raw=true)", "your-blog")
+      "![My Image](/assets/your-blog/myawesomebloga.png)"
 
-      iex> Techblog.format_images("<img src=\\\"/assets/static/images/a.png?raw=true\\\" alt=\\\"hello\\\"/>")
-      "<img src=\\\"/images/a.png\\\" alt=\\\"hello\\\"/>"
+      iex> Techblog.format_images("<img src=\\\"a.png?raw=true\\\" alt=\\\"hello\\\"/>", "your-blog")
+      "<img src=\\\"/assets/your-blog/a.png\\\" alt=\\\"hello\\\"/>"
 
-      iex> Techblog.format_images("<img src=\\\"/myawesomeblog/assets/static/images/a.png?raw=true\\\" alt=\\\"hello\\\"/>")
-      "<img src=\\\"/images/a.png\\\" alt=\\\"hello\\\"/>"
+      iex> Techblog.format_images("<img src=\\\"myawesomebloga.png?raw=true\\\" alt=\\\"hello\\\"/>", "my-blog")
+      "<img src=\\\"/assets/my-blog/myawesomebloga.png\\\" alt=\\\"hello\\\"/>"
 
   """
-  def format_images(line) do
+  def format_images(line, blog_slug) do
     line
-    |> regex(~r{!\[(.*)\]\(/assets/static/([^\)]*)\?raw=true\)}, fn _, alt, p ->
-      "![#{alt}](/#{p})"
+    |> regex(~r{!\[(.*)\]\(([^\)]*)\?raw=true\)}, fn _, alt, p ->
+      "![#{alt}](/assets/#{blog_slug}/#{p})"
     end)
-    |> regex(~r{!\[(.*)\]\(/[^/]*/assets/static/([^\)]*)\?raw=true\)}, fn _, alt, p ->
-      "![#{alt}](/#{p})"
+    |> regex(~r{!\[(.*)\]\([^/]*([^\)]*)\?raw=true\)}, fn _, alt, p ->
+      "![#{alt}](/assets/#{blog_slug}/#{p})"
     end)
-    |> regex(~r{<img\s+src=\"/assets/static/([^\?]*)\?raw=true\"}, fn _, p ->
-      "<img src=\"/#{p}\""
+    |> regex(~r{<img\s+src=\"([^\?]*)\?raw=true\"}, fn _, p ->
+      "<img src=\"/assets/#{blog_slug}/#{p}\""
     end)
-    |> regex(~r{<img\s+src=\"/[^/]*/assets/static/([^\?]*)\?raw=true\"}, fn _, p ->
-      "<img src=\"/#{p}\""
+    |> regex(~r{<img\s+src=\"[^/]*([^\?]*)\?raw=true\"}, fn _, p ->
+      "<img src=\"/assets/#{blog_slug}/#{p}\""
     end)
   end
 
@@ -156,32 +156,24 @@ defmodule Techblog do
     |> Enum.into(%{})
   end
 
-  defp append_html!({name, details}, path, filename) do
+  defp append_html!({blog_slug, details}, path, filename) do
     {
-      name,
-      Map.put(details, :html, as_html!("#{path}/#{name}/#{filename}"))
+      blog_slug,
+      Map.put(details, :html, as_html!(path, blog_slug, filename))
     }
   end
 
-  defp as_html!(filename), do: as_html!(filename, File.exists?(filename))
-
-  defp as_html!(filename, true) do
-    filename
-    |> article_content()
+  defp as_html!(path, blog_slug, filename) do
+    "#{path}/#{blog_slug}/#{filename}"
+    |> article_content(blog_slug)
     |> Earmark.as_html!()
   end
 
-  defp as_html!(filename, false) do
-    "#{filename}.example"
-    |> article_content()
-    |> Earmark.as_html!()
-  end
-
-  defp article_content(fullpath) do
+  defp article_content(fullpath, blog_slug) do
     fullpath
     |> File.stream!()
     |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
-    |> Enum.map(&format_images/1)
+    |> Enum.map(fn line -> format_images(line, blog_slug) end)
     |> Enum.join()
   end
 

@@ -30,8 +30,7 @@ defmodule TechblogWeb.Endpoint do
   plug Plug.Static,
     at: "/assets",
     from: Application.get_env(:techblog, :blog_path),
-    gzip: false,
-    only: ~w(*.png *.jpg)
+    gzip: false
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

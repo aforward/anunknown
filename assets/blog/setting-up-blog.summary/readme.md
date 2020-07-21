@@ -24,7 +24,7 @@ Task lists:
 - ???
 - Be rich
 
-![Art](/assets/static/images/artboard.png?raw=true)
+![Art](artboard.png?raw=true)
 
 The above was (mostly) rendered using
 
@@ -49,7 +49,7 @@ For images, if you want it to show up in GitHub AND on your blog
 then you can use this cheat
 
 ```
-BANG[Art](/assets/static/images/artboard.png?raw=true)
+BANG[Art](artboard.png?raw=true)
 ```
 
 Where `BANG` is really `!`.

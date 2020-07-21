@@ -6,4 +6,4 @@ This is your full-length article.
 To display images that will display in github and
 on your website, follow this pattern.
 
-![Art](/assets/static/images/artboard.png?raw=true)
+![Art](artboard.png?raw=true)
