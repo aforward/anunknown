@@ -6,6 +6,9 @@ if [ -e /src/anunknown ]; then
   (echo "Deploying anunknown" && \
    touch /opt/anunknown_deploy.start && \
    source $HOME/.bash_aliases && \
+   cd /src/writing && \
+   git fetch && \
+   git reset --hard origin/main && \
    cd /src/anunknown && \
    git fetch && \
    git reset --hard origin/main && \
