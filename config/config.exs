@@ -21,9 +21,7 @@ config :techblog, TechblogWeb.Endpoint,
   secret_key_base: "DCeSmGCfQ4FaWWwIS6ekfVmxISEPjsWyvrg2lbqvXLKCmaMxPlH9BfcmqVJeQvXR",
   render_errors: [view: TechblogWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Techblog.PubSub,
-  live_view: [
-    signing_salt: "vDA35tDfoT5uyH6t/IfBHDqv4cx4UDCksD9Ve4F4wl2oNg6AacyoXIwrO8VA0A4m"
-  ]
+  live_view: [signing_salt: "vDA35tDfoT5"]
 
 # Configures Elixir's Logger
 config :logger, :console,

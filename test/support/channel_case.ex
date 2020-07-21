@@ -21,6 +21,7 @@ defmodule TechblogWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
+      import TechblogWeb.ChannelCase
 
       # The default endpoint for testing
       @endpoint TechblogWeb.Endpoint
