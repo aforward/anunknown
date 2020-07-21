@@ -5,7 +5,11 @@ config :techblog,
   port: 4000,
   ssl_port: 4001,
   host: "127.0.0.1",
-  email: "admin@localhost"
+  email: "admin@localhost",
+  blog_mode: :reload,
+  blog_assets: "../writing",
+  blog_path: "../writing/blog"
+
 
 # For development, we disable any cache and enable
 # debugging and code reloading.

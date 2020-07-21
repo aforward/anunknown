@@ -9,26 +9,18 @@ defmodule Techblog do
   def slugs(), do: slugs(@default_path)
 
   def slugs(path) do
-    real = _slugs(path, ".summary.md")
-
-    cond do
-      map_size(real) == 0 -> _slugs(path, ".summary.md.example")
-      :else -> real
-    end
-  end
-
-  defp _slugs(path, ext) do
     path
     |> File.ls!()
-    |> Enum.filter(fn nme -> String.ends_with?(nme, ext) end)
+    |> Enum.filter(&File.exists?(summary_file(path, &1)))
     |> Enum.map(fn nme ->
       {
-        nme |> String.split_at(String.length(ext) * -1) |> elem(0),
-        article_attrs("#{path}/#{nme}")
+        nme,
+        path |> summary_file(nme) |> article_attrs()
       }
     end)
     |> Enum.into(%{})
   end
+
 
   @doc """
   Sort the provided map of slugs based on the :sort details.  "Biggest"
@@ -138,11 +130,11 @@ defmodule Techblog do
 
   def articles(), do: articles(@default_path)
 
-  def articles(path), do: all_html!(path, ".md")
+  def articles(path), do: all_html!(path, "readme.md")
 
   def summaries(), do: summaries(@default_path)
 
-  def summaries(path), do: all_html!(path, ".summary.md")
+  def summaries(path), do: all_html!(path, "summary.md")
 
   def tags(), do: tags(@default_path)
 
@@ -155,17 +147,19 @@ defmodule Techblog do
     end)
   end
 
-  defp all_html!(path, ext) do
+  defp summary_file(path, name), do: "#{path}/#{name}/summary.md"
+
+  defp all_html!(path, filename) do
     path
     |> slugs()
-    |> Enum.map(fn slug -> append_html!(slug, path, ext) end)
+    |> Enum.map(fn slug -> append_html!(slug, path, filename) end)
     |> Enum.into(%{})
   end
 
-  defp append_html!({name, details}, path, ext) do
+  defp append_html!({name, details}, path, filename) do
     {
       name,
-      Map.put(details, :html, as_html!("#{path}/#{name}#{ext}"))
+      Map.put(details, :html, as_html!("#{path}/#{name}/#{filename}"))
     }
   end
 
@@ -230,4 +224,6 @@ defmodule Techblog do
   defp regex(line, matcher, func) do
     Regex.replace(matcher, line, func)
   end
+
+
 end
