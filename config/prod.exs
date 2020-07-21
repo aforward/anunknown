@@ -7,7 +7,7 @@ config :techblog,
   host: "127.0.0.1",
   email: "aforward@gmail.com",
   blog_mode: :static,
-  blog_path: "/src/writing/assets/blog"
+  blog_path: "/src/writing/blog"
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
