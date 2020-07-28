@@ -1,11 +1,21 @@
-<div class="block-article">
-  <div class="container">
-    <%= render TechblogWeb.LayoutView, "goback.html", assigns %>
-    <%= raw(@article[:html]) %>
-    <%= render TechblogWeb.LayoutView, "tags.html", assigns %>
-    <%= render TechblogWeb.LayoutView, "goback.html", assigns %>
+
+<div class="container mt-10 mx-auto px-4">
+  <div class="relative max-w-2xl mx-auto lg:max-w-4xl">
+    <div class="prose prose-lg text-gray-500 mx-auto">
+      <div class="blogpost">
+        <div class="details">
+          <%= render TechblogWeb.LayoutView, "goback.html", assigns %>
+          <%= raw(@article[:html]) %>
+          <div class="mt-10 text-right">
+            <%= render TechblogWeb.LayoutView, "tags.html", assigns %>
+          </div>
+          <%= render TechblogWeb.LayoutView, "goback.html", assigns %>
+        </div>
+      </div>
+      <div class="mt-10 text-right">
+        <%= render TechblogWeb.LayoutView, "version.html", assigns %>
+        <%= render TechblogWeb.LayoutView, "spinner.html", assigns %>
+      </div>
+    </div>
   </div>
 </div>
-<%= render TechblogWeb.LayoutView, "version.html", assigns %>
-<%= render TechblogWeb.LayoutView, "spinner.html", assigns %>
-

@@ -8,6 +8,7 @@ defmodule TechblogWeb.BlogController do
 
   def index(conn, params) do
     conn
+    |> assign(:page_id, :blog)
     |> assign(:tags, tags())
     |> assign(:slugs, slugs() |> Techblog.filter(params["tags"]) |> Techblog.sort())
     |> assign(:summaries, summaries() |> Techblog.filter(params["tags"]) |> Techblog.sort())
