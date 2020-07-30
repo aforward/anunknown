@@ -27,6 +27,8 @@ defmodule TechblogWeb.Router do
     get("/articles", BlogController, :index)
     get("/articles/:slug", BlogController, :show)
 
+    get("/books", BookController, :index)
+
     get("/demo/flash", DemoController, :show_flash)
 
     live "/demo/empex", EmpexlogoLive

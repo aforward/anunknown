@@ -8,6 +8,7 @@ config :techblog,
   email: "aforward@gmail.com",
   blog_mode: :static,
   writing_assets: "/src/writing",
+  books_path: "/src/writing/books",
   blog_path: "/src/writing/blog"
 
 # For production, don't forget to configure the url host

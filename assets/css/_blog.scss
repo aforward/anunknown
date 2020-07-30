@@ -1,4 +1,16 @@
 
+.bookpost {
+
+  ul {
+    @apply ml-3 list-disc list-inside;
+  }
+
+  p {
+    @apply mt-3 mb-2 leading-6;
+  }
+
+}
+
 .blogpost {
 
   p {

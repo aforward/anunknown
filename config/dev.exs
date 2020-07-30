@@ -8,6 +8,7 @@ config :techblog,
   email: "admin@localhost",
   blog_mode: :reload,
   writing_assets: "../writing",
+  books_path: "../writing/books",
   blog_path: "../writing/blog"
 
 # For development, we disable any cache and enable

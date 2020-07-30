@@ -3,6 +3,7 @@ use Mix.Config
 config :techblog,
   blog_mode: :reload,
   writing_assets: "assets",
+  books_path: "assets/books",
   blog_path: "assets/blog"
 
 # We don't run a server during test. If one is required,

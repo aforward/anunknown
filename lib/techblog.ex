@@ -117,13 +117,13 @@ defmodule Techblog do
       "![#{alt}](/assets/#{prefix}/#{blog_slug}/#{p})"
     end)
     |> regex(~r{!\[(.*)\]\([^/]*([^\)]*)\?raw=true\)}, fn _, alt, p ->
-      "![#{alt}](/assets/#{blog_slug}/#{p})"
+      "![#{alt}](/assets/#{prefix}/#{blog_slug}/#{p})"
     end)
     |> regex(~r{<img\s+src=\"([^\?]*)\?raw=true\"}, fn _, p ->
-      "<img src=\"/assets/#{blog_slug}/#{p}\""
+      "<img src=\"/assets/#{prefix}/#{blog_slug}/#{p}\""
     end)
     |> regex(~r{<img\s+src=\"[^/]*([^\?]*)\?raw=true\"}, fn _, p ->
-      "<img src=\"/assets/#{blog_slug}/#{p}\""
+      "<img src=\"/assets/#{prefix}/#{blog_slug}/#{p}\""
     end)
   end
 
@@ -180,7 +180,7 @@ defmodule Techblog do
     Map.merge(default_attrs(fullpath), other_attrs(fullpath))
   end
 
-  defp default_attrs(fullpath) do
+  def default_attrs(fullpath) do
     %{
       title:
         fullpath
@@ -193,7 +193,7 @@ defmodule Techblog do
     }
   end
 
-  defp other_attrs(fullpath) do
+  def other_attrs(fullpath) do
     fullpath
     |> File.stream!()
     |> Enum.filter(fn line -> String.starts_with?(line, "#meta") end)
