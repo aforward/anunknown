@@ -2,7 +2,7 @@ use Mix.Config
 
 config :techblog,
   blog_mode: :reload,
-  blog_assets: "assets",
+  writing_assets: "assets",
   blog_path: "assets/blog"
 
 # We don't run a server during test. If one is required,
