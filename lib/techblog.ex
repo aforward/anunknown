@@ -21,7 +21,6 @@ defmodule Techblog do
     |> Enum.into(%{})
   end
 
-
   @doc """
   Sort the provided map of slugs based on the :sort details.  "Biggest"
   (aka newest if using a timestamp) first.
@@ -99,23 +98,23 @@ defmodule Techblog do
 
   ## Example
 
-      iex> Techblog.format_images("![My Image](a.png?raw=true)", "my-blog")
-      "![My Image](/assets/my-blog/a.png)"
+      iex> Techblog.format_images("![My Image](a.png?raw=true)", "blog", "my-blog")
+      "![My Image](/assets/blog/my-blog/a.png)"
 
-      iex> Techblog.format_images("![My Image](myawesomebloga.png?raw=true)", "your-blog")
-      "![My Image](/assets/your-blog/myawesomebloga.png)"
+      iex> Techblog.format_images("![My Image](myawesomebloga.png?raw=true)", "books", "your-blog")
+      "![My Image](/assets/books/your-blog/myawesomebloga.png)"
 
-      iex> Techblog.format_images("<img src=\\\"a.png?raw=true\\\" alt=\\\"hello\\\"/>", "your-blog")
-      "<img src=\\\"/assets/your-blog/a.png\\\" alt=\\\"hello\\\"/>"
+      iex> Techblog.format_images("<img src=\\\"a.png?raw=true\\\" alt=\\\"hello\\\"/>", "blog", "your-blog")
+      "<img src=\\\"/assets/blog/your-blog/a.png\\\" alt=\\\"hello\\\"/>"
 
-      iex> Techblog.format_images("<img src=\\\"myawesomebloga.png?raw=true\\\" alt=\\\"hello\\\"/>", "my-blog")
-      "<img src=\\\"/assets/my-blog/myawesomebloga.png\\\" alt=\\\"hello\\\"/>"
+      iex> Techblog.format_images("<img src=\\\"myawesomebloga.png?raw=true\\\" alt=\\\"hello\\\"/>", "blog", "my-blog")
+      "<img src=\\\"/assets/blog/my-blog/myawesomebloga.png\\\" alt=\\\"hello\\\"/>"
 
   """
-  def format_images(line, blog_slug) do
+  def format_images(line, prefix, blog_slug) do
     line
     |> regex(~r{!\[(.*)\]\(([^\)]*)\?raw=true\)}, fn _, alt, p ->
-      "![#{alt}](/assets/#{blog_slug}/#{p})"
+      "![#{alt}](/assets/#{prefix}/#{blog_slug}/#{p})"
     end)
     |> regex(~r{!\[(.*)\]\([^/]*([^\)]*)\?raw=true\)}, fn _, alt, p ->
       "![#{alt}](/assets/#{blog_slug}/#{p})"
@@ -173,7 +172,7 @@ defmodule Techblog do
     fullpath
     |> File.stream!()
     |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
-    |> Enum.map(fn line -> format_images(line, blog_slug) end)
+    |> Enum.map(fn line -> format_images(line, "blog", blog_slug) end)
     |> Enum.join()
   end
 
@@ -216,6 +215,4 @@ defmodule Techblog do
   defp regex(line, matcher, func) do
     Regex.replace(matcher, line, func)
   end
-
-
 end

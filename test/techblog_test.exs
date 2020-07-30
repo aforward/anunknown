@@ -48,12 +48,13 @@ defmodule TechblogTest do
   end
 
   test "format_images looks for ?raw=true in an image block" do
-    assert "![My Image](/assets/my-blog/a.png)" ==
-             Techblog.format_images("![My Image](a.png?raw=true)", "my-blog")
+    assert "![My Image](/assets/blog/my-blog/a.png)" ==
+             Techblog.format_images("![My Image](a.png?raw=true)", "blog", "my-blog")
 
-    assert "This is a smple ![My Image](/assets/your-blog/a.png) substitution\n" ==
+    assert "This is a smple ![My Image](/assets/books/your-blog/a.png) substitution\n" ==
              Techblog.format_images(
                "This is a smple ![My Image](a.png?raw=true) substitution\n",
+               "books",
                "your-blog"
              )
 

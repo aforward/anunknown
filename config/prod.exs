@@ -7,6 +7,7 @@ config :techblog,
   host: "127.0.0.1",
   email: "aforward@gmail.com",
   blog_mode: :static,
+  blog_assets: "/src/writing",
   blog_path: "/src/writing/blog"
 
 # For production, don't forget to configure the url host

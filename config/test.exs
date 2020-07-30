@@ -1,6 +1,5 @@
 use Mix.Config
 
-
 config :techblog,
   blog_mode: :reload,
   blog_assets: "assets",

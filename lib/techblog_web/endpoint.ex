@@ -29,7 +29,7 @@ defmodule TechblogWeb.Endpoint do
 
   plug Plug.Static,
     at: "/assets",
-    from: Application.get_env(:techblog, :blog_path),
+    from: Application.get_env(:techblog, :blog_assets),
     gzip: false
 
   # Code reloading can be explicitly enabled under the
