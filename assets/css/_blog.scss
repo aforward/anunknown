@@ -21,6 +21,11 @@
     @apply border-dashed border-gray-200 rounded-lg;
   }
 
+  code.inline {
+    @apply border font-mono px-1 bg-gray-100 text-gray-800;
+    @apply border-dashed border-gray-200 rounded-lg;
+  }
+
   ul {
     @apply ml-10 text-gray-500 my-4 list-disc list-inside;
     li {
@@ -31,6 +36,13 @@
   img {
     @apply w-full;
   }
+
+  a {
+    @apply mt-3 text-blue-500 cursor-pointer;
+    &:hover {
+      @apply underline text-blue-800 inline;
+    }
+  }  
 
   .summary {
     @apply mt-6;
@@ -69,13 +81,6 @@
     }
     h4, h5 {
       @apply text-base;
-    }
-
-    a {
-      @apply mt-3 text-blue-500 cursor-pointer;
-      &:hover {
-        @apply underline text-blue-800 inline;
-      }
     }
   }
 
