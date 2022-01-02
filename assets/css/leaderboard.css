@@ -1,0 +1,87 @@
+
+table {
+  border-collapse: collapse;
+}
+
+table.leaderboard {
+  table-layout: fixed;
+}
+
+table.leaderboard tr th {
+  background-color: var(--blue-1);
+  border: 1px solid var(--blue-9);
+}
+
+table.leaderboard tr td {
+  vertical-align: top;
+  border: 1px dotted var(--blue-9);
+}
+
+.data-cell {
+  text-align: center;
+}
+
+.sortable-column svg.sortable {
+  width: var(--size-6);
+}
+
+.sortable-column.on {
+  background-color: var(--blue-9);
+  color: var(--blue-1);
+}
+
+.sortable-column.on svg.sortable .primary {
+  fill: var(--blue-0);
+}
+
+.sortable-column.on svg.sortable .secondary {
+  fill: var(--blue-0);
+}
+
+.sortable-column.off {
+  background-color: var(--blue-1);
+}
+
+.sortable-column.off svg.sortable .primary {
+  fill: var(--blue-0);
+}
+
+.sortable-column.off svg.sortable .secondary{
+  fill: var(--blue-0);
+}
+
+.sortable-column.off:hover {
+  background-color: var(--blue-9);
+  border: 1px solid var(--blue-0);
+  cursor: pointer;
+  color: var(--blue-1);
+}
+
+.sortable-column.off:hover svg.sortable .primary {
+  fill: var(--blue-3);
+}
+
+.sortable-column.off:hover svg.sortable .secondary {
+  fill: var(--blue-3);
+}
+
+@media only screen and (min-width: 770px) {
+  table.leaderboard th {
+    font-size: var(--size-6);
+  }
+
+  table.leaderboard td {
+    font-size: var(--size-8);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  table.leaderboard th {
+    font-size: var(--size-10);
+  }
+
+  table.leaderboard td {
+    font-size: var(--size-13);
+    overflow: scroll;
+  }
+}

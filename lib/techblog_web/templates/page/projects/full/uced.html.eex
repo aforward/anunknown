@@ -5,7 +5,7 @@
       <h1>Use Case Editor</h1>
 
       <p>
-        The <a href="https://eecs.uottawa.ca/~ssome/Use_Case_Editor_UCEd.html" class="external">Use Case Editor</a> integrates a set of tools for use cases edition, domain model edition and
+        The <a href="https://www.eecs.uottawa.ca/~ssome/Use_Case_Editor_UCEd.html" class="external">Use Case Editor</a> integrates a set of tools for use cases edition, domain model edition and
         requirements simulation. Based on use cases and a domain model description, UCEd generates a
         state model that realizes the use case.
       </p>

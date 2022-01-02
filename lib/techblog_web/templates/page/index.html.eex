@@ -79,8 +79,8 @@
             <p class="mt-3 text-lg leading-6 text-gray-500">
               I have a software engineering background with advanced degrees in computer science
               (<a class="underline text-blue-500" href="https://engineering.uottawa.ca/undergraduate-programs/software-engineering">BASc</a>,
-               <a class="underline text-blue-500" href="https://eecs.uottawa.ca/~tcl/gradtheses/aforward/">MSc</a>,
-               <a class="underline text-blue-500" href="https://eecs.uottawa.ca/~tcl/gradtheses/aforwardphd/">PhD</a>).
+               <a class="underline text-blue-500" href="https://www.eecs.uottawa.ca/~tcl/gradtheses/aforward/">MSc</a>,
+               <a class="underline text-blue-500" href="https://www.eecs.uottawa.ca/~tcl/gradtheses/aforwardphd/">PhD</a>).
               I am proficient with Java, PHP, Ruby on Rails, C# (ASP.Net), HTML/XHTML, JavaScript, CSS, Oracle, MySql,
               and Cloud Computing (Amazon S3).  You can view <a href="/portfolio" class="underline text-blue-500">my portfolio</a> or
               email me for a copy of my resume.
@@ -192,6 +192,9 @@
           </div>
 -->
         </div>
+      </div>
+      <div class="mt-10 mx-auto text-right pb-8 text-gray-300">
+        v<%= Application.spec(:techblog, :vsn) %>
       </div>
     </div>
   </div>

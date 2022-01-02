@@ -1,23 +1,38 @@
 #!/bin/bash
+#
+# If you encounter an issue with
+#   Host key verification failed.
+# Then you need to SSH into the box first
+#   ssh root@`doex ip fivedollars-v028`
 
-NAME=${NAME-fivedollars-v022}
+NAME=${NAME-fivedollars-v028}
 
 if [ -e /src/anunknown ]; then
-  (echo "Deploying anunknown" && \
+  BRANCH=${1-$(cat /tmp/.branch)}
+  (echo "Deploying anunknown ($BRANCH)" && \
    touch /opt/anunknown_deploy.start && \
    source $HOME/.bash_aliases && \
    cd /src/writing && \
    git fetch && \
    git reset --hard origin/main && \
    cd /src/anunknown && \
+   # Get the latest code
    git fetch && \
-   git reset --hard origin/main && \
+   # Ensure we can safely checkout the desired branch
+   git reset --hard origin/$BRANCH && \
+   # Now go into that branch
+   git checkout $BRANCH && \
+   # And make it the latest code... confusing, sorry, but safe
+   git reset --hard origin/$BRANCH && \
    ./bin/compile 2>&1 && \
    systemctl restart anunknown && \
    rm /opt/anunknown_deploy.start && \
    touch /opt/anunknown_deploy.bits && \
    echo "... done deploying anunknown")
 else
+  BRANCH=${1-$(git rev-parse --abbrev-ref HEAD)}
+  echo "$BRANCH" > .branch
+  doex scp $NAME ./.branch /tmp/.branch
   doex scp $NAME ./bin/deploy /tmp/anunknown_deploy
   doex ssh $NAME "/tmp/anunknown_deploy"
 fi

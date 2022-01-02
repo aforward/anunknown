@@ -1,0 +1,102 @@
+
+.bookpost ul {
+  @apply ml-3 list-disc list-inside;
+}
+
+.bookpost p {
+  @apply mt-3 mb-2 leading-6;
+}
+
+.blogpost p {
+  @apply mt-3 mb-2 text-xl leading-6 text-gray-500;
+}
+
+.blogpost pre {
+  @apply border-4 font-mono mt-3 p-3 text-base leading-6 bg-gray-100 text-gray-800;
+  @apply border-dashed border-gray-200 rounded-lg;
+}
+
+.blogpost code.inline {
+  @apply border font-mono px-1 bg-gray-100 text-gray-800;
+  @apply border-dashed border-gray-200 rounded-lg;
+}
+
+.blogpost ul {
+  @apply ml-10 text-gray-500 my-4 list-disc list-inside;
+}
+
+.blogpost ul li {
+  @apply text-xl;
+}
+
+.blogpost img {
+  @apply w-full;
+}
+
+.blogpost a {
+  @apply mt-3 text-blue-500 cursor-pointer hover:underline hover:text-blue-800 hover:inline;
+}
+
+.blogpost .summary {
+  @apply mt-6;
+}
+
+.blogpost .summary h1 {
+  @apply mt-2 text-4xl;
+}
+
+.blogpost .summary h2, .blogpost .summary h3 {
+  @apply mt-2 text-2xl leading-7 font-semibold text-gray-900;
+}
+
+.blogpost table {
+  @apply table-auto border-collapse w-full;
+}
+
+.blogpost table th {
+  @apply border border-blue-800 bg-blue-800 text-xl text-white my-5 p-5;
+}
+
+.blogpost table td {
+  @apply border border-gray-400 p-5 align-top;
+}
+
+.blogpost .details h1 {
+  @apply mt-2 text-4xl text-center leading-8 font-extrabold tracking-tight text-gray-900;
+}
+
+.blogpost .details h2 {
+  @apply mt-2 mb-8 text-xl text-center font-bold tracking-tight text-gray-700;
+}
+
+.blogpost .details h3, .blogpost .details h4, .blogpost .details h5 {
+  @apply mt-8 mb-2 font-bold tracking-tight text-gray-700;
+}
+
+.blogpost .details h3 {
+  @apply text-xl;
+}
+
+.blogpost .details h4, .blogpost .details h5 {
+  @apply text-base;
+}
+
+.blogpost .read-more, .blogpost .go-back {
+  @apply mt-3 mb-5;
+}
+
+.blogpost .read-more a, .blogpost .go-back a {
+  @apply mt-3 cursor-pointer;
+}
+
+.blogpost .read-more a span, .blogpost .go-back a span {
+  @apply text-blue-500 hover:underline hover:text-blue-800;
+}
+
+.blogpost .read-more a svg, .blogpost .go-back a svg {
+  @apply h-3 w-auto text-blue-400 hover:text-blue-800;
+}
+
+.blogpost .read-more a svg .primary, .blogpost .go-back a svg .primary {
+  @apply fill-current;
+}

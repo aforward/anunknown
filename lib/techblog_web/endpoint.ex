@@ -11,10 +11,6 @@ defmodule TechblogWeb.Endpoint do
     signing_salt: "qF5BEhB6"
   ]
 
-  socket "/socket", TechblogWeb.UserSocket,
-    websocket: true,
-    longpoll: false
-
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
@@ -25,7 +21,7 @@ defmodule TechblogWeb.Endpoint do
     at: "/",
     from: :techblog,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(assets fonts images favicon.ico robots.txt)
 
   plug Plug.Static,
     at: "/assets",
@@ -45,7 +41,6 @@ defmodule TechblogWeb.Endpoint do
     cookie_key: "request_logger"
 
   plug Plug.RequestId
-  plug Plug.Logger
   plug TechblogWeb.Plugs.RedirectPlug
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
