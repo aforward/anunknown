@@ -34,9 +34,16 @@ defmodule Techblog.Book do
       author:
         stream
         |> Enum.filter(fn line -> String.starts_with?(line, "##") end)
-        |> Enum.fetch!(0)
-        |> String.replace("##", "")
-        |> String.trim(),
+        |> Enum.fetch(0)
+        |> case do
+          :error ->
+            nil
+
+          {:ok, author} ->
+            author
+            |> String.replace("##", "")
+            |> String.trim()
+        end,
       img: "/assets/books/#{nme}/#{nme}.png",
       body:
         stream

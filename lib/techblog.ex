@@ -187,9 +187,16 @@ defmodule Techblog do
         |> File.stream!()
         |> Enum.reject(fn line -> String.starts_with?(line, "#meta") end)
         |> Enum.filter(fn line -> String.starts_with?(line, "#") end)
-        |> Enum.fetch!(0)
-        |> String.replace("#", "")
-        |> String.trim()
+        |> Enum.fetch(0)
+        |> case do
+          :error ->
+            nil
+
+          {:ok, title} ->
+            title
+            |> String.replace("#", "")
+            |> String.trim()
+        end
     }
   end
 
