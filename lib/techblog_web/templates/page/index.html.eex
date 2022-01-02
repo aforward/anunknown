@@ -193,6 +193,9 @@
 -->
         </div>
       </div>
+      <div class="mt-10 mx-auto text-right pb-8 text-gray-300">
+        v<%= Application.spec(:techblog, :vsn) %>
+      </div>
     </div>
   </div>
 </main>
