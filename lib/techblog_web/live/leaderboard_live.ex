@@ -41,9 +41,7 @@ defmodule TechblogWeb.LeaderboardLive do
   end
 
   @display_time fn time ->
-    "#{time |> div(60) |> Integer.to_string() |> String.pad_leading(2, "0")}:#{
-      time |> rem(60) |> Integer.to_string() |> String.pad_leading(2, "0")
-    }"
+    "#{time |> div(60) |> Integer.to_string() |> String.pad_leading(2, "0")}:#{time |> rem(60) |> Integer.to_string() |> String.pad_leading(2, "0")}"
   end
 
   @summary fn athletes ->

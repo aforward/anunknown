@@ -1,0 +1,15 @@
+.publication h3 {
+  @apply mt-2 text-2xl leading-7 font-semibold text-gray-900;
+}
+
+.publication p.label {
+  @apply text-sm leading-5 text-gray-500;
+}
+
+.publication p.citation {
+  @apply mt-3 text-sm leading-6 text-gray-400;
+}
+
+.publication p.abstract {
+  @apply mt-3 text-base leading-6 text-gray-600;
+}
