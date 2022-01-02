@@ -1,27 +1,23 @@
 #!/bin/bash
 
-# The --unsafe-perm is to install node-sass
-# Otherwise you will a permissions error
-# https://github.com/sass/node-sass/issues/1098
-# (cd assets && npm install --unsafe-perm node-sass) && \
-# (cd assets && npm install --no-optional && webpack --mode production) && \
-
 set -o errexit
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd ${DIR}/..
 
 # Initial setup
-MIX_ENV=prod mix deps.get --only prod
+mix deps.get --only prod
+
+export MIX_ENV=prod
+export SECRET_KEY_BASE=$(mix phx.gen.secret)
+export SIGNING_SALT=$(mix phx.gen.secret)
+export DATABASE_URL=ecto://postgres:postgres@127.0.0.1/netnetworth
+export PHX_SERVER=1
+
 MIX_ENV=prod mix compile
 
 # Compile assets
-npm install --prefix ./assets
-npm run deploy --prefix ./assets
-MIX_ENV=prod mix phx.digest
+mix assets.deploy
 
 # Build the release and overwrite the existing release directory
-MIX_ENV=prod mix release --overwrite
-
-# Perform any migrations necessary
-# _build/prod/rel/myApp/bin/myApp eval "Techblog.Release.migrate"
+mix release --overwrite

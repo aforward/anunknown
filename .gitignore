@@ -38,3 +38,4 @@ bin/env.private
 assets/package-lock.json
 priv/certbot/*
 .DS_Store
+.branch

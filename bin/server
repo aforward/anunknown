@@ -1,9 +1,11 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd ${DIR}/..
+
 export MIX_ENV=${MIX_ENV-prod}
 export SECRET_KEY_BASE=$(mix phx.gen.secret)
 export SIGNING_SALT=$(mix phx.gen.secret)
+export PHX_SERVER=1
 
-(DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )" && \
- cd ${DIR}/.. && \
- ./_build/prod/rel/techblog/bin/techblog "$@")
+./_build/prod/rel/techblog/bin/techblog "$@"
